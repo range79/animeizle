@@ -11,14 +11,14 @@ import jakarta.persistence.Table
 @Entity
 data class UserProfile(
     @Id
-    var id: String? = null,
-    var username: String? = null,
+    var id: Long? = null,
+    var username: String,
     @OneToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "user_id")
     @MapsId
-    var userid: User? =null,
-    var profileImageUrl: String? = null,
-    var favoriteanimes: List<String>? = null,
-    var comments: String? = null,
-    var likes: String? = null,
+    var userid: User,
+    var profileImageUrl: String?,
+    var favoriteanimes: List<String>?,
+    var comments: String? ,
+    var likes: String?,
 )
