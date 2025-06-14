@@ -6,6 +6,7 @@ import com.range.animeizle.user.dto.RegisterRequest
 import com.range.animeizle.user.dto.RegisterResponse
 import com.range.animeizle.user.exception.EmailAlreadyRegisteredException
 import com.range.animeizle.user.exception.PasswordIncorrectException
+import com.range.animeizle.user.exception.RequiredFieldNullException
 import com.range.animeizle.user.exception.UsernameAlreadyRegisteredException
 import com.range.animeizle.user.mapper.UserMapper
 import com.range.animeizle.user.service.AuthService
@@ -28,21 +29,25 @@ class AuthServiceImpl(
     //logger
     private val log: Logger = LoggerFactory.getLogger(AuthServiceImpl::class.java)
 
-    override fun login(loginRequest: LoginRequest): String {
-        val user =    authServiceHelper.findUserByUsernameOrEmail(loginRequest.usernameOrEmail)
+    override fun login(loginRequest: LoginRequest?): String {
+        if (loginRequest == null) {
+            throw RequiredFieldNullException("You must provide a valid login request")
+        }
+        val user = authServiceHelper.findUserByUsernameOrEmail(loginRequest!!.usernameOrEmail )
 
         if (!passwordEncoder.matches(loginRequest.password, user!!.password)) {
             throw PasswordIncorrectException("Password is incorrect")
         }
-
-        return    jwtUtil.generateToken(user.username,user.role)
+        return  jwtUtil.generateToken(user.username,user.role)
 
     }
 
-
-
     @Transactional
-    override fun register(registerRequest: RegisterRequest): RegisterResponse {
+    override fun register(registerRequest: RegisterRequest?): RegisterResponse {
+        if (registerRequest == null) {
+            throw RequiredFieldNullException("You must provide a valid register request")
+        }
+
         if (userRepository.existsByEmail(registerRequest.email)) {
             log.warn("User with email ${registerRequest.email} already exists.")
             throw EmailAlreadyRegisteredException("Email already registered")

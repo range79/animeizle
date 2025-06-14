@@ -11,7 +11,7 @@ import jakarta.persistence.Table
 
 @Entity
 @Table(name = "animes")
-data class 8Animes (
+data class Animes (
     @Id
     @GeneratedValue
     var id: Long? = null,
