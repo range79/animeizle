@@ -1,14 +1,15 @@
 package com.range.animeizle.user.service.impl
-
+import com.range.animeizle.common.util.JwtUtil
 import com.range.animeizle.user.dao.repository.UserRepository
 import com.range.animeizle.user.dto.LoginRequest
 import com.range.animeizle.user.dto.RegisterRequest
 import com.range.animeizle.user.dto.RegisterResponse
 import com.range.animeizle.user.exception.EmailAlreadyRegisteredException
+import com.range.animeizle.user.exception.PasswordIncorrectException
 import com.range.animeizle.user.exception.UsernameAlreadyRegisteredException
-import com.range.animeizle.user.exception.UsernameOrPasswordBlankException
 import com.range.animeizle.user.mapper.UserMapper
 import com.range.animeizle.user.service.AuthService
+import com.range.animeizle.user.service.helper.AuthServiceHelper
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
@@ -18,15 +19,19 @@ import org.springframework.transaction.annotation.Transactional
 class AuthServiceImpl(
     private val userMapper: UserMapper,
     private val userRepository: UserRepository,
+    private val authServiceHelper: AuthServiceHelper,
+    private val jwtUtil: JwtUtil
 
-    ): AuthService {
+): AuthService {
     //logger
     private val log: Logger = LoggerFactory.getLogger(AuthServiceImpl::class.java)
 
-    override fun login(loginRequest: LoginRequest) {
-
-
-
+    override fun login(loginRequest: LoginRequest): String {
+        val user =    authServiceHelper.findUserByUsernameOrEmail(loginRequest.usernameOrEmail)
+        if (user!!.password != loginRequest.usernameOrEmail) {
+            throw PasswordIncorrectException("Password is incorrect")
+        }
+   return    jwtUtil.generateToken(user.username,user.role)
 
     }
 

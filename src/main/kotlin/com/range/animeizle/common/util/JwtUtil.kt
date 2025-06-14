@@ -17,10 +17,10 @@ class JwtUtil {
     private lateinit var secret: String
     @Value("\${jwt.duration}")
     private lateinit var duration: String
-    fun generateToken(username: String?, role: Role): String? {
+    fun generateToken(username: String?, role: Role?): String? {
         return Jwts
             .builder().subject(username)
-            .claim("role", role.authority).signWith(getSecretKey())
+            .claim("role", role?.authority?: Role.ROLE_USER).signWith(getSecretKey())
             .expiration(Date(System.currentTimeMillis() + duration.toLong() * 1000L))
             .compact()
     }
@@ -44,20 +44,20 @@ class JwtUtil {
 
     fun getUsername(token: String?): String {
         val claims = parseToken(token)
-        return claims.getSubject()
+        return claims.subject
     }
 
     fun validateToken(token: String?, userDetails: UserDetails): Boolean {
         val claim = parseToken(token)
 
-        val username = claim.getSubject()
+        val username = claim.subject
 
 
-        val expiration = claim.getExpiration()
+        val expiration = claim.expiration
 
         val expired = expiration.before(Date())
 
-        return username == userDetails.getUsername() && !expired
+        return username == userDetails.username && !expired
     }
 
 
