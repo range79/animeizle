@@ -17,7 +17,7 @@ class JwtUtil {
     private lateinit var secret: String
     @Value("\${jwt.duration}")
     private lateinit var duration: String
-    fun generateToken(username: String?, role: Role?): String? {
+    fun generateToken(username: String?, role: Role?): String {
         return Jwts
             .builder().subject(username)
             .claim("role", role?.authority?: Role.ROLE_USER).signWith(getSecretKey())
@@ -51,7 +51,6 @@ class JwtUtil {
         val claim = parseToken(token)
 
         val username = claim.subject
-
 
         val expiration = claim.expiration
 

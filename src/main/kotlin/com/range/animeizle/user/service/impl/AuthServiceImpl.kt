@@ -12,6 +12,7 @@ import com.range.animeizle.user.service.AuthService
 import com.range.animeizle.user.service.helper.AuthServiceHelper
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
@@ -20,7 +21,8 @@ class AuthServiceImpl(
     private val userMapper: UserMapper,
     private val userRepository: UserRepository,
     private val authServiceHelper: AuthServiceHelper,
-    private val jwtUtil: JwtUtil
+    private val jwtUtil: JwtUtil,
+    private val passwordEncoder: PasswordEncoder
 
 ): AuthService {
     //logger
@@ -28,12 +30,16 @@ class AuthServiceImpl(
 
     override fun login(loginRequest: LoginRequest): String {
         val user =    authServiceHelper.findUserByUsernameOrEmail(loginRequest.usernameOrEmail)
-        if (user!!.password != loginRequest.usernameOrEmail) {
+
+        if (!passwordEncoder.matches(loginRequest.password, user!!.password)) {
             throw PasswordIncorrectException("Password is incorrect")
         }
-   return    jwtUtil.generateToken(user.username,user.role)
+
+        return    jwtUtil.generateToken(user.username,user.role)
 
     }
+
+
 
     @Transactional
     override fun register(registerRequest: RegisterRequest): RegisterResponse {
@@ -46,9 +52,10 @@ class AuthServiceImpl(
             throw UsernameAlreadyRegisteredException("Username already registered")
         }
         log.info("user ${registerRequest.username} registering")
+        val user =  userMapper.registerRequestToUserEntity(registerRequest)
+        user.password = passwordEncoder.encode(registerRequest.password)
+        val savedUser =userRepository.save(user
 
-        val savedUser =userRepository.save(
-            userMapper.registerRequestToUserEntity(registerRequest)
         )
 
         return userMapper.userEntityToRegisterResponse(savedUser)

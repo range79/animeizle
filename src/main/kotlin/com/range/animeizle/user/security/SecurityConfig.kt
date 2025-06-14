@@ -19,7 +19,7 @@ class SecurityConfig(private val jwtFilter: JwtFilter) {
             authorizeHttpRequests {
                 authorize("/v1/register",permitAll)
                 authorize("/v1/login", permitAll)
-                authorize(anyRequest, permitAll)
+                authorize(anyRequest, authenticated)
             }
             addFilterBefore<UsernamePasswordAuthenticationFilter>(jwtFilter)
         }
