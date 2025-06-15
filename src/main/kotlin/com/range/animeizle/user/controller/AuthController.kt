@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class AuthController(private val authService: AuthService): AuthApi {
-    override fun login(loginRequest: LoginRequest?): ResponseEntity<String?>? {
+    override fun login(loginRequest: LoginRequest): ResponseEntity<String> {
         return ResponseEntity.ok(authService.login(loginRequest =loginRequest))
     }
 
-    override fun register(registerRequest: RegisterRequest?): ResponseEntity<RegisterResponse?>? {
+    override fun register(registerRequest: RegisterRequest?): ResponseEntity<RegisterResponse> {
        return ResponseEntity.ok(authService.register(registerRequest))
     }
 }

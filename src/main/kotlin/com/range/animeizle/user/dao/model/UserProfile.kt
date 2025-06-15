@@ -17,7 +17,9 @@ data class UserProfile(
     @JoinColumn(name = "user_id")
     @MapsId
     var userid: User,
-    var profileImageUrl: String?,
+   // var profileImage: ByteArray?,
+
+    //todo need refactor
     var favoriteanimes: List<String>?,
     var comments: String? ,
     var likes: String?,
