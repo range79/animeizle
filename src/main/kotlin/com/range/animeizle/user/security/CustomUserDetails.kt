@@ -1,10 +1,9 @@
-package com.range.animeizle.user.service
+package com.range.animeizle.user.security
 
 import com.range.animeizle.user.dao.model.Role
 import com.range.animeizle.user.dao.model.User
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
-
 
 class CustomUserDetails(private val user: User) : UserDetails {
     override fun getAuthorities(): MutableCollection<out GrantedAuthority?> {
