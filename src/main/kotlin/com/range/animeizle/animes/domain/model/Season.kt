@@ -1,4 +1,4 @@
-package com.range.animeizle.animes.dao.model
+package com.range.animeizle.animes.domain.model
 
 
 import jakarta.persistence.Entity
@@ -10,14 +10,14 @@ import jakarta.persistence.Table
 
 @Table(name = "seasons")
 @Entity
-data class Seasons(
+data class Season(
     @Id val id: Long,
     val seasonNumber: Int,
     @ManyToOne
     @JoinColumn(name = "anime_id")
-    val anime: Animes,
+    val anime: Anime,
     @OneToMany(mappedBy = "season")
-    val episodes: List<Episodes>
+    val episodes: List<Episode>
 )
 
 

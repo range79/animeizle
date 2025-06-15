@@ -1,4 +1,4 @@
-package com.range.animeizle.user.dao.model
+package com.range.animeizle.user.domain.model
 
 import org.springframework.security.core.GrantedAuthority
 

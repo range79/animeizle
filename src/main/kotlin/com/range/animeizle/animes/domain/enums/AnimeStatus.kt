@@ -1,4 +1,4 @@
-package com.range.animeizle.animes.enums
+package com.range.animeizle.animes.domain.enums
 
 enum class AnimeStatus {
     RELEASED,
