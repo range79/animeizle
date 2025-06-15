@@ -1,6 +1,6 @@
 package com.range.animeizle.common.util
 
-import com.range.animeizle.user.dao.model.Role
+import com.range.animeizle.user.domain.model.Role
 import io.jsonwebtoken.Claims
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.security.Keys

@@ -1,7 +1,7 @@
 package com.range.animeizle.user.service.helper
 
-import com.range.animeizle.user.dao.model.User
-import com.range.animeizle.user.dao.repository.UserRepository
+import com.range.animeizle.user.domain.model.User
+import com.range.animeizle.user.domain.repository.UserRepository
 import com.range.animeizle.user.exception.UserNotFoundException
 import org.springframework.stereotype.Component
 

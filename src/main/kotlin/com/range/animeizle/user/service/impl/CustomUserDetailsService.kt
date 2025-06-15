@@ -1,6 +1,6 @@
 package com.range.animeizle.user.service.impl
 
-import com.range.animeizle.user.dao.repository.UserRepository
+import com.range.animeizle.user.domain.repository.UserRepository
 import com.range.animeizle.user.security.CustomUserDetails
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService

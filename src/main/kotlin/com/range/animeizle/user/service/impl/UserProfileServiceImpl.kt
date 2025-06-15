@@ -1,6 +1,6 @@
 package com.range.animeizle.user.service.impl
 
-import com.range.animeizle.user.dao.repository.UserProfileRepository
+import com.range.animeizle.user.domain.repository.UserProfileRepository
 import com.range.animeizle.user.service.UserProfileService
 import org.springframework.stereotype.Service
 import org.springframework.web.multipart.MultipartFile

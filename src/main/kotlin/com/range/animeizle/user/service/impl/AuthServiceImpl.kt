@@ -1,6 +1,6 @@
 package com.range.animeizle.user.service.impl
 import com.range.animeizle.common.util.JwtUtil
-import com.range.animeizle.user.dao.repository.UserRepository
+import com.range.animeizle.user.domain.repository.UserRepository
 import com.range.animeizle.user.dto.LoginRequest
 import com.range.animeizle.user.dto.RegisterRequest
 import com.range.animeizle.user.dto.RegisterResponse
