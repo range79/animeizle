@@ -16,6 +16,6 @@ data class Anime(
     var description: String,
     @OneToMany(mappedBy = "anime",fetch = FetchType.LAZY)
     val seasons: List<Season>,
-    val animeStatus: AnimeStatus
+    var animeStatus: AnimeStatus
 )
 

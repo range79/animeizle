@@ -1,4 +1,4 @@
-package com.range.animeizle.common.Security
+package com.range.animeizle.common.security
 
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
