@@ -1,3 +1,11 @@
 package com.range.animeizle.animes.dto
 
-class AnimeRequest 
+import com.range.animeizle.animes.domain.enums.AnimeStatus
+
+data class AnimeResponse (
+
+    var id: Long,
+    var title: String,
+    var description: String,
+    var animeStatus: AnimeStatus
+)

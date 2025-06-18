@@ -11,7 +11,7 @@ class AnimeServiceImpl(
     private val animeRepository: AnimeRepository
 ): AnimeService {
     override fun addAnime(anime: Anime): Long {
-   TODO()
+      TODO()
 
     }
 
@@ -21,14 +21,11 @@ class AnimeServiceImpl(
 
     override fun updateAnime(id: Long, anime: Anime): Anime {
         val findedanime = animeRepository.findById(id).orElseThrow { AnimeNotFoundException("Could not find anime with id $id") }
-        findedanime.title = anime.title.trim()
 
+        findedanime.title = anime.title.trim()
         findedanime.description = anime.description.trim()
         findedanime.animeStatus =anime.animeStatus
         return animeRepository.save(findedanime)
-
-
-
 
     }
 
