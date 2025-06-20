@@ -6,7 +6,7 @@ import com.range.animeizle.animes.dto.response.AnimeResponse
 
 interface AnimeService {
     fun addAnime(animeRequest: AnimeRequest): AnimeResponse
-    fun removeAnime(id: Long): AnimeResponse
+    fun removeAnime(id: Long,returnDetails: Boolean): AnimeResponse?
     fun updateAnime(id: Long, animeRequest: AnimeRequest): AnimeResponse
     fun findAll(): List<AnimeResponse>
 

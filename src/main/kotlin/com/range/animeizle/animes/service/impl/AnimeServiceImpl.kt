@@ -24,15 +24,16 @@ class AnimeServiceImpl(
 
     }
     @Transactional
-    override fun removeAnime(id: Long): AnimeResponse {
+    override fun removeAnime(id: Long,returnDetails: Boolean): AnimeResponse? {
         val anime = animeRepository.findById(id).orElseThrow{
             AnimeNotFoundException("Not found anime $id")
         }
-
-        animeRepository.deleteById(id)
-        val animeResponse =animeMapper.animeToAnimeResponse(anime)
-
-        return animeResponse;
+        animeRepository.delete(anime)
+        if (returnDetails) {
+            val animeResponse =animeMapper.animeToAnimeResponse(anime)
+            return animeResponse
+        }
+        return null
     }
     @Transactional
     override fun updateAnime(id: Long, animeRequest: AnimeRequest): AnimeResponse {
@@ -41,7 +42,7 @@ class AnimeServiceImpl(
         foundAnime.title = animeRequest.title
         foundAnime.description = animeRequest.description
         foundAnime.animeStatus =animeRequest.animeStatus
-
+        animeRepository.save(foundAnime)
         val animeResponse = animeMapper.animeToAnimeResponse(foundAnime)
         return animeResponse
     }
