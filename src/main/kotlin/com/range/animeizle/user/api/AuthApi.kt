@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping
 
 @RequestMapping("/v1")
 interface AuthApi {
-    @PostMapping
+    @PostMapping("/login")
     fun login(@RequestBody loginRequest: LoginRequest): ResponseEntity<String>
+    @PostMapping("/register")
     fun register(@RequestBody registerRequest: RegisterRequest?): ResponseEntity<RegisterResponse>
 }
