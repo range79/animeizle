@@ -1,0 +1,35 @@
+package com.range.animeizle.animes.controller
+
+import com.range.animeizle.animes.api.AnimeApi
+import com.range.animeizle.animes.dto.request.AnimeRequest
+import com.range.animeizle.animes.dto.response.AnimeResponse
+import com.range.animeizle.animes.service.AnimeService
+import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.RestController
+
+@RestController
+class AnimeController(
+    val animeService: AnimeService
+) : AnimeApi {
+    override fun AddAnime(animeRequest: AnimeRequest): ResponseEntity<AnimeResponse>  {
+        return ResponseEntity.ok(animeService.addAnime(animeRequest))
+    }
+
+    override fun RemoveAnime(
+        id: Long,
+        returnDetails: Boolean
+    ): ResponseEntity<AnimeResponse?> {
+        return ResponseEntity.ok(animeService.removeAnime(id, returnDetails))
+    }
+
+    override fun UpdateAnime(
+        id: Long,
+        animeRequest: AnimeRequest
+    ): ResponseEntity<AnimeResponse> {
+        return ResponseEntity.ok(animeService.updateAnime(id, animeRequest))
+    }
+
+    override fun findAll(): ResponseEntity<List<AnimeResponse>> {
+        return ResponseEntity.ok(animeService.findAll())
+    }
+}

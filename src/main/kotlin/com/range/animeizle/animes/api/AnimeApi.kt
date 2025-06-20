@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam
 @RequestMapping("/v1/anime")
 interface AnimeApi {
     @PostMapping("/")
-    fun AddAnime(animeRequest: AnimeRequest): AnimeResponse
+    fun AddAnime(animeRequest: AnimeRequest): ResponseEntity<AnimeResponse>
     @DeleteMapping("/{id}")
     fun RemoveAnime(@PathVariable id: Long, @RequestParam(defaultValue = "false") returnDetails: Boolean): ResponseEntity<AnimeResponse?>
     @PatchMapping("/{id}")
