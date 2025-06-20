@@ -11,18 +11,18 @@ import org.springframework.web.bind.annotation.RestController
 class AnimeController(
     val animeService: AnimeService
 ) : AnimeApi {
-    override fun AddAnime(animeRequest: AnimeRequest): ResponseEntity<AnimeResponse>  {
+    override fun addAnime(animeRequest: AnimeRequest): ResponseEntity<AnimeResponse>  {
         return ResponseEntity.ok(animeService.addAnime(animeRequest))
     }
 
-    override fun RemoveAnime(
+    override fun removeAnime(
         id: Long,
         returnDetails: Boolean
     ): ResponseEntity<AnimeResponse?> {
         return ResponseEntity.ok(animeService.removeAnime(id, returnDetails))
     }
 
-    override fun UpdateAnime(
+    override fun updateAnime(
         id: Long,
         animeRequest: AnimeRequest
     ): ResponseEntity<AnimeResponse> {
