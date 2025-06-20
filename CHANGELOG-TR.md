@@ -43,3 +43,12 @@
 
     * Geliştirilmiş doğrulama, hata yönetimi ve token üretimi ile daha güvenli hale getirildi.
 
+## [Dev Version] - 2025-06-20
+### Eklendi
+- AnimeApi eklendi
+- AnimeController eklendi
+- AnimeService eklendi
+- AnimeMapper eklendi
+- AnimeNotFoundException eklendi
+- dto/request ve dto/response paketleri eklendi
+- AnimeResponseDto eklendi

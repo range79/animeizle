@@ -45,3 +45,12 @@
 
     * Improved validation, error handling, and token generation to ensure more secure login flow.
 
+## [Dev Version] - 2025-06-20
+### Added
+- AnimeApi added
+- AnimeController added
+- AnimeService added
+- AnimeMapper added
+- AnimeNotFoundException added
+- dto/request and dto/response packages added
+- AnimeResponseDto added
