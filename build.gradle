@@ -35,6 +35,9 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'org.postgresql:postgresql'
+    //argon2 dependency
+    // https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15to18
+    implementation("org.bouncycastle:bcprov-jdk15to18:1.81")
     //swagger
     // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.9")
