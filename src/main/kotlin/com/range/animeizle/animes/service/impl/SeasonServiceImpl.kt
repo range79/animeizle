@@ -2,7 +2,7 @@ package com.range.animeizle.animes.service.impl
 
 import com.range.animeizle.animes.domain.model.Season
 import com.range.animeizle.animes.domain.repository.SeasonRepository
-import com.range.animeizle.animes.dto.SeasonResponse
+import com.range.animeizle.animes.dto.response.SeasonResponse
 import com.range.animeizle.animes.service.SeasonService
 import org.springframework.stereotype.Service
 
