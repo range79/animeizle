@@ -1,4 +1,4 @@
-package com.range.animeizle.animes.domain.model
+package com.range.animeizle.animes.domain.entity
 
 
 import jakarta.persistence.CascadeType
@@ -16,8 +16,8 @@ data class Season(
     @Id
     val id: Long,
 
+    val seasonSize: Int,
     val seasonNumber: Int,
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "anime_id")
     var anime: Anime? = null,

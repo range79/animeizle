@@ -1,8 +1,8 @@
 package com.range.animeizle.animes.service.impl
 
 import com.range.animeizle.animes.domain.enums.AnimeStatus
-import com.range.animeizle.animes.domain.mapper.AnimeMapper
-import com.range.animeizle.animes.domain.model.Anime
+import com.range.animeizle.animes.mapper.AnimeMapper
+import com.range.animeizle.animes.domain.entity.Anime
 import com.range.animeizle.animes.domain.repository.AnimeRepository
 import com.range.animeizle.animes.dto.request.AnimeRequest
 import com.range.animeizle.animes.dto.response.AnimeResponse

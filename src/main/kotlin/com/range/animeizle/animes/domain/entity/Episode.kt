@@ -1,4 +1,4 @@
-package com.range.animeizle.animes.domain.model
+package com.range.animeizle.animes.domain.entity
 
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType

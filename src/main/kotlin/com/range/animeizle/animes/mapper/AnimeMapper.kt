@@ -1,6 +1,6 @@
-package com.range.animeizle.animes.domain.mapper
+package com.range.animeizle.animes.mapper
 
-import com.range.animeizle.animes.domain.model.Anime
+import com.range.animeizle.animes.domain.entity.Anime
 import com.range.animeizle.animes.dto.request.AnimeRequest
 import com.range.animeizle.animes.dto.response.AnimeResponse
 import org.springframework.stereotype.Component

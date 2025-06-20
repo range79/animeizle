@@ -1,6 +1,6 @@
 package com.range.animeizle.user.domain.repository
 
-import com.range.animeizle.user.domain.model.User
+import com.range.animeizle.user.domain.entity.User
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface UserRepository: JpaRepository<User, Long>{

@@ -1,4 +1,4 @@
-package com.range.animeizle.user.domain.model
+package com.range.animeizle.user.domain.entity
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity

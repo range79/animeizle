@@ -20,7 +20,13 @@ class AnimeController(
         id: Long,
         returnDetails: Boolean
     ): ResponseEntity<AnimeResponse?> {
-        return ResponseEntity.ok(animeService.removeAnime(id, returnDetails))
+
+        val removedAnime = animeService.removeAnime(id, returnDetails)
+        return if (returnDetails && removedAnime != null) {
+            ResponseEntity.ok(removedAnime)
+        } else {
+            ResponseEntity.noContent().build()
+        }
     }
 
     override fun updateAnime(

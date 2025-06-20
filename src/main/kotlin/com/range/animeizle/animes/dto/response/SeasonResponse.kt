@@ -1,6 +1,7 @@
 package com.range.animeizle.animes.dto.response
 
 data class SeasonResponse (
-    val id: Long,
-    val seasonNumber: Int,
+    var id: Long,
+    var seasonNumber: Int,
+    var seasonSize: Int,
     )

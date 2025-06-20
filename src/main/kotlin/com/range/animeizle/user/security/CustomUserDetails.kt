@@ -1,7 +1,7 @@
 package com.range.animeizle.user.security
 
-import com.range.animeizle.user.domain.model.Role
-import com.range.animeizle.user.domain.model.User
+import com.range.animeizle.user.domain.entity.Role
+import com.range.animeizle.user.domain.entity.User
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
 
