@@ -1,5 +1,6 @@
 package com.range.animeizle.animes.api
 
+import com.range.animeizle.animes.domain.enums.AnimeStatus
 import com.range.animeizle.animes.dto.request.AnimeRequest
 import com.range.animeizle.animes.dto.response.AnimeResponse
 import org.springframework.http.ResponseEntity
@@ -22,4 +23,6 @@ interface AnimeApi {
     fun updateAnime(@PathVariable id: Long,@RequestBody animeRequest: AnimeRequest): ResponseEntity<AnimeResponse>
     @GetMapping("/all")
     fun findAll(): ResponseEntity<List<AnimeResponse>>
+    @PatchMapping("/{id}/status")
+    fun setAnimeStatus(@PathVariable id: Long,  @RequestParam status: AnimeStatus ): ResponseEntity<AnimeResponse>
 }

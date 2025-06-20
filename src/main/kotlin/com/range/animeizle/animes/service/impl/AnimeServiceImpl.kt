@@ -1,6 +1,8 @@
 package com.range.animeizle.animes.service.impl
 
+import com.range.animeizle.animes.domain.enums.AnimeStatus
 import com.range.animeizle.animes.domain.mapper.AnimeMapper
+import com.range.animeizle.animes.domain.model.Anime
 import com.range.animeizle.animes.domain.repository.AnimeRepository
 import com.range.animeizle.animes.dto.request.AnimeRequest
 import com.range.animeizle.animes.dto.response.AnimeResponse
@@ -25,9 +27,8 @@ class AnimeServiceImpl(
     }
     @Transactional
     override fun removeAnime(id: Long,returnDetails: Boolean): AnimeResponse? {
-        val anime = animeRepository.findById(id).orElseThrow{
-            AnimeNotFoundException("Not found anime $id")
-        }
+        val anime = findAnime(id)
+
         animeRepository.delete(anime)
         if (returnDetails) {
             val animeResponse =animeMapper.animeToAnimeResponse(anime)
@@ -37,7 +38,7 @@ class AnimeServiceImpl(
     }
     @Transactional
     override fun updateAnime(id: Long, animeRequest: AnimeRequest): AnimeResponse {
-        val foundAnime = animeRepository.findById(id).orElseThrow { AnimeNotFoundException("Could not find anime with id $id") }
+        val foundAnime = findAnime(id)
 
         foundAnime.title = animeRequest.title
         foundAnime.description = animeRequest.description
@@ -52,4 +53,22 @@ class AnimeServiceImpl(
             .map(animeMapper::animeToAnimeResponse)
             .toList()
     }
+
+    override fun setAnimeStatus(
+        animeId: Long,
+        status: AnimeStatus
+    ): AnimeResponse {
+        val anime = findAnime(animeId)
+        anime.animeStatus=status
+        animeRepository.save(anime)
+        return animeMapper.animeToAnimeResponse(anime)
+    }
+
+
+
+    private fun findAnime(id: Long): Anime{
+        return  animeRepository.findById(id).orElseThrow { AnimeNotFoundException("Could not find anime $id") }
+    }
+
+
 }
