@@ -32,7 +32,7 @@ class AnimeServiceImpl(
         animeRepository.delete(anime)
         if (returnDetails) {
             val animeResponse =animeMapper.animeToAnimeResponse(anime)
-            return animeResponse
+            return animeResponse    
         }
         return null
     }

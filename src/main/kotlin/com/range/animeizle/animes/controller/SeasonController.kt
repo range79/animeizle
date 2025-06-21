@@ -2,6 +2,7 @@ package com.range.animeizle.animes.controller
 
 import com.range.animeizle.animes.api.SeasonApi
 import com.range.animeizle.animes.domain.entity.Season
+import com.range.animeizle.animes.dto.request.SeasonRequest
 import com.range.animeizle.animes.dto.response.SeasonResponse
 import com.range.animeizle.animes.service.SeasonService
 import jakarta.servlet.ServletResponse
@@ -27,6 +28,10 @@ class SeasonController(val seasonService: SeasonService): SeasonApi {
             return ResponseEntity.ok(season)
         }
         return ResponseEntity.noContent().build()
+    }
+
+    override fun add(seasonRequest: SeasonRequest): ResponseEntity<SeasonResponse> {
+        return ResponseEntity.ok(seasonService.add(seasonRequest))
     }
 
 }

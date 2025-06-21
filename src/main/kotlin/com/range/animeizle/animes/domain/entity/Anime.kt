@@ -25,4 +25,5 @@ data class Anime(
 
     @OneToMany(mappedBy = "anime", cascade = [CascadeType.ALL], orphanRemoval = true, fetch = FetchType.LAZY)
     val seasons: MutableList<Season>? = mutableListOf()
+
 )
