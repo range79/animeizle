@@ -3,14 +3,16 @@ package com.range.animeizle.animes.api
 import com.range.animeizle.animes.domain.entity.Season
 import com.range.animeizle.animes.domain.enums.AnimeStatus
 import com.range.animeizle.animes.dto.response.SeasonResponse
+import jakarta.servlet.ServletResponse
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RequestMapping("/v1")
 interface SeasonApi {
     @GetMapping("/season/{animeId}")
-    fun findAllAnimeSeasons(@PathVariable animeId:Long): List<SeasonResponse>
+    fun findAllAnimeSeasons(@PathVariable animeId:Long, servletResponse: ServletResponse): ResponseEntity<List<SeasonResponse>>
     @GetMapping("/season/{id}")
-    fun findSeason(@PathVariable id: Long): Season
+    fun findSeason(@PathVariable id: Long): ResponseEntity<Season>
     @DeleteMapping("/season/{id}/details")
-    fun removeSeason(@PathVariable id: Long,@RequestParam status: AnimeStatus): SeasonResponse?
+    fun removeSeason(@PathVariable id: Long,@RequestParam details : Boolean): ResponseEntity<SeasonResponse?>
 }
