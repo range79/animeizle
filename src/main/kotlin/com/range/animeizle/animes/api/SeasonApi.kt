@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*
 
 @RequestMapping("/v1")
 interface SeasonApi {
-    @GetMapping("/season/{animeId}")
+    @GetMapping("/season/anime/{animeId}")
     fun findAllAnimeSeasons(@PathVariable animeId:Long, servletResponse: ServletResponse): ResponseEntity<List<SeasonResponse>>
     @GetMapping("/season/{id}")
     fun findSeason(@PathVariable id: Long): ResponseEntity<Season>
