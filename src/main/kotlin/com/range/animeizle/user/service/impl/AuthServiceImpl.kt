@@ -43,7 +43,7 @@ class AuthServiceImpl(
     }
 
     @Transactional
-    override fun register(registerRequest: RegisterRequest?): RegisterResponse {
+    override fun register(registerRequest: RegisterRequest?): String {
         if (registerRequest == null) {
             throw RequiredFieldNullException("You must provide a valid register request")
         }
@@ -63,7 +63,7 @@ class AuthServiceImpl(
 
         )
 
-        return userMapper.userEntityToRegisterResponse(savedUser)
+        return jwtUtil.generateToken(savedUser.username,savedUser.role)
 
 
     }

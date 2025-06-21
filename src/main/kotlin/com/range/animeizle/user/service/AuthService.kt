@@ -6,5 +6,5 @@ import com.range.animeizle.user.dto.RegisterResponse
 
 interface AuthService {
     fun login(loginRequest: LoginRequest?): String
-    fun register(registerRequest: RegisterRequest?): RegisterResponse
+    fun register(registerRequest: RegisterRequest?): String
 }

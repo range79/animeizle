@@ -14,5 +14,5 @@ interface AuthApi {
     @PostMapping("/login")
     fun login(@RequestBody loginRequest: LoginRequest): ResponseEntity<String>
     @PostMapping("/register")
-    fun register(@RequestBody registerRequest: RegisterRequest?): ResponseEntity<RegisterResponse>
+    fun register(@RequestBody registerRequest: RegisterRequest?): ResponseEntity<String>
 }

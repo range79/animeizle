@@ -14,7 +14,7 @@ class AuthController(private val authService: AuthService): AuthApi {
         return ResponseEntity.ok(authService.login(loginRequest =loginRequest))
     }
 
-    override fun register(registerRequest: RegisterRequest?): ResponseEntity<RegisterResponse> {
+    override fun register(registerRequest: RegisterRequest?): ResponseEntity<String> {
        return ResponseEntity.ok(authService.register(registerRequest))
     }
 }
