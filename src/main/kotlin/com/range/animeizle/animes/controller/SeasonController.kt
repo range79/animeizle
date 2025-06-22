@@ -34,4 +34,13 @@ class SeasonController(val seasonService: SeasonService): SeasonApi {
         return ResponseEntity.ok(seasonService.add(seasonRequest))
     }
 
+    override fun updateSeason(
+        id: Long,
+        seasonRequest: SeasonRequest
+    ): ResponseEntity<SeasonResponse> {
+        return ResponseEntity.ok(seasonService.update(id, seasonRequest))
+    }
+
+
 }
+

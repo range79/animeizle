@@ -17,4 +17,6 @@ interface SeasonApi {
     fun removeSeason(@PathVariable id: Long,@RequestParam details : Boolean): ResponseEntity<SeasonResponse?>
     @PostMapping("/season")
     fun add(@RequestBody seasonRequest: SeasonRequest): ResponseEntity<SeasonResponse>
+    @PatchMapping("/season/{id}")
+    fun updateSeason(@PathVariable id: Long,  @RequestBody seasonRequest: SeasonRequest): ResponseEntity<SeasonResponse>
 }
