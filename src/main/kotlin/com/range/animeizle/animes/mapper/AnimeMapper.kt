@@ -24,6 +24,13 @@ class AnimeMapper {
             animeStatus = anime.animeStatus
         )
     }
+    fun updateFromRequest(anime:Anime, animeRequest:AnimeRequest){
+         anime.apply{
+            title = animeRequest.title
+            description = animeRequest.description
+            animeStatus = animeRequest.animeStatus
+    }
+    }
 
 }
 

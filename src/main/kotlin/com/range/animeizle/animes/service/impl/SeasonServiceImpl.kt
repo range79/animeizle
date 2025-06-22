@@ -10,6 +10,7 @@ import com.range.animeizle.animes.exception.SeasonNotFoundException
 import com.range.animeizle.animes.mapper.SeasonMapper
 import com.range.animeizle.animes.service.SeasonService
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
 @Service
 class SeasonServiceImpl(val seasonRepository: SeasonRepository,
@@ -34,6 +35,7 @@ class SeasonServiceImpl(val seasonRepository: SeasonRepository,
         }
 
     }
+    @Transactional
     override fun add(seasonRequest: SeasonRequest): SeasonResponse {
         val anime = animeRepository.findById(seasonRequest.animeId)
             .orElseThrow{AnimeNotFoundException("Anime not found with id ${seasonRequest.animeId}")}
@@ -46,13 +48,19 @@ class SeasonServiceImpl(val seasonRepository: SeasonRepository,
         val seasonSave = seasonRepository.save(season)
         return  seasonMapper.seasonToSeasonResponse(seasonSave)
     }
-
+    @Transactional
     override fun update(
         id: Long,
-        season: Season
+        seasonRequest: SeasonRequest
     ): SeasonResponse {
-    TODO()
+        val season = seasonFinder(id)
 
+        val anime = animeRepository.findById(seasonRequest.animeId).orElseThrow{
+            AnimeNotFoundException("Anime not found with id ${seasonRequest.animeId}")
+        }
+        seasonMapper.updateFromRequest(season,seasonRequest, anime)
+        seasonRepository.save(season)
+        return  seasonMapper.seasonToSeasonResponse(season)
     }
 
 

@@ -1,14 +1,14 @@
 package com.range.animeizle.animes.service.impl
 
-import com.range.animeizle.animes.domain.enums.AnimeStatus
-import com.range.animeizle.animes.mapper.AnimeMapper
 import com.range.animeizle.animes.domain.entity.Anime
+import com.range.animeizle.animes.domain.enums.AnimeStatus
 import com.range.animeizle.animes.domain.repository.AnimeRepository
 import com.range.animeizle.animes.dto.request.AnimeRequest
 import com.range.animeizle.animes.dto.response.AnimeResponse
 import com.range.animeizle.animes.exception.AnimeNotFoundException
+import com.range.animeizle.animes.mapper.AnimeMapper
 import com.range.animeizle.animes.service.AnimeService
-import jakarta.transaction.Transactional
+import org.springframework.transaction.annotation.Transactional
 import org.springframework.stereotype.Service
 
 @Service
@@ -32,20 +32,17 @@ class AnimeServiceImpl(
         animeRepository.delete(anime)
         if (returnDetails) {
             val animeResponse =animeMapper.animeToAnimeResponse(anime)
-            return animeResponse    
+            return animeResponse
         }
         return null
     }
     @Transactional
     override fun updateAnime(id: Long, animeRequest: AnimeRequest): AnimeResponse {
         val foundAnime = findAnime(id)
-
-        foundAnime.title = animeRequest.title
-        foundAnime.description = animeRequest.description
-        foundAnime.animeStatus =animeRequest.animeStatus
+        animeMapper.updateFromRequest(foundAnime,animeRequest)
         animeRepository.save(foundAnime)
-        val animeResponse = animeMapper.animeToAnimeResponse(foundAnime)
-        return animeResponse
+
+        return animeMapper.animeToAnimeResponse(foundAnime)
     }
 
     override fun findAll(): List<AnimeResponse> {
@@ -53,7 +50,7 @@ class AnimeServiceImpl(
             .map(animeMapper::animeToAnimeResponse)
             .toList()
     }
-
+    @Transactional
     override fun setAnimeStatus(
         animeId: Long,
         status: AnimeStatus

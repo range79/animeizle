@@ -9,5 +9,5 @@ interface SeasonService {
     fun findSeason(id: Long): Season
     fun removeSeason(id: Long,details: Boolean): SeasonResponse?
     fun add(seasonRequest: SeasonRequest): SeasonResponse
-    fun update(id: Long,season: Season): SeasonResponse
+    fun update(id: Long,seasonRequest: SeasonRequest): SeasonResponse
 }

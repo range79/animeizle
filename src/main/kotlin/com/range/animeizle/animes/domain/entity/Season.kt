@@ -19,8 +19,8 @@ data class Season(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long,
 
-    val seasonSize: Int,
-    val seasonNumber: Int,
+    var seasonSize: Int,
+    var seasonNumber: Int,
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "anime_id")
     var anime: Anime? = null,
