@@ -5,23 +5,32 @@ import com.range.animeizle.animes.domain.enums.AnimeStatus
 import com.range.animeizle.animes.domain.repository.AnimeRepository
 import com.range.animeizle.animes.dto.request.AnimeRequest
 import com.range.animeizle.animes.dto.response.AnimeResponse
+import com.range.animeizle.animes.exception.AnimeAlreadyRegistered
 import com.range.animeizle.animes.exception.AnimeNotFoundException
 import com.range.animeizle.animes.mapper.AnimeMapper
 import com.range.animeizle.animes.service.AnimeService
-import org.springframework.transaction.annotation.Transactional
+import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
 @Service
 class AnimeServiceImpl(
     private val animeRepository: AnimeRepository,
-    private val animeMapper: AnimeMapper
-): AnimeService {
+    private val animeMapper: AnimeMapper,
+
+    ): AnimeService {
+    private val log = LoggerFactory.getLogger(AnimeServiceImpl::class.java)
     @Transactional
     override fun addAnime(animeRequest: AnimeRequest): AnimeResponse {
+        if (animeRepository.existsByTitle(animeRequest.title)){
+            log.info("Already registered new anime ${animeRequest.title}")
+            throw AnimeAlreadyRegistered("Anime already registered ${animeRequest.title}")
+        }
 
         val anime = animeMapper.animeRequestToAnime(animeRequest)
 
         val animeResponse = animeRepository.save(anime)
+        log.info("Created new anime ${animeRequest.title}")
         return animeMapper.animeToAnimeResponse(animeResponse)
 
     }
@@ -30,6 +39,7 @@ class AnimeServiceImpl(
         val anime = findAnime(id)
 
         animeRepository.delete(anime)
+        log.info("Removed anime ${anime.id}")
         if (returnDetails) {
             val animeResponse =animeMapper.animeToAnimeResponse(anime)
             return animeResponse
@@ -58,13 +68,17 @@ class AnimeServiceImpl(
         val anime = findAnime(animeId)
         anime.animeStatus=status
         animeRepository.save(anime)
+        log.info("Updated anime status ${anime.id}, to $status")
         return animeMapper.animeToAnimeResponse(anime)
     }
 
 
 
     private fun findAnime(id: Long): Anime{
-        return  animeRepository.findById(id).orElseThrow { AnimeNotFoundException("Could not find anime $id") }
+        return  animeRepository.findById(id).orElseThrow {
+            log.warn("Anime not found with id $id")
+            AnimeNotFoundException("Could not find anime $id")
+        }
     }
 
 

@@ -36,6 +36,7 @@ class AuthServiceImpl(
         val user = authServiceHelper.findUserByUsernameOrEmail(loginRequest!!.usernameOrEmail )
 
         if (!passwordEncoder.matches(loginRequest.password, user!!.password)) {
+         log.info("Invalid password {}", loginRequest.usernameOrEmail)
             throw PasswordIncorrectException("Password is incorrect")
         }
         return  jwtUtil.generateToken(user.username,user.role)
@@ -59,9 +60,8 @@ class AuthServiceImpl(
         log.info("user ${registerRequest.username} registering")
         val user =  userMapper.registerRequestToUserEntity(registerRequest)
         user.password = passwordEncoder.encode(registerRequest.password)
-        val savedUser =userRepository.save(user
-
-        )
+        val savedUser =userRepository.save(user)
+        log.info("saved user ${savedUser.username} to database")
 
         return jwtUtil.generateToken(savedUser.username,savedUser.role)
 
