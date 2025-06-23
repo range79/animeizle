@@ -10,5 +10,4 @@ interface AnimeService {
     fun updateAnime(id: Long, animeRequest: AnimeRequest): AnimeResponse
     fun findAll(): List<AnimeResponse>
     fun setAnimeStatus(animeId: Long, status: AnimeStatus): AnimeResponse
-
 }

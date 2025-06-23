@@ -3,7 +3,6 @@ package com.range.animeizle.animes.api
 import com.range.animeizle.animes.domain.enums.EpisodeStatus
 import com.range.animeizle.animes.dto.request.EpisodeRequest
 import com.range.animeizle.animes.dto.response.EpisodeResponse
-import org.apache.coyote.Response
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 

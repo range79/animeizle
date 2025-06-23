@@ -13,8 +13,4 @@ interface EpisodeService {
     fun findAll(): List<EpisodeResponse>
     fun addEpisode(episodeRequest: EpisodeRequest, seasonId: Long): EpisodeResponse
 
-
-
-
-
 }
