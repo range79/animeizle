@@ -3,7 +3,6 @@ import com.range.animeizle.common.util.JwtUtil
 import com.range.animeizle.user.domain.repository.UserRepository
 import com.range.animeizle.user.dto.LoginRequest
 import com.range.animeizle.user.dto.RegisterRequest
-import com.range.animeizle.user.dto.RegisterResponse
 import com.range.animeizle.user.exception.EmailAlreadyRegisteredException
 import com.range.animeizle.user.exception.PasswordIncorrectException
 import com.range.animeizle.user.exception.RequiredFieldNullException
@@ -33,10 +32,10 @@ class AuthServiceImpl(
         if (loginRequest == null) {
             throw RequiredFieldNullException("You must provide a valid login request")
         }
-        val user = authServiceHelper.findUserByUsernameOrEmail(loginRequest!!.usernameOrEmail )
+        val user = authServiceHelper.findUserByUsernameOrEmail(loginRequest.usernameOrEmail )
 
         if (!passwordEncoder.matches(loginRequest.password, user!!.password)) {
-         log.info("Invalid password {}", loginRequest.usernameOrEmail)
+            log.warn("Invalid password {}", loginRequest.usernameOrEmail)
             throw PasswordIncorrectException("Password is incorrect")
         }
         return  jwtUtil.generateToken(user.username,user.role)
@@ -50,18 +49,18 @@ class AuthServiceImpl(
         }
 
         if (userRepository.existsByEmail(registerRequest.email)) {
-            log.warn("User with email ${registerRequest.email} already exists.")
+            log.warn("Register attempt with already existing email: {}", registerRequest.email.take(3) + "***")
             throw EmailAlreadyRegisteredException("Email already registered")
         }
         if (userRepository.existsByUsername(registerRequest.username)) {
             log.warn("User already registered"+registerRequest.username)
             throw UsernameAlreadyRegisteredException("Username already registered")
         }
-        log.info("user ${registerRequest.username} registering")
+        log.debug("user ${registerRequest.username} registering")
         val user =  userMapper.registerRequestToUserEntity(registerRequest)
         user.password = passwordEncoder.encode(registerRequest.password)
         val savedUser =userRepository.save(user)
-        log.info("saved user ${savedUser.username} to database")
+        log.debug("saved user ${savedUser.username} to database")
 
         return jwtUtil.generateToken(savedUser.username,savedUser.role)
 

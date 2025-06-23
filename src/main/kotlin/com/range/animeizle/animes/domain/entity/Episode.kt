@@ -1,5 +1,6 @@
 package com.range.animeizle.animes.domain.entity
 
+import com.range.animeizle.animes.domain.enums.EpisodeStatus
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType
 import jakarta.persistence.Id
@@ -13,10 +14,11 @@ data class Episode(
     @Id
     val id: Long,
 
-    val episodeNumber: Int,
-    val title: String,
-    val description: String,
-    val link: String,
+    var episodeNumber: Int,
+    var title: String,
+    var description: String,
+    var link: String,
+    var episodeStatus: EpisodeStatus,
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "season_id")
