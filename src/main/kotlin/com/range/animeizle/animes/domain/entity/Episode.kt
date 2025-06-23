@@ -12,7 +12,7 @@ import jakarta.persistence.Table
 @Table(name = "episodes")
 data class Episode(
     @Id
-    val id: Long,
+    val id: Long?,
 
     var episodeNumber: Int,
     var title: String,

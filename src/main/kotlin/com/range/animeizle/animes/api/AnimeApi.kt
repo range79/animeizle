@@ -3,6 +3,7 @@ package com.range.animeizle.animes.api
 import com.range.animeizle.animes.domain.enums.AnimeStatus
 import com.range.animeizle.animes.dto.request.AnimeRequest
 import com.range.animeizle.animes.dto.response.AnimeResponse
+import com.range.animeizle.animes.dto.response.EpisodeResponse
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam
 
 @RequestMapping("/v1/anime")
 interface AnimeApi {
+
     @PostMapping("/")
     fun addAnime(animeRequest: AnimeRequest): ResponseEntity<AnimeResponse>
     @DeleteMapping("/{id}")

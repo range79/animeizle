@@ -11,7 +11,7 @@ interface EpisodeService {
     fun updateEpisode(seasonId: Long, episodeRequest: EpisodeRequest): EpisodeResponse
     fun deleteEpisode(id: Long,description: Boolean): EpisodeResponse?
     fun findAll(): List<EpisodeResponse>
-
+    fun addEpisode(episodeRequest: EpisodeRequest, seasonId: Long): EpisodeResponse
 
 
 

@@ -9,4 +9,5 @@ data class EpisodeRequest (
     val description: String,
     val link: String,
     var episodeStatus: EpisodeStatus,
+    var animeid: Long
 )

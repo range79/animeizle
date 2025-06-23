@@ -7,16 +7,16 @@ import jakarta.servlet.ServletResponse
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
-@RequestMapping("/v1")
+@RequestMapping("/v1/seasons")
 interface   SeasonApi {
-    @GetMapping("/season/anime/{animeId}")
+    @GetMapping("/anime/{animeId}")
     fun findAllAnimeSeasons(@PathVariable animeId:Long, servletResponse: ServletResponse): ResponseEntity<List<SeasonResponse>>
-    @GetMapping("/season/{id}")
+    @GetMapping("/{id}")
     fun findSeason(@PathVariable id: Long): ResponseEntity<Season>
-    @DeleteMapping("/season/{id}/details")
+    @DeleteMapping("/{id}/details")
     fun removeSeason(@PathVariable id: Long,@RequestParam details : Boolean): ResponseEntity<SeasonResponse?>
-    @PostMapping("/season")
+    @PostMapping("/add")
     fun add(@RequestBody seasonRequest: SeasonRequest): ResponseEntity<SeasonResponse>
-    @PatchMapping("/season/{id}")
+    @PatchMapping("/{id}")
     fun updateSeason(@PathVariable id: Long,  @RequestBody seasonRequest: SeasonRequest): ResponseEntity<SeasonResponse>
 }

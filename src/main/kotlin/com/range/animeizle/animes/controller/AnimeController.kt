@@ -4,6 +4,7 @@ import com.range.animeizle.animes.api.AnimeApi
 import com.range.animeizle.animes.domain.enums.AnimeStatus
 import com.range.animeizle.animes.dto.request.AnimeRequest
 import com.range.animeizle.animes.dto.response.AnimeResponse
+import com.range.animeizle.animes.dto.response.EpisodeResponse
 import com.range.animeizle.animes.service.AnimeService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.RestController
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController
 class AnimeController(
     val animeService: AnimeService
 ) : AnimeApi {
+
     override fun addAnime(animeRequest: AnimeRequest): ResponseEntity<AnimeResponse>  {
         return ResponseEntity.ok(animeService.addAnime(animeRequest))
     }
