@@ -31,7 +31,7 @@ AnimeIzle, kullanıcıların anime izleme deneyimini kolaylaştırmak için geli
 
 1. Projeyi klonlayın:  
 ```bash
-    git clone https://github.com/range79/animeizle.git
+git clone https://github.com/range79/animeizle.git
 ````
 
 2. Bağımlılıkları yükleyin ve projeyi derleyin:
