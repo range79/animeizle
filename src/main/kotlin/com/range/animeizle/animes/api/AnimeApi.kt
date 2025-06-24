@@ -3,26 +3,21 @@ package com.range.animeizle.animes.api
 import com.range.animeizle.animes.domain.enums.AnimeStatus
 import com.range.animeizle.animes.dto.request.AnimeRequest
 import com.range.animeizle.animes.dto.response.AnimeResponse
-import com.range.animeizle.animes.dto.response.EpisodeResponse
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.DeleteMapping
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PatchMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestParam
+import org.springframework.web.bind.annotation.*
 
 @RequestMapping("/v1/anime")
 interface AnimeApi {
 
     @PostMapping("/app")
-    fun addAnime(animeRequest: AnimeRequest): ResponseEntity<AnimeResponse>
-    @DeleteMapping("/{id}")
-    fun removeAnime(@PathVariable id: Long, @RequestParam(defaultValue = "false") returnDetails: Boolean): ResponseEntity<AnimeResponse?>
+    fun addAnime(@RequestBody animeRequest: AnimeRequest): ResponseEntity<AnimeResponse>
+    @DeleteMapping("/{id}/details")
+    fun removeAnime(@PathVariable id: Long, @RequestParam(defaultValue = "false") details: Boolean): ResponseEntity<AnimeResponse?>
     @PatchMapping("/{id}")
-    fun updateAnime(@PathVariable id: Long,@RequestBody animeRequest: AnimeRequest): ResponseEntity<AnimeResponse>
+    fun updateAnime(
+        @PathVariable id: Long,
+        @RequestBody animeRequest: AnimeRequest
+    ): ResponseEntity<AnimeResponse>
     @GetMapping("/all")
     fun findAll(): ResponseEntity<List<AnimeResponse>>
     @PatchMapping("/{id}/status")

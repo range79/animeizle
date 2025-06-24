@@ -15,10 +15,11 @@ interface EpisodeApi {
     @PatchMapping("/{id}")
     fun updateEpisode(@PathVariable id: Long, @RequestBody episodeRequest: EpisodeRequest): ResponseEntity<EpisodeResponse>
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{id}/details")
     fun deleteEpisode(
         @PathVariable id: Long,
-        @RequestParam description: Boolean): ResponseEntity<EpisodeResponse?>
+        @RequestParam(defaultValue = "false")  details: Boolean
+    ): ResponseEntity<EpisodeResponse?>
 
     @GetMapping("/all")
     fun findAll(): ResponseEntity<List<EpisodeResponse>>
