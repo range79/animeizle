@@ -61,6 +61,7 @@ argon2.hashLength=
 argon2.parallelism=
 argon2.memory=
 argon2.iterations=
+https.enable=false  // if you are using https make it true
 ```
 
 ---
