@@ -50,5 +50,5 @@ class AuthController(private val authService: AuthService): AuthApi {
             .header("Set-Cookie", cookie.toString())
             .body("Login successful")
     }
-    }
+}
 

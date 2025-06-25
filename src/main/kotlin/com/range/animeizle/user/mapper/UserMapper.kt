@@ -3,7 +3,6 @@ package com.range.animeizle.user.mapper
 import com.range.animeizle.user.domain.entity.Role
 import com.range.animeizle.user.domain.entity.User
 import com.range.animeizle.user.dto.RegisterRequest
-import com.range.animeizle.user.dto.RegisterResponse
 import org.springframework.stereotype.Component
 
 @Component
@@ -14,14 +13,7 @@ class UserMapper {
             email = registerRequest.email,
             role = Role.ROLE_USER
         )
-
-
     }
-fun userEntityToRegisterResponse(user: User): RegisterResponse {
-    return RegisterResponse(
-        username = user.username
-    )
-}
 
 
 
