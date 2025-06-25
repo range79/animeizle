@@ -25,9 +25,9 @@ class EpisodeController(
 
     override fun deleteEpisode(
         id: Long,
-        description: Boolean
+        details: Boolean
     ): ResponseEntity<EpisodeResponse?> {
-        val response = service.deleteEpisode(id, description)
+        val response = service.deleteEpisode(id, details)
         return if (response!=null){
             ResponseEntity.ok(response)
         }else {

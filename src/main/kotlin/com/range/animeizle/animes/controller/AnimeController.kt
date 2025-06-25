@@ -4,7 +4,6 @@ import com.range.animeizle.animes.api.AnimeApi
 import com.range.animeizle.animes.domain.enums.AnimeStatus
 import com.range.animeizle.animes.dto.request.AnimeRequest
 import com.range.animeizle.animes.dto.response.AnimeResponse
-import com.range.animeizle.animes.dto.response.EpisodeResponse
 import com.range.animeizle.animes.service.AnimeService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.RestController
@@ -20,11 +19,11 @@ class AnimeController(
 
     override fun removeAnime(
         id: Long,
-        returnDetails: Boolean
+        details: Boolean
     ): ResponseEntity<AnimeResponse?> {
 
-        val removedAnime = animeService.removeAnime(id, returnDetails)
-        return if (returnDetails && removedAnime != null) {
+        val removedAnime = animeService.removeAnime(id, details)
+        return if (details && removedAnime != null) {
             ResponseEntity.ok(removedAnime)
         } else {
             ResponseEntity.noContent().build()

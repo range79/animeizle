@@ -14,12 +14,4 @@ class UserMapper {
             role = Role.ROLE_USER
         )
     }
-
-
-
-
-
-
-
-
 }
