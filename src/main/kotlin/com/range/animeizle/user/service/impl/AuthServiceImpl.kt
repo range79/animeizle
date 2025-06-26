@@ -45,6 +45,7 @@ class AuthServiceImpl(
     @Transactional
     override fun register(registerRequest: RegisterRequest?): String {
         if (registerRequest == null) {
+            log.warn("You must provide a valid login request")
             throw RequiredFieldNullException("You must provide a valid register request")
         }
 

@@ -18,7 +18,10 @@ class LikeMapper {
     }
     fun LikeToLikeResponse(like :Like):LikeResponse {
         return LikeResponse(
-            id = like.id
+            id = like.id,
+            episodeId = like.episode.id,
+            username = like.user.username,
+
         )
     }
 }

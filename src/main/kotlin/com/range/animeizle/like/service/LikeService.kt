@@ -6,5 +6,5 @@ import com.range.animeizle.like.dto.LikeResponse
 interface LikeService {
     fun likeEpisode(likeRequest: LikeRequest): LikeResponse
     fun removeLikeEpisode(id: Long,details: Boolean): LikeResponse?
-    fun findAllUserLikes(userId: Long): List<LikeResponse>
+    fun findAllUserLikes(): List<LikeResponse>
 }

@@ -13,6 +13,8 @@ import com.range.animeizle.like.service.LikeService
 import com.range.animeizle.user.domain.entity.User
 import com.range.animeizle.user.domain.repository.UserRepository
 import com.range.animeizle.user.exception.UserNotFoundException
+import org.springframework.boot.actuate.endpoint.SecurityContext
+import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
@@ -48,14 +50,10 @@ class LikeServiceImpl(
 
     }
 
-    override fun findAllUserLikes(userId: Long): List<LikeResponse> {
-    TODO("l need think about this function")
+    override fun findAllUserLikes(): List<LikeResponse> {
+        val  user = SecurityContextHolder.getContext().authentication.name
+        return likeRepository.findByUser_Username(user).map(likeMapper::LikeToLikeResponse)
     }
-
-
-
-
-
 
 
     private fun findUser(userId: Long): User {
@@ -73,13 +71,4 @@ class LikeServiceImpl(
             LikeNotFoundException("Like Not Found")
         }
     }
-
-
-
-
-
-
-
-
-
 }
