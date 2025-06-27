@@ -23,7 +23,7 @@ class LikeController(
     }
 
     override fun findAllUserLikes(id: Long): ResponseEntity<List<LikeResponse>> {
-        return ResponseEntity.ok(likeService.findAllUserLikes(id))
+        return ResponseEntity.ok(likeService.findAllUserLikes())
     }
 
 }

@@ -20,8 +20,6 @@ class LikeMapper {
         return LikeResponse(
             id = like.id,
             episodeId = like.episode.id,
-            username = like.user.username,
-
         )
     }
 }
