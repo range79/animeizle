@@ -5,15 +5,15 @@ import com.range.animeizle.animes.domain.repository.EpisodeRepository
 import com.range.animeizle.animes.exception.EpisodeNotFound
 import com.range.animeizle.like.domain.entity.Like
 import com.range.animeizle.like.domain.repository.LikeRepository
-import com.range.animeizle.like.dto.LikeRequest
 import com.range.animeizle.like.dto.LikeResponse
+import com.range.animeizle.like.exception.LikeAuthorException
 import com.range.animeizle.like.exception.LikeNotFoundException
 import com.range.animeizle.like.mapper.LikeMapper
 import com.range.animeizle.like.service.LikeService
-import com.range.animeizle.user.domain.entity.User
-import com.range.animeizle.user.domain.repository.UserRepository
-import com.range.animeizle.user.exception.UserNotFoundException
-import org.springframework.boot.actuate.endpoint.SecurityContext
+import com.range.animeizle.user.domain.entity.UserProfile
+import com.range.animeizle.user.domain.repository.UserProfileRepository
+import com.range.animeizle.user.exception.UserProfileNotFoundException
+import com.range.animeizle.user.security.CustomUserDetails
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -21,16 +21,19 @@ import org.springframework.transaction.annotation.Transactional
 @Service
 class LikeServiceImpl(
     private val likeRepository: LikeRepository,
-    private val userRepository: UserRepository,
+    private val userProfileRepository: UserProfileRepository,
     private val episodeRepository: EpisodeRepository,
     private val likeMapper: LikeMapper
 ): LikeService {
 
     @Transactional
-    override fun likeEpisode(likeRequest: LikeRequest): LikeResponse {
-        val user = findUser(likeRequest.userId)
-        val episode =findEpisode(likeRequest.episodeId)
+    override fun likeEpisode(episodeId: Long): LikeResponse {
+        val userId = getUserId()
+
+        val user = findUserProfile(userId)
+        val episode =findEpisode(episodeId)
         val like =likeMapper.LikeRequestToLike(user,episode)
+
         val savedLike=  likeRepository.save(like)
         return likeMapper.LikeToLikeResponse(savedLike)
 
@@ -40,7 +43,11 @@ class LikeServiceImpl(
         id: Long,
         details: Boolean
     ): LikeResponse? {
+        val userId =getUserId()
         val like= findLikedEpisode(id)
+        if (userId!=like.userProfile.id ){
+            throw LikeAuthorException("You are not authorized to delete this like with id=$id")
+        }
         likeRepository.delete(like)
         return if (details){
             likeMapper.LikeToLikeResponse(like)
@@ -51,14 +58,18 @@ class LikeServiceImpl(
     }
 
     override fun findAllUserLikes(): List<LikeResponse> {
-        val  user = SecurityContextHolder.getContext().authentication.name
-        return likeRepository.findByUser_Username(user).map(likeMapper::LikeToLikeResponse)
+        val  user = getUserId()
+        return likeRepository.findByUserProfile_Id(user).map(likeMapper::LikeToLikeResponse)
     }
 
 
-    private fun findUser(userId: Long): User {
-        return userRepository.findById(userId).orElseThrow {
-            UserNotFoundException("User Not Found")
+
+
+
+    //helper
+    private fun findUserProfile(userId: Long): UserProfile {
+        return userProfileRepository.findById(userId).orElseThrow{
+            UserProfileNotFoundException("User Profile Not Found")
         }
     }
     private fun findEpisode(episodeId: Long): Episode {
@@ -70,5 +81,9 @@ class LikeServiceImpl(
         return likeRepository.findById(id).orElseThrow{
             LikeNotFoundException("Like Not Found")
         }
+
+    }
+    private fun getUserId(): Long{
+        return (SecurityContextHolder.getContext().authentication.principal as CustomUserDetails).getId()
     }
 }

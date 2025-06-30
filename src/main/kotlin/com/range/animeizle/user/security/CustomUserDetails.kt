@@ -7,16 +7,16 @@ import org.springframework.security.core.userdetails.UserDetails
 
 class CustomUserDetails(private val user: User) : UserDetails {
     override fun getAuthorities(): MutableCollection<out GrantedAuthority?> {
-        return mutableListOf(user.role ?: Role.ROLE_USER)
+        return mutableListOf(user.role)
     }
 
     override fun getPassword(): String {
-        return user.password ?: ""
+        return user.password
     }
 
 
     override fun getUsername(): String {
-        return user.username ?: ""
+        return user.username
     }
 
     override fun isAccountNonExpired(): Boolean {
@@ -33,5 +33,8 @@ class CustomUserDetails(private val user: User) : UserDetails {
 
     override fun isEnabled(): Boolean {
         return true
+    }
+     fun getId(): Long{
+        return user.id!!
     }
 }

@@ -15,12 +15,13 @@ import javax.crypto.SecretKey
 class JwtUtil {
     @Value("\${jwt.secret}")
     private lateinit var secret: String
+
     @Value("\${jwt.duration}")
     private lateinit var duration: String
-    fun generateToken(username: String?, role: Role?): String {
+    fun generateToken(id: Long?, role: Role?): String {
         return Jwts
-            .builder().subject(username)
-            .claim("role", role?.authority?: Role.ROLE_USER).signWith(getSecretKey())
+            .builder().subject(id.toString())
+            .claim("role", role?.authority ?: Role.ROLE_USER).signWith(getSecretKey())
             .expiration(Date(System.currentTimeMillis() + duration.toLong() * 1000L))
             .compact()
     }
@@ -42,7 +43,7 @@ class JwtUtil {
             .getPayload()
     }
 
-    fun getUsername(token: String?): String {
+    fun getUserId(token: String?): String {
         val claims = parseToken(token)
         return claims.subject
     }

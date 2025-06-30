@@ -2,6 +2,7 @@ package com.range.animeizle.like.domain.entity
 
 import com.range.animeizle.animes.domain.entity.Episode
 import com.range.animeizle.user.domain.entity.User
+import com.range.animeizle.user.domain.entity.UserProfile
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType
 import jakarta.persistence.GeneratedValue
@@ -20,7 +21,7 @@ data class Like (
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    val user: User,
+    val userProfile: UserProfile,
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "episode_id")

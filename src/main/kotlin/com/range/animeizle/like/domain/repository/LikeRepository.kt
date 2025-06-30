@@ -5,5 +5,5 @@ import com.range.animeizle.like.dto.LikeResponse
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface LikeRepository: JpaRepository<Like, Long>{
-    fun  findByUser_Username(username: String): List<Like>
+    fun  findByUserProfile_Id(id: Long): List<Like>
 }

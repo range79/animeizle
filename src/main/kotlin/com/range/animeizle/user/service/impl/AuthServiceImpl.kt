@@ -38,7 +38,7 @@ class AuthServiceImpl(
             log.warn("Invalid password {}", loginRequest.usernameOrEmail)
             throw PasswordIncorrectException("Password is incorrect")
         }
-        return  jwtUtil.generateToken(user.username,user.role)
+        return  jwtUtil.generateToken(user.id,user.role)
 
     }
 
@@ -63,7 +63,7 @@ class AuthServiceImpl(
         val savedUser =userRepository.save(user)
         log.debug("saved user ${savedUser.username} to database")
 
-        return jwtUtil.generateToken(savedUser.username,savedUser.role)
+        return jwtUtil.generateToken(savedUser.id,savedUser.role)
 
 
     }

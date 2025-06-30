@@ -17,8 +17,8 @@ import org.springframework.web.filter.OncePerRequestFilter
 @Component
 class JwtFilter(
 
-    private val jwtUtil: JwtUtil? = null,
-    private val customUserDetailsService: CustomUserDetailsService? = null
+    private val jwtUtil: JwtUtil,
+    private val customUserDetailsService: CustomUserDetailsService
 ) : OncePerRequestFilter() {
     private val log: Logger = LoggerFactory.getLogger(JwtFilter::class.java)
 
@@ -35,10 +35,10 @@ class JwtFilter(
             if (authHeader != null && authHeader.startsWith("Bearer ")) {
                 val token = authHeader.substring(7)
 
-                val username = jwtUtil!!.getUsername(token)
+                val username = jwtUtil.getUserId(token)
 
                 if (SecurityContextHolder.getContext().authentication == null) {
-                    val userDetails: UserDetails = customUserDetailsService!!.loadUserByUsername(username)
+                    val userDetails: UserDetails = customUserDetailsService.loadUserByUsername(username)
 
                     if (jwtUtil.validateToken(token, userDetails)) {
                         val authToken =
