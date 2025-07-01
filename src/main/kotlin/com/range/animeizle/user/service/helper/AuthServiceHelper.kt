@@ -18,9 +18,4 @@ class AuthServiceHelper(private val userRepository: UserRepository) {
             userRepository.findByUsername(input)
         }?:throw UserNotFoundException("User not found")
     }
-
-
-
-
-
 }

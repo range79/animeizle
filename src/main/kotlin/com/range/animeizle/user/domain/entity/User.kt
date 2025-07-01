@@ -19,8 +19,8 @@ data class User(
     @Column(name = "id")
     var id: Long? = null,
     var username: String,
-    var password: String,
     var email: String,
+    var password: String,
     @Enumerated(EnumType.STRING)
     var role: Role,
 

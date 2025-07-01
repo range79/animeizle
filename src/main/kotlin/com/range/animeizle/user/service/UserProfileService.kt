@@ -6,7 +6,7 @@ interface UserProfileService {
 
     fun addPhoto(multipartFile: MultipartFile)
 
-    fun addFavorite(id: String)
+
 
 
 }

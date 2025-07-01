@@ -17,8 +17,5 @@ data class UserProfile(
     @JoinColumn(name = "user_id")
     @MapsId
     var userid: User,
-
-
-    var comments: String? ,
     var profileImg: ByteArray
 )
