@@ -14,8 +14,9 @@ data class Comment (
     val comment: String,
     val rating: Int,
     val animeId: Int,
-    val episodeId: Int,
+    val episodeId: Long,
     val userId: Int,
+    var likes: Long,
     val createdAt: String,
     val updatedAt: String
 )
