@@ -22,8 +22,12 @@ data class Anime(
 
     @Enumerated(EnumType.STRING)
     var animeStatus: AnimeStatus,
-
-    @OneToMany(mappedBy = "anime", cascade = [CascadeType.ALL], orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(
+        mappedBy = "anime",
+        cascade = [CascadeType.ALL],
+        orphanRemoval = true,
+        fetch = FetchType.LAZY
+    )
     val seasons: MutableList<Season>? = mutableListOf()
 
 )

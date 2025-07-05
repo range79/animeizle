@@ -72,6 +72,9 @@ class AnimeServiceImpl(
         return animeMapper.animeToAnimeResponse(anime)
     }
 
+    override fun findAnimeWithId(animeId: Long): Anime {
+        return findAnime(animeId)
+    }
 
 
     private fun findAnime(id: Long): Anime{

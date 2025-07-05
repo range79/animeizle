@@ -25,7 +25,12 @@ data class Season(
     @JoinColumn(name = "anime_id")
     var anime: Anime? = null,
 
-    @OneToMany(mappedBy = "season", cascade = [CascadeType.ALL], orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(
+        mappedBy = "season",
+        cascade = [CascadeType.ALL],
+        orphanRemoval = true,
+        fetch = FetchType.LAZY
+    )
     val episodes: MutableList<Episode> = mutableListOf()
 )
 

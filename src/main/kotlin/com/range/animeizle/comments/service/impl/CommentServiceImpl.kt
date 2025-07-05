@@ -2,6 +2,7 @@ package com.range.animeizle.comments.service.impl
 
 import com.range.animeizle.animes.domain.repository.EpisodeRepository
 import com.range.animeizle.animes.exception.EpisodeNotFound
+import com.range.animeizle.animes.service.EpisodeService
 import com.range.animeizle.comments.domain.entity.Comment
 import com.range.animeizle.comments.domain.repository.CommentRepository
 import com.range.animeizle.comments.exception.CommentAuthorException
@@ -14,14 +15,12 @@ import org.springframework.stereotype.Service
 class CommentServiceImpl(
     private val commentRepository: CommentRepository,
     private val customSecurityContext: CustomSecurityContext,
-    private val episodeRepository: EpisodeRepository,
+    private val episodeService: EpisodeService,
     private val commentMapper: CommentMapper
 ) : CommentService {
     override fun sendComment(episodeId: Long, comment: String) {
         val  userId =customSecurityContext.getUserId()
-        if (!episodeRepository.existsById(episodeId)){
-            throw EpisodeNotFound("Episode not found")
-        }
+        episodeService.exits(episodeId)
         val commentEntity =commentMapper.toComments(comment,userId,episodeId)
         commentRepository.save(commentEntity)
     }

@@ -13,13 +13,11 @@ import jakarta.persistence.Table
 data class Episode(
     @Id
     val id: Long?,
-
     var episodeNumber: Int,
     var title: String,
     var description: String,
     var link: String,
     var episodeStatus: EpisodeStatus,
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "season_id")
     var season: Season? = null

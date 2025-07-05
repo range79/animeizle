@@ -2,13 +2,12 @@ package com.range.animeizle.animes.service.impl
 
 import com.range.animeizle.animes.domain.entity.Anime
 import com.range.animeizle.animes.domain.entity.Season
-import com.range.animeizle.animes.domain.repository.AnimeRepository
 import com.range.animeizle.animes.domain.repository.SeasonRepository
 import com.range.animeizle.animes.dto.request.SeasonRequest
 import com.range.animeizle.animes.dto.response.SeasonResponse
-import com.range.animeizle.animes.exception.AnimeNotFoundException
 import com.range.animeizle.animes.exception.SeasonNotFoundException
 import com.range.animeizle.animes.mapper.SeasonMapper
+import com.range.animeizle.animes.service.AnimeService
 import com.range.animeizle.animes.service.SeasonService
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
@@ -17,9 +16,10 @@ import org.springframework.transaction.annotation.Transactional
 @Service
 class SeasonServiceImpl(val seasonRepository: SeasonRepository,
                         val seasonMapper: SeasonMapper,
-                        val animeRepository: AnimeRepository) : SeasonService {
+                        val animeService: AnimeService
+) : SeasonService {
 
-   private val log = LoggerFactory.getLogger(AnimeServiceImpl::class.java)
+    private val log = LoggerFactory.getLogger(AnimeServiceImpl::class.java)
 
     override fun findAllAnimeSeasons(animeid: Long): List<SeasonResponse> {
 
@@ -77,9 +77,8 @@ class SeasonServiceImpl(val seasonRepository: SeasonRepository,
                 SeasonNotFoundException("Season Not Found with id $id") }
     }
     private fun animeFinder (id: Long): Anime {
-        return animeRepository.findById(id).orElseThrow{
-            log.warn("Anime not found with id $id")
-            AnimeNotFoundException("Anime not found with id $id")
-        }
+        return animeService.findAnimeWithId(id)
     }
 }
+
+

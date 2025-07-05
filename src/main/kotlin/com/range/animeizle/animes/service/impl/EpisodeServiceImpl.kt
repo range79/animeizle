@@ -3,19 +3,18 @@ package com.range.animeizle.animes.service.impl
 import com.range.animeizle.animes.domain.entity.Episode
 import com.range.animeizle.animes.domain.enums.EpisodeStatus
 import com.range.animeizle.animes.domain.repository.EpisodeRepository
-import com.range.animeizle.animes.domain.repository.SeasonRepository
 import com.range.animeizle.animes.dto.request.EpisodeRequest
 import com.range.animeizle.animes.dto.response.EpisodeResponse
 import com.range.animeizle.animes.exception.EpisodeNotFound
-import com.range.animeizle.animes.exception.SeasonNotFoundException
 import com.range.animeizle.animes.mapper.EpisodeMapper
 import com.range.animeizle.animes.service.EpisodeService
+import com.range.animeizle.animes.service.SeasonService
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 
 @Service
 class EpisodeServiceImpl(
-    private val seasonRepository: SeasonRepository,
+    private val seasonService: SeasonService,
     private val episodeRepository: EpisodeRepository,
     private val episodeMapper: EpisodeMapper
 ) : EpisodeService {
@@ -73,9 +72,8 @@ class EpisodeServiceImpl(
     }
 
     override fun addEpisode(episodeRequest: EpisodeRequest, seasonId: Long): EpisodeResponse {
-        val  season =seasonRepository.findById(seasonId).orElseThrow{
-            SeasonNotFoundException("Season not found with id $seasonId")
-        }
+        val  season =seasonService.findSeason(seasonId)
+
         val episode = episodeMapper.episodeRequestToEpisode(episodeRequest,season)
         log.debug("addEpisode with id {}", episode)
         episodeRepository.save(episode)
@@ -83,6 +81,12 @@ class EpisodeServiceImpl(
 
 
 
+    }
+
+    override fun exits(id: Long){
+        if (!episodeRepository.existsById(id)){
+            throw EpisodeNotFound("Episode not found with id $id")
+        }
     }
 
 
