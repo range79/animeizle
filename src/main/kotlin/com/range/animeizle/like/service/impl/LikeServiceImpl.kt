@@ -1,7 +1,6 @@
 package com.range.animeizle.like.service.impl
 
-import com.range.animeizle.animes.domain.repository.EpisodeRepository
-import com.range.animeizle.animes.exception.EpisodeNotFound
+import com.range.animeizle.animes.service.EpisodeService
 import com.range.animeizle.like.domain.entity.EpisodeLike
 import com.range.animeizle.like.domain.repository.EpisodeLikeRepository
 import com.range.animeizle.like.dto.LikeResponse
@@ -17,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional
 @Service
 class LikeServiceImpl(
     private val episodeLikeRepository: EpisodeLikeRepository,
-    private val episodeRepository: EpisodeRepository,
+    private val episodeService: EpisodeService,
     private val likeMapper: LikeMapper
 ): LikeService {
 
@@ -67,12 +66,15 @@ class LikeServiceImpl(
 
     }
     private fun validateEpisodeExists(episodeId: Long) {
-        if (!episodeRepository.existsById(episodeId))
-            throw EpisodeNotFound("Episode with id=$episodeId not found")
+        episodeService.exits(episodeId)
     }
+
+
     private  fun getUserId(): Long{
-        return (SecurityContextHolder.getContext().authentication.principal as CustomUserDetails).getId()
+        return (SecurityContextHolder.getContext().authentication.principal
+                as CustomUserDetails).getId()
     }
+
     private fun checkOwnership(userId: Long, episodeLike: EpisodeLike) {
         if (userId != episodeLike.userId)
             throw LikeAuthorException("User $userId not authorized to delete like id=${episodeLike.id}")
