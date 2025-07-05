@@ -5,4 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository
 
 interface EpisodeRepository : JpaRepository<Episode, Long> {
     fun findBySeason_Id(seasonId: Long): List<Episode>
+
 }

@@ -2,8 +2,8 @@ package com.range.animeizle.like.service.impl
 
 import com.range.animeizle.animes.domain.repository.EpisodeRepository
 import com.range.animeizle.animes.exception.EpisodeNotFound
-import com.range.animeizle.like.domain.entity.Like
-import com.range.animeizle.like.domain.repository.LikeRepository
+import com.range.animeizle.like.domain.entity.EpisodeLike
+import com.range.animeizle.like.domain.repository.EpisodeLikeRepository
 import com.range.animeizle.like.dto.LikeResponse
 import com.range.animeizle.like.exception.LikeAuthorException
 import com.range.animeizle.like.exception.LikeNotFoundException
@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional
 
 @Service
 class LikeServiceImpl(
-    private val likeRepository: LikeRepository,
+    private val episodeLikeRepository: EpisodeLikeRepository,
     private val episodeRepository: EpisodeRepository,
     private val likeMapper: LikeMapper
 ): LikeService {
@@ -26,7 +26,7 @@ class LikeServiceImpl(
         val userId =getUserId()
         validateEpisodeExists(episodeId)
         val like = likeMapper.toLike(userId, episodeId)
-        val savedLike = likeRepository.save(like)
+        val savedLike = episodeLikeRepository.save(like)
         return likeMapper.toLikeResponse(savedLike)
     }
 
@@ -38,7 +38,7 @@ class LikeServiceImpl(
         val userId =getUserId()
         val like= findLikedEpisode(id)
         checkOwnership(userId,like)
-        likeRepository.delete(like)
+        episodeLikeRepository.delete(like)
         return if (details){
             likeMapper.toLikeResponse(like)
         }else{
@@ -49,7 +49,7 @@ class LikeServiceImpl(
 
     override fun findAllUserLikes(): List<LikeResponse> {
         val  user =getUserId()
-        val like = likeRepository.findByUserId(user).map  (
+        val like = episodeLikeRepository.findByUserId(user).map  (
             likeMapper::toLikeResponse
         )
         return like
@@ -60,8 +60,8 @@ class LikeServiceImpl(
 
 
 
-    private fun findLikedEpisode(id: Long): Like {
-        return likeRepository.findById(id).orElseThrow{
+    private fun findLikedEpisode(id: Long): EpisodeLike {
+        return episodeLikeRepository.findById(id).orElseThrow{
             LikeNotFoundException("Like Not Found")
         }
 
@@ -73,9 +73,9 @@ class LikeServiceImpl(
     private  fun getUserId(): Long{
         return (SecurityContextHolder.getContext().authentication.principal as CustomUserDetails).getId()
     }
-    private fun checkOwnership(userId: Long, like: Like) {
-        if (userId != like.userId)
-            throw LikeAuthorException("User $userId not authorized to delete like id=${like.id}")
+    private fun checkOwnership(userId: Long, episodeLike: EpisodeLike) {
+        if (userId != episodeLike.userId)
+            throw LikeAuthorException("User $userId not authorized to delete like id=${episodeLike.id}")
     }
 
 }

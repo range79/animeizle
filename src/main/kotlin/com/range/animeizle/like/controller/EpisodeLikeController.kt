@@ -1,15 +1,15 @@
 package com.range.animeizle.like.controller
 
-import com.range.animeizle.like.api.LikeApi
+import com.range.animeizle.like.api.EpisodeLikeApi
 import com.range.animeizle.like.dto.LikeResponse
 import com.range.animeizle.like.service.LikeService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class LikeController(
+class EpisodeLikeController(
     val likeService: LikeService
-): LikeApi{
+): EpisodeLikeApi{
     override fun likeEpisode(episodeId: Long): ResponseEntity<LikeResponse> {
         return ResponseEntity.ok(likeService.likeEpisode(episodeId))
     }

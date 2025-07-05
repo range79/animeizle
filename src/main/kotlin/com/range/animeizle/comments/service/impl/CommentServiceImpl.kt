@@ -1,23 +1,46 @@
 package com.range.animeizle.comments.service.impl
 
+import com.range.animeizle.animes.domain.repository.EpisodeRepository
+import com.range.animeizle.animes.exception.EpisodeNotFound
+import com.range.animeizle.comments.domain.entity.Comment
+import com.range.animeizle.comments.domain.repository.CommentRepository
+import com.range.animeizle.comments.exception.CommentAuthorException
+import com.range.animeizle.comments.mapper.CommentMapper
 import com.range.animeizle.comments.service.CommentService
+import com.range.animeizle.common.CustomSecurityContext
 import org.springframework.stereotype.Service
 
 @Service
-class CommentServiceImpl : CommentService {
+class CommentServiceImpl(
+    private val commentRepository: CommentRepository,
+    private val customSecurityContext: CustomSecurityContext,
+    private val episodeRepository: EpisodeRepository,
+    private val commentMapper: CommentMapper
+) : CommentService {
     override fun sendComment(episodeId: Long, comment: String) {
-        TODO("Not yet implemented")
+        val  userId =customSecurityContext.getUserId()
+        if (!episodeRepository.existsById(episodeId)){
+            throw EpisodeNotFound("Episode not found")
+        }
+        val commentEntity =commentMapper.toComments(comment,userId,episodeId)
+        commentRepository.save(commentEntity)
     }
 
-    override fun fetchComments(episodeId: Long) {
-        TODO("Not yet implemented")
+    override fun fetchComments(episodeId: Long) :List<Comment>{
+        return commentRepository.findAllByEpisodeId(episodeId)
+
     }
 
     override fun deleteComment(commentId: Long) {
-        TODO("Not yet implemented")
-    }
+        val comment = commentRepository.findById(commentId).orElseThrow{ EpisodeNotFound("Comment not found")}
 
-    override fun likeComment(commentId: Long) {
-        TODO("Not yet implemented")
+        val userId = customSecurityContext.getUserId()
+        if (comment.userId != userId){
+            throw CommentAuthorException("You're not the author of this comment")
+        }
+        commentRepository.delete(comment)
+
+
+
     }
 }

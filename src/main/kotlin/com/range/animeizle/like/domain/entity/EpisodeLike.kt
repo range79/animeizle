@@ -5,7 +5,7 @@ import java.time.LocalDateTime
 
 @Table(name = "like_episodes")
 @Entity
-data class Like (
+data class EpisodeLike (
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     var id: Long? = null,
