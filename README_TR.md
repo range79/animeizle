@@ -61,7 +61,7 @@ argon2.hashLength=
 argon2.parallelism=
 argon2.memory=
 argon2.iterations=
-https.enable=false  //eger https kullaniyorsaniz true yapiniz
+https.enable=false  #eger https kullaniyorsaniz true yapiniz
 ```
 
 ---
