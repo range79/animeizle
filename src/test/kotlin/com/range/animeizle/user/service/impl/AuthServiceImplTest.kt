@@ -6,17 +6,20 @@ import com.range.animeizle.user.domain.entity.User
 import com.range.animeizle.user.domain.repository.UserRepository
 import com.range.animeizle.user.dto.LoginRequest
 import com.range.animeizle.user.dto.RegisterRequest
+import com.range.animeizle.user.exception.RequiredFieldNullException
 import com.range.animeizle.user.mapper.UserMapper
 import com.range.animeizle.user.service.helper.AuthServiceHelper
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.InjectMocks
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.Mockito.verify
 import org.mockito.junit.jupiter.MockitoExtension
+import org.springframework.security.core.userdetails.UsernameNotFoundException
 import org.springframework.security.crypto.password.PasswordEncoder
 @ExtendWith(MockitoExtension::class)
 class AuthServiceImplTest {
@@ -75,6 +78,33 @@ class AuthServiceImplTest {
         verify(jwtUtil).generateToken(user.id,user.role)
         verify(userRepository).save(user)
 
+    }
+    @Test
+    fun `should return exception if LoginRequest is null`(){
+        assertThrows <RequiredFieldNullException>{
+            authServiceImpl.login(null)
+        }
+
+    }
+    @Test
+    fun `should return exception if RegisterRequest is null`(){
+        assertThrows <RequiredFieldNullException>{
+            authServiceImpl.register(null)
+        }
+    }
+    @Test
+    fun `should throw exception if user password not match`(){
+        Mockito.`when`(authServiceHelper.findUserByUsernameOrEmail(loginRequest.usernameOrEmail))
+            .thenReturn(user)
+        Mockito.`when`(passwordEncoder.matches(loginRequest.password, user.password)).thenReturn(false)
+        assertThrows <Exception>{
+            authServiceImpl.login(loginRequest)
+        }
+    }
+    fun `should throw exception if user not found`(){
+        Mockito.`when`(authServiceHelper.findUserByUsernameOrEmail(loginRequest.usernameOrEmail))
+            .thenReturn(null)
+        assertThrows <UsernameNotFoundException>{authServiceImpl.login(loginRequest)}
     }
 
 }
