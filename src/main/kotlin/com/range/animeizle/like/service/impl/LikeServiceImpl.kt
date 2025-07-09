@@ -54,11 +54,6 @@ class LikeServiceImpl(
         return like
     }
 
-
-
-
-
-
     private fun findLikedEpisode(id: Long): EpisodeLike {
         return episodeLikeRepository.findById(id).orElseThrow{
             LikeNotFoundException("Like Not Found")
