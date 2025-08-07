@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.*
 @RequestMapping("/v1/seasons")
 interface   SeasonApi {
     @GetMapping("/anime/{animeId}")
-    fun findAllAnimeSeasons(@PathVariable animeId:Long ): ResponseEntity<List<SeasonResponse>>
+    fun findAllAnimeSeasons(@PathVariable animeId:Long ): List<SeasonResponse>
     @GetMapping("/{id}")
-    fun findSeason(@PathVariable id: Long): ResponseEntity<Season>
+    fun findSeason(@PathVariable id: Long): Season
     @DeleteMapping("/{id}/details")
     fun removeSeason(
         @PathVariable id: Long,
         @RequestParam(defaultValue = "false") details : Boolean
     ): ResponseEntity<SeasonResponse?>
     @PostMapping("/add")
-    fun add(@RequestBody seasonRequest: SeasonRequest): ResponseEntity<SeasonResponse>
+    fun add(@RequestBody seasonRequest: SeasonRequest): SeasonResponse
     @PatchMapping("/{id}")
-    fun updateSeason(@PathVariable id: Long,  @RequestBody seasonRequest: SeasonRequest): ResponseEntity<SeasonResponse>
+    fun updateSeason(@PathVariable id: Long,  @RequestBody seasonRequest: SeasonRequest): SeasonResponse
 }

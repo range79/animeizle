@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class SeasonController(val seasonService: SeasonService): SeasonApi {
-    override fun findAllAnimeSeasons(animeId: Long): ResponseEntity<List<SeasonResponse>> {
-        return  ResponseEntity.ok(seasonService.findAllAnimeSeasons(animeId))
+    override fun findAllAnimeSeasons(animeId: Long): List<SeasonResponse> {
+        return  seasonService.findAllAnimeSeasons(animeId)
     }
 
-    override fun findSeason(id: Long): ResponseEntity<Season> {
-        return ResponseEntity.ok(seasonService.findSeason(id))
+    override fun findSeason(id: Long):Season {
+        return seasonService.findSeason(id)
     }
 
     override fun removeSeason(
@@ -29,17 +29,16 @@ class SeasonController(val seasonService: SeasonService): SeasonApi {
         return ResponseEntity.noContent().build()
     }
 
-    override fun add(seasonRequest: SeasonRequest): ResponseEntity<SeasonResponse> {
-        return ResponseEntity.ok(seasonService.add(seasonRequest))
+    override fun add(seasonRequest: SeasonRequest): SeasonResponse {
+        return seasonService.add(seasonRequest)
     }
 
     override fun updateSeason(
         id: Long,
         seasonRequest: SeasonRequest
-    ): ResponseEntity<SeasonResponse> {
-        return ResponseEntity.ok(seasonService.update(id, seasonRequest))
+    ): SeasonResponse {
+        return seasonService.update(id, seasonRequest)
     }
-
 
 }
 

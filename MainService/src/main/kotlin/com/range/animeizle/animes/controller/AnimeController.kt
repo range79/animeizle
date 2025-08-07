@@ -13,8 +13,8 @@ class AnimeController(
     val animeService: AnimeService
 ) : AnimeApi {
 
-    override fun addAnime(animeRequest: AnimeRequest): ResponseEntity<AnimeResponse>  {
-        return ResponseEntity.ok(animeService.addAnime(animeRequest))
+    override fun addAnime(animeRequest: AnimeRequest): AnimeResponse  {
+        return animeService.addAnime(animeRequest)
     }
 
     override fun removeAnime(
@@ -33,18 +33,18 @@ class AnimeController(
     override fun updateAnime(
         id: Long,
         animeRequest: AnimeRequest
-    ): ResponseEntity<AnimeResponse> {
-        return ResponseEntity.ok(animeService.updateAnime(id, animeRequest))
+    ): AnimeResponse {
+        return animeService.updateAnime(id, animeRequest)
     }
 
-    override fun findAll(): ResponseEntity<List<AnimeResponse>> {
-        return ResponseEntity.ok(animeService.findAll())
+    override fun findAll(): List<AnimeResponse> {
+        return animeService.findAll()
     }
 
     override fun setAnimeStatus(
         id: Long,
         status: AnimeStatus
-    ): ResponseEntity<AnimeResponse> {
-        return ResponseEntity.ok(animeService.setAnimeStatus(id,status))
+    ): AnimeResponse {
+        return animeService.setAnimeStatus(id,status)
     }
 }

@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.RestController
 class EpisodeController(
     private val service: EpisodeService
 ): EpisodeApi {
-    override fun findAllSeasonEpisodes(id: Long): ResponseEntity<List<EpisodeResponse>> {
-        return ResponseEntity.ok( service.findAllSeasonEpisodes(id))
+    override fun findAllSeasonEpisodes(id: Long):List<EpisodeResponse> {
+        return service.findAllSeasonEpisodes(id)
     }
 
     override fun setEpisodeStatus(
         id: Long,
         status: EpisodeStatus
-    ): ResponseEntity<EpisodeResponse> {
-        return ResponseEntity.ok(service.setEpisodeStatus(id, status))
+    ): EpisodeResponse {
+        return service.setEpisodeStatus(id, status)
     }
 
     override fun deleteEpisode(
@@ -37,18 +37,18 @@ class EpisodeController(
     override fun updateEpisode(
         id: Long,
         episodeRequest: EpisodeRequest
-    ): ResponseEntity<EpisodeResponse> {
-        return ResponseEntity.ok(service.updateEpisode(id, episodeRequest))
+    ): EpisodeResponse {
+        return service.updateEpisode(id, episodeRequest)
     }
 
-    override fun findAll(): ResponseEntity<List<EpisodeResponse>> {
-        return ResponseEntity.ok(service.findAll())
+    override fun findAll(): List<EpisodeResponse> {
+        return service.findAll()
     }
 
     override fun addEpisode(
         episodeRequest: EpisodeRequest,
         id: Long
-    ): ResponseEntity<EpisodeResponse> {
-        return ResponseEntity.ok(service.addEpisode(episodeRequest, id))
+    ): EpisodeResponse {
+        return service.addEpisode(episodeRequest, id)
     }
 }

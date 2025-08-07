@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.*
 @RequestMapping("/v1/episodes")
 interface EpisodeApi {
     @GetMapping("/{id}")
-    fun findAllSeasonEpisodes(@PathVariable id: Long): ResponseEntity<List<EpisodeResponse>>
+    fun findAllSeasonEpisodes(@PathVariable id: Long): List<EpisodeResponse>
     @PostMapping("/{id}/status")
-    fun setEpisodeStatus(@PathVariable id: Long,@RequestParam(name="status", defaultValue = "false") status: EpisodeStatus): ResponseEntity<EpisodeResponse>
+    fun setEpisodeStatus(@PathVariable id: Long,@RequestParam(name="status", defaultValue = "false") status: EpisodeStatus): EpisodeResponse
     @PatchMapping("/{id}")
-    fun updateEpisode(@PathVariable id: Long, @RequestBody episodeRequest: EpisodeRequest): ResponseEntity<EpisodeResponse>
+    fun updateEpisode(@PathVariable id: Long, @RequestBody episodeRequest: EpisodeRequest): EpisodeResponse
 
     @DeleteMapping("/{id}/details")
     fun deleteEpisode(
@@ -22,8 +22,8 @@ interface EpisodeApi {
     ): ResponseEntity<EpisodeResponse?>
 
     @GetMapping("/all")
-    fun findAll(): ResponseEntity<List<EpisodeResponse>>
+    fun findAll(): List<EpisodeResponse>
 
     @PostMapping("/add/{id}")
-    fun addEpisode(@RequestBody episodeRequest: EpisodeRequest, @PathVariable id: Long): ResponseEntity<EpisodeResponse>
+    fun addEpisode(@RequestBody episodeRequest: EpisodeRequest, @PathVariable id: Long): EpisodeResponse
 }
