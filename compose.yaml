@@ -1,0 +1,10 @@
+services:
+  user-service-db:
+    extends:
+      file: ./MainService/compose.yaml
+      service: user-db
+
+  comment-service-db:
+    extends:
+      file: ./CommentService/compose.yml
+      service: comment-db
