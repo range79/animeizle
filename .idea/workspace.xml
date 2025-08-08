@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="65e0a340-c3af-43c6-a8fe-19b2167fa95b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/dto/ErrorResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/exception/AbstractExceptionHandler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/exception/CommentNotFoundException.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/exception/GlobalExceptionHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/compose.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/Animeizle.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/api/AnimeApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/api/EpisodeApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/api/SeasonApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/controller/AnimeController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/controller/EpisodeController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/controller/SeasonController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/domain/entity/Anime.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/domain/entity/Episode.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/domain/entity/Season.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/domain/enums/AnimeStatus.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/domain/enums/EpisodeStatus.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/domain/repository/AnimeRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/domain/repository/EpisodeRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/domain/repository/SeasonRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/dto/request/AnimeRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/dto/request/EpisodeRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/dto/request/SeasonRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/dto/response/AnimeResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/dto/response/EpisodeResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/dto/response/SeasonResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/exception/AnimeAlreadyRegistered.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/exception/AnimeNotFoundException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/exception/EpisodeNotFound.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/exception/SeasonNotFoundException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/mapper/AnimeMapper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/mapper/EpisodeMapper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/mapper/SeasonMapper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/service/AnimeService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/service/EpisodeService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/service/SeasonService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/service/impl/AnimeServiceImpl.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/service/impl/EpisodeServiceImpl.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/service/impl/SeasonServiceImpl.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/comments/api/CommentApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/comments/controller/CommentController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/comments/domain/entity/Comment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/comments/domain/repository/CommentRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/comments/dto/CommentResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/comments/exception/CommentAuthorException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/comments/mapper/CommentMapper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/comments/service/CommentService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/comments/service/impl/CommentServiceImpl.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/common/CustomSecurityContext.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/common/dto/ErrorResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/common/exception/AbstractExceptionHandler.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/common/exception/GlobalExceptionHandler.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/common/security/PasswordEncoderConfig.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/common/util/JwtUtil.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/like/api/EpisodeLikeApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/like/controller/EpisodeLikeController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/like/domain/entity/EpisodeLike.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/like/domain/repository/EpisodeLikeRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/like/dto/LikeResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/like/exception/LikeAuthorException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/like/exception/LikeNotFoundException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/like/mapper/LikeMapper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/like/service/LikeService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/like/service/impl/LikeServiceImpl.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/token/domain/entity/RefreshToken.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/token/domain/repository/RefreshTokenRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/token/exception/TokenNotFoundException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/token/service/RefreshTokenService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/token/service/RefreshTokenServiceImpl.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/api/AuthApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/controller/AuthController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/domain/entity/Role.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/domain/entity/User.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/domain/entity/UserProfile.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/domain/repository/UserProfileRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/domain/repository/UserRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/dto/LoginRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/dto/RegisterRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/dto/RegisterResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/exception/EmailAlreadyRegisteredException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/exception/PasswordIncorrectException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/exception/RequiredFieldNullException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/exception/UserNotFoundException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/exception/UserProfileNotFoundException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/exception/UsernameAlreadyRegisteredException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/exception/UsernameOrPasswordBlankException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/mapper/UserMapper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/security/CustomUserDetails.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/security/JwtFilter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/security/SecurityConfig.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/service/AuthService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/service/UserProfileService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/service/helper/AuthServiceHelper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/service/impl/AuthServiceImpl.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/service/impl/CustomUserDetailsService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/service/impl/UserProfileServiceImpl.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/test/kotlin/com/range/animeizle/AniseyirApplicationTests.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/test/kotlin/com/range/animeizle/user/service/impl/AuthServiceImplTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resouces/application.yml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/CommentService">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/MainService">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="animeizle" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;range79&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:range79/animeizle.git&quot;,
+    &quot;accountId&quot;: &quot;66067c81-32fa-47db-a21c-53617c61bc1d&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2zmBzQtlgNAA1kQWwdFRLFo36MO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle./home/range/workdir/animeizle/CommentService/build.gradle.executor": "Run",
+    "Gradle.Build CommentService.executor": "Run",
+    "Gradle.Build MainService.executor": "Run",
+    "Gradle.Build animeizle.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found": "Database connection parameters found",
+    "Notification.DoNotAsk-DatabaseConfigFileWatcher.found": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.AniseyirApplication.executor": "Run",
+    "Spring Boot.CommentServiceApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/range/workdir/animeizle",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/animeizle" />
+      <recent name="$PROJECT_DIR$/.idea" />
+      <recent name="$PROJECT_DIR$/src/main" />
+      <recent name="$PROJECT_DIR$/src/main/kotlin" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.range.commentservice.exception" />
+      <recent name="com.range.commentservice.dto" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle./home/range/workdir/animeizle/CommentService/build.gradle">
+    <configuration name="/home/range/workdir/animeizle/CommentService/build.gradle" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/CommentService/build.gradle" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="MainService.aot" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="MainService.aot" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration name="AniseyirApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="animeizle.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.range.animeizle.AniseyirApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="CommentService.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.range.commentservice.CommentServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle./home/range/workdir/animeizle/CommentService/build.gradle" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="65e0a340-c3af-43c6-a8fe-19b2167fa95b" name="Changes" comment="" />
+      <created>1752326630038</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1752326630038</updated>
+      <workItem from="1752326631100" duration="585000" />
+      <workItem from="1752338427256" duration="301000" />
+      <workItem from="1752404696225" duration="19000" />
+      <workItem from="1752596533625" duration="49000" />
+      <workItem from="1752597406162" duration="7000" />
+      <workItem from="1752599830438" duration="743000" />
+      <workItem from="1752750877525" duration="998000" />
+      <workItem from="1754486704184" duration="144000" />
+      <workItem from="1754486865559" duration="31000" />
+      <workItem from="1754486904603" duration="38000" />
+      <workItem from="1754486966688" duration="44000" />
+      <workItem from="1754487012325" duration="1137000" />
+      <workItem from="1754511240338" duration="3443000" />
+      <workItem from="1754555853271" duration="1839000" />
+      <workItem from="1754655665705" duration="7000" />
+      <workItem from="1754655791710" duration="258000" />
+      <workItem from="1754656073610" duration="2231000" />
+      <workItem from="1754674345723" duration="36000" />
+      <workItem from="1754674390557" duration="661000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
