@@ -10,8 +10,8 @@ class CommentMapper {
         return Comment(
             id=null,
             text = comment,
-            userId = episodeId,
-            episodeId = 0,
+            userId = userId,
+            episodeId = episodeId,
             updatedAt = LocalDateTime.now()
         )
     }
