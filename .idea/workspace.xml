@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="65e0a340-c3af-43c6-a8fe-19b2167fa95b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/domain/entity/Comment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/domain/entity/Comment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/mapper/CommentMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/mapper/CommentMapper.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +196,7 @@
       <workItem from="1754655791710" duration="258000" />
       <workItem from="1754656073610" duration="2231000" />
       <workItem from="1754674345723" duration="36000" />
-      <workItem from="1754674390557" duration="1376000" />
+      <workItem from="1754674390557" duration="3862000" />
     </task>
     <servers />
   </component>

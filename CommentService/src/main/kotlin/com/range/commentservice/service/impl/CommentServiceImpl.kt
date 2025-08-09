@@ -8,6 +8,7 @@ import com.range.commentservice.exception.CommentAuthorException
 import com.range.commentservice.mapper.CommentMapper
 import com.range.commentservice.service.CommentService
 import com.range.animeizle.common.CustomSecurityContext
+import com.range.commentservice.exception.CommentNotFoundException
 import jakarta.transaction.Transactional
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -33,7 +34,7 @@ class CommentServiceImpl(
     @Transactional
     override fun deleteComment(commentId: String) {
         val comment = commentRepository.findById(commentId)
-            .orElseThrow{ EpisodeNotFound("Comment not found")}
+            .orElseThrow{ CommentNotFoundException("Comment not found")}
 
         val userId = customSecurityContext.getUserId()
         if (comment.userId != userId){
