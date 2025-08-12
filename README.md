@@ -5,6 +5,16 @@
 
 ---
 
+![GitHub repo size](https://img.shields.io/github/repo-size/range79/rpms-server?style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues/range79/rpms-server?style=flat-square)
+![GitHub license](https://img.shields.io/github/license/range79/rpms-server?style=flat-square)
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white)
+![Gradle](https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=gradle&logoColor=white)
+
+---
+
+
 AnimeIzle is a backend service developed to enhance users’ anime watching experience. It is built with Kotlin and Spring Boot.
 
 ---
