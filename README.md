@@ -39,12 +39,12 @@ AnimeIzle is a backend service developed to enhance users’ anime watching expe
 
 ## 📦 Installation
 
-1. Clone the project:  
+### 1. Clone the project:  
 ```bash
 git clone https://github.com/range79/animeizle.git
 ````
 
-2. Install dependencies and build the project:
+### 2. Install dependencies and build the project:
 
 ```bash
 ./gradlew build
