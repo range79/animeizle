@@ -1,15 +1,14 @@
 package com.range.commentservice.service.impl
 
-import com.range.animeizle.animes.exception.EpisodeNotFound
-import com.range.animeizle.animes.service.EpisodeService
+
 import com.range.commentservice.domain.entity.Comment
 import com.range.commentservice.domain.repository.CommentRepository
 import com.range.commentservice.exception.CommentAuthorException
 import com.range.commentservice.mapper.CommentMapper
 import com.range.commentservice.service.CommentService
-import com.range.animeizle.common.CustomSecurityContext
+
 import com.range.commentservice.exception.CommentNotFoundException
-import jakarta.transaction.Transactional
+
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
