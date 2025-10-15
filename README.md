@@ -19,7 +19,7 @@ AnimeIzle is a backend service developed to enhance users’ anime watching expe
 
 ---
 
-## 🚀 Features
+##  Features
 
 - Management of animes, seasons, and episodes  
 - User profiles and favorite animes  
