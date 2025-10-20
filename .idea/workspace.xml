@@ -5,9 +5,122 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65e0a340-c3af-43c6-a8fe-19b2167fa95b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/AndroidProjectSystem.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/animeizle.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainService/.gradle/8.14.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/MainService/.gradle/8.14.2/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/service/impl/CommentServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/service/impl/CommentServiceImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config Server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Config Server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/.gradle/8.14.2/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/.gradle/8.14.2/checksums/md5-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/.gradle/8.14.2/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/.gradle/8.14.2/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/.gradle/8.14.2/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/.gradle/8.14.2/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/.gradle/8.14.2/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/.gradle/8.14.2/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/compose.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/Animeizle.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/api/AnimeApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/api/EpisodeApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/api/SeasonApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/controller/AnimeController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/controller/EpisodeController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/controller/SeasonController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/domain/entity/Anime.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/domain/entity/Episode.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/domain/entity/Season.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/domain/enums/AnimeStatus.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/domain/enums/EpisodeStatus.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/domain/repository/AnimeRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/domain/repository/EpisodeRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/domain/repository/SeasonRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/dto/request/AnimeRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/dto/request/EpisodeRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/dto/request/SeasonRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/dto/response/AnimeResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/dto/response/EpisodeResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/dto/response/SeasonResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/exception/AnimeAlreadyRegistered.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/exception/AnimeNotFoundException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/exception/EpisodeNotFound.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/exception/SeasonNotFoundException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/mapper/AnimeMapper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/mapper/EpisodeMapper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/mapper/SeasonMapper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/service/AnimeService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/service/EpisodeService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/service/SeasonService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/service/impl/AnimeServiceImpl.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/service/impl/EpisodeServiceImpl.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/animes/service/impl/SeasonServiceImpl.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/common/CustomSecurityContext.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/common/dto/ErrorResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/common/exception/AbstractExceptionHandler.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/common/exception/GlobalExceptionHandler.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/common/security/PasswordEncoderConfig.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/common/util/JwtUtil.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/like/api/EpisodeLikeApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/like/controller/EpisodeLikeController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/like/domain/entity/EpisodeLike.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/like/domain/repository/EpisodeLikeRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/like/dto/LikeResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/like/exception/LikeAuthorException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/like/exception/LikeNotFoundException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/like/mapper/LikeMapper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/like/service/LikeService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/like/service/impl/LikeServiceImpl.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/token/domain/entity/RefreshToken.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/token/domain/repository/RefreshTokenRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/token/exception/TokenNotFoundException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/token/service/RefreshTokenService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/token/service/RefreshTokenServiceImpl.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/api/AuthApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/controller/AuthController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/domain/entity/Role.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/domain/entity/User.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/domain/entity/UserProfile.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/domain/repository/UserProfileRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/domain/repository/UserRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/dto/LoginRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/dto/RegisterRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/dto/RegisterResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/exception/EmailAlreadyRegisteredException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/exception/PasswordIncorrectException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/exception/RequiredFieldNullException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/exception/UserNotFoundException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/exception/UserProfileNotFoundException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/exception/UsernameAlreadyRegisteredException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/exception/UsernameOrPasswordBlankException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/mapper/UserMapper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/security/CustomUserDetails.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/security/JwtFilter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/security/SecurityConfig.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/service/AuthService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/service/UserProfileService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/service/helper/AuthServiceHelper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/service/impl/AuthServiceImpl.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/service/impl/CustomUserDetailsService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/kotlin/com/range/animeizle/user/service/impl/UserProfileServiceImpl.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/test/kotlin/com/range/animeizle/AniseyirApplicationTests.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/test/kotlin/com/range/animeizle/user/service/impl/AuthServiceImplTest.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +143,9 @@
     <projectState path="$PROJECT_DIR$/MainService">
       <ProjectState />
     </projectState>
+    <projectState path="$PROJECT_DIR$/UserService">
+      <ProjectState />
+    </projectState>
   </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
@@ -37,9 +153,22 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/UserService">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="UserService" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="UserService" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -68,6 +197,11 @@
     &quot;accountId&quot;: &quot;66067c81-32fa-47db-a21c-53617c61bc1d&quot;
   }
 }</component>
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$/UserService" gradleHome="$USER_HOME$/.gradle/wrapper/dists/gradle-8.14.3-bin/cv11ve7ro1n3o1j4so8xd9n66/gradle-8.14.3" javaHome="$USER_HOME$/.jdks/ms-17.0.16" gradleVersion="8.14.3" />
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-client/3.1.11/c19688eca66ee0bd172e5d8471417427738b4d75/jersey-client-3.1.11-sources.jar!/org/glassfish/jersey/client/JerseyClient.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/UserService/build.gradle.kts" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -78,12 +212,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Gradle./home/range/workdir/animeizle/CommentService/build.gradle.executor": "Run",
     "Gradle.Build CommentService.executor": "Run",
     "Gradle.Build EurekaServer.executor": "Run",
     "Gradle.Build EurukaServer.executor": "Run",
     "Gradle.Build MainService.executor": "Run",
+    "Gradle.Build UserService.executor": "Run",
     "Gradle.Build animeizle.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found": "Database connection parameters found",
     "Notification.DoNotAsk-DatabaseConfigFileWatcher.found": "true",
@@ -101,19 +238,20 @@
     "Spring Boot.CommentServiceApplication.executor": "Debug",
     "Spring Boot.EurekaServerApplication.executor": "Run",
     "Spring Boot.EurukaServerApplication.executor": "Run",
+    "Spring Boot.UserServiceApplication.executor": "Run",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "test",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/range/workdir/animeizle/EurekaServer/build.gradle",
+    "last_opened_file_path": "/home/range79/workdir/animeizle/UserService/build.gradle.kts",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "to.speed.mode.migration.done": "true",
@@ -128,12 +266,23 @@
       <recent name="$PROJECT_DIR$/.idea" />
       <recent name="$PROJECT_DIR$/src/main" />
     </key>
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="com.range.userservice.service.impl" />
+      <recent name="com.range.userservice.domain.entity" />
+      <recent name="com.range.userservice.service" />
+      <recent name="com.range.userservice.ddto" />
+      <recent name="com.range.userservice.dto" />
+    </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="com.range.commentservice.exception" />
       <recent name="com.range.commentservice.dto" />
     </key>
+    <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="com.range.userservice.mapper" />
+      <recent name="com.range.userservice.dto" />
+    </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.EurekaServerApplication">
+  <component name="RunManager" selected="Spring Boot.AniseyirApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="MainService.aot" />
       <method v="2">
@@ -147,14 +296,14 @@
     </configuration>
     <configuration name="AniseyirApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="com.range.animeizle.main" />
+      <module name="MainService.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.range.animeizle.AniseyirApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="CommentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="CommentService.main" />
+      <module name="com.range.CommentService.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.range.commentservice.CommentServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -167,12 +316,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="UserService.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.range.userservice.UserServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26199.169" />
-        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-IU-252.26199.169" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.26830.84" />
       </set>
     </attachedChunks>
   </component>
@@ -231,6 +387,10 @@
       <workItem from="1756761421428" duration="3000" />
       <workItem from="1756923750177" duration="15000" />
       <workItem from="1758948342012" duration="3290000" />
+      <workItem from="1760872107413" duration="5419000" />
+      <workItem from="1760877908849" duration="10325000" />
+      <workItem from="1760956664802" duration="17000" />
+      <workItem from="1760956689265" duration="2280000" />
     </task>
     <servers />
   </component>

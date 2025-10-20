@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.thoughtworks.paranamer:paranamer:2.8.3" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="com.thoughtworks.paranamer" artifactId="paranamer" version="2.8.3" baseVersion="2.8.3" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.thoughtworks.paranamer/paranamer/2.8.3/75ae4eb129574b7fc0df5fa8808d7ed625be815d/paranamer-2.8.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

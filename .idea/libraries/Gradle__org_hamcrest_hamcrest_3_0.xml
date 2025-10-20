@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: org.hamcrest:hamcrest:3.0" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.hamcrest" artifactId="hamcrest" version="3.0" baseVersion="3.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest/3.0/8fd9b78a8e6a6510a078a9e30e9e86a6035cfaf7/hamcrest-3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -20,7 +20,7 @@ class CommentServiceImpl(
 ) : CommentService {
     @Transactional
     override fun sendComment(episodeId: Long, comment: String) {
-        val  userId =customSecurityContext.getUserId()
+        val  userId =.getUserId()
         episodeService.exits(episodeId)
         val commentEntity =commentMapper.toComments(comment,userId,episodeId)
         commentRepository.save(commentEntity)
@@ -31,7 +31,7 @@ class CommentServiceImpl(
 
     }
     @Transactional
-    override fun deleteComment(commentId: String) {
+    override fun deleteComment(commentId: Long) {
         val comment = commentRepository.findById(commentId)
             .orElseThrow{ CommentNotFoundException("Comment not found")}
 

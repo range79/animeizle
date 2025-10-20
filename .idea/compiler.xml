@@ -1,9 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="17" />
+    <bytecodeTargetLevel>
+      <module name="com.range.CommentService.main" target="17" />
+      <module name="com.range.CommentService.test" target="17" />
+      <module name="com.range.EurekaServer.test" target="17" />
+      <module name="com.range.UserService.main" target="17" />
+      <module name="com.range.UserService.test" target="17" />
+      <module name="CommentService" target="17" />
+      <module name="CommentService.main" target="17" />
+      <module name="CommentService.test" target="17" />
+      <module name="EurekaServer" target="17" />
+      <module name="EurekaServer.main" target="17" />
+      <module name="EurekaServer.test" target="17" />
+      <module name="UserService" target="17" />
+      <module name="UserService.main" target="17" />
+      <module name="UserService.test" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_STRING" value="-parameters" />
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="CommentService" options="-parameters" />
+      <module name="CommentService.main" options="-parameters" />
+      <module name="CommentService.test" options="-parameters" />
+      <module name="EurekaServer" options="-parameters" />
+      <module name="EurekaServer.main" options="-parameters" />
+      <module name="EurekaServer.test" options="-parameters" />
+      <module name="UserService" options="-parameters" />
+      <module name="UserService.main" options="-parameters" />
+      <module name="UserService.test" options="-parameters" />
+      <module name="com.range.CommentService.main" options="-parameters" />
+      <module name="com.range.CommentService.test" options="-parameters" />
+      <module name="com.range.EurekaServer.test" options="-parameters" />
+      <module name="com.range.UserService.main" options="-parameters" />
+      <module name="com.range.UserService.test" options="-parameters" />
+    </option>
   </component>
 </project>

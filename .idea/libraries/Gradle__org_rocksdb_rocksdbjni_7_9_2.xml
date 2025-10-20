@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: org.rocksdb:rocksdbjni:7.9.2" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.rocksdb" artifactId="rocksdbjni" version="7.9.2" baseVersion="7.9.2" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.rocksdb/rocksdbjni/7.9.2/6409b667493149191b09fe1fce94bada6096a3e9/rocksdbjni-7.9.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.netflix.spectator:spectator-api:1.7.3" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="com.netflix.spectator" artifactId="spectator-api" version="1.7.3" baseVersion="1.7.3" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.spectator/spectator-api/1.7.3/d7d62fc0559b4de07c99a8072896b4abb0c4124d/spectator-api-1.7.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

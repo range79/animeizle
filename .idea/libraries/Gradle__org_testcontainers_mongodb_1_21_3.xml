@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: org.testcontainers:mongodb:1.21.3" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.testcontainers" artifactId="mongodb" version="1.21.3" baseVersion="1.21.3" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.testcontainers/mongodb/1.21.3/c28c8ca937af8bebd191d4bf5859a8665d9918a8/mongodb-1.21.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

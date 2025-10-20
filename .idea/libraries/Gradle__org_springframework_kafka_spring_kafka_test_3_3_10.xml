@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.kafka:spring-kafka-test:3.3.10" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.springframework.kafka" artifactId="spring-kafka-test" version="3.3.10" baseVersion="3.3.10" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.kafka/spring-kafka-test/3.3.10/dc1ec4b50229ae4f31e948ffad2334281b6be59d/spring-kafka-test-3.3.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

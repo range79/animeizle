@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: org.antlr:stringtemplate:3.2.1" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.antlr" artifactId="stringtemplate" version="3.2.1" baseVersion="3.2.1" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.antlr/stringtemplate/3.2.1/59ec8083721eae215c6f3caee944c410d2be34de/stringtemplate-3.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

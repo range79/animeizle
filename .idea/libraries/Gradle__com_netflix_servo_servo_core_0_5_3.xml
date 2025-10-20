@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.netflix.servo:servo-core:0.5.3" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="com.netflix.servo" artifactId="servo-core" version="0.5.3" baseVersion="0.5.3" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.servo/servo-core/0.5.3/790cdf248baa2bf0b4b42fe83d79c717ed510f2b/servo-core-0.5.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
