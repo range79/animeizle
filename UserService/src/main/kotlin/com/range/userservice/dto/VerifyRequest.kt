@@ -1,14 +1,10 @@
 package com.range.userservice.dto
 
-import jakarta.validation.constraints.Email
 import jakarta.validation.constraints.NotBlank
 
-class RegisterRequest(
-    @field:Email
-    val email: String,
+data class VerifyRequest (
     @field:NotBlank
-    val username: String,
+    val username : String,
     @field:NotBlank
     val password: String
-
 )

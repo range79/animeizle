@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CommentService.iml" filepath="$PROJECT_DIR$/.idea/modules/CommentService.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/CommentService.main.iml" filepath="$PROJECT_DIR$/.idea/modules/CommentService.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/CommentService.test.iml" filepath="$PROJECT_DIR$/.idea/modules/CommentService.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/EurekaServer.iml" filepath="$PROJECT_DIR$/.idea/modules/EurekaServer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/EurekaServer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/EurekaServer.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/EurekaServer.test.iml" filepath="$PROJECT_DIR$/.idea/modules/EurekaServer.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/UserService.iml" filepath="$PROJECT_DIR$/.idea/modules/UserService.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/UserService.main.iml" filepath="$PROJECT_DIR$/.idea/modules/UserService.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/UserService.test.iml" filepath="$PROJECT_DIR$/.idea/modules/UserService.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.range.CommentService.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.range.CommentService.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.range.CommentService.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.range.CommentService.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.range.EurekaServer.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.range.EurekaServer.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.range.UserService.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.range.UserService.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.range.UserService.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.range.UserService.test.iml" />
     </modules>

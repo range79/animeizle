@@ -17,5 +17,7 @@ data class User (
     var username: String?,
     var password: String?,
     var email: String?,
+    val emailVerified: Boolean,
     val role: Set<Role>,
+    val twoFactorEnabled: Boolean,
 )
