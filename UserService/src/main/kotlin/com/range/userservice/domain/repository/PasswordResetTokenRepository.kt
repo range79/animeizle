@@ -6,4 +6,5 @@ interface PasswordResetTokenRepository {
     fun saveToken(token: PasswordResetToken)
     fun findByToken(token: String): String
     fun delete(token: String)
+    fun exitsByEmail(email: String): Boolean
 }

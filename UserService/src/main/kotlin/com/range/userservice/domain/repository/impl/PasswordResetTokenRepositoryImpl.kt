@@ -4,10 +4,11 @@ import com.range.userservice.domain.entity.PasswordResetToken
 import com.range.userservice.domain.repository.PasswordResetTokenRepository
 import com.range.userservice.exception.PasswordResetTokenException
 import org.springframework.data.redis.core.RedisTemplate
+import org.springframework.stereotype.Component
 import org.springframework.stereotype.Repository
 import java.util.concurrent.TimeUnit
-
 @Repository
+
 class PasswordResetTokenRepositoryImpl(
     private val redisTemplate: RedisTemplate<String, String>
 ) : PasswordResetTokenRepository {
@@ -22,5 +23,9 @@ class PasswordResetTokenRepositoryImpl(
 
     override fun delete(token: String) {
         redisTemplate.delete(token)
+    }
+
+    override fun exitsByEmail(email: String): Boolean {
+        return redisTemplate.opsForValue().get("email:${email}") != null
     }
 }

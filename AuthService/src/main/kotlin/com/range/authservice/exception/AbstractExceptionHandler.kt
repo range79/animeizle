@@ -1,4 +1,4 @@
-package com.range.userservice.exception
+package com.range.authservice.exception
 
 import org.springframework.http.HttpStatus
 

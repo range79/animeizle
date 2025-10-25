@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CommentService.main.iml" filepath="$PROJECT_DIR$/.idea/modules/CommentService.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CommentService.test.iml" filepath="$PROJECT_DIR$/.idea/modules/CommentService.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/EurekaServer.test.iml" filepath="$PROJECT_DIR$/.idea/modules/EurekaServer.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/UserService.main.iml" filepath="$PROJECT_DIR$/.idea/modules/UserService.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/UserService.test.iml" filepath="$PROJECT_DIR$/.idea/modules/UserService.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.range.UserService.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.range.UserService.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.range.UserService.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.range.UserService.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/animeizle.iml" filepath="$PROJECT_DIR$/.idea/animeizle.iml" />
     </modules>
   </component>
 </project>

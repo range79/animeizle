@@ -4,38 +4,8 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/AuthService" />
-        <option name="gradleJvm" value="ms-17" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/AuthService" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/CommentService" />
-        <option name="gradleHome" value="/usr/share/java/gradle" />
-        <option name="gradleJvm" value="ms-17" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/CommentService" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/EurekaServer" />
-        <option name="gradleHome" value="/usr/share/java/gradle" />
-        <option name="gradleJvm" value="ms-17" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/EurekaServer" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/UserService" />
-        <option name="gradleHome" value="/usr/share/java/gradle" />
-        <option name="gradleJvm" value="ms-17" />
+        <option name="gradleJvm" value="graalvm-ce-23" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/UserService" />

@@ -7,12 +7,14 @@ import com.range.userservice.dto.ForgotPasswordRequest
 import com.range.userservice.dto.RegisterRequest
 import com.range.userservice.dto.ResetPasswordRequest
 import com.range.userservice.dto.VerifyRequest
+import com.range.userservice.dto.VerifyResponse
 import com.range.userservice.exception.AuthenticationException
 import com.range.userservice.exception.EmailNotFoundException
 import com.range.userservice.exception.UserNotFoundException
 import com.range.userservice.service.UserService
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 import java.util.*
 
 @Service
@@ -22,7 +24,7 @@ class UserServiceImpl(
     private val passwordTokenService: PasswordTokenService,
 ) : UserService {
 
-
+    @Transactional()
     override fun register(registerRequest: RegisterRequest) {
         val user = registerRequest.toModel(passwordEncoder.encode(registerRequest.password))
         userRepository.save(user)
@@ -48,12 +50,13 @@ class UserServiceImpl(
         return user.role
     }
 
-    override fun verifyUser(verifyRequest: VerifyRequest) {
+    override fun verifyUser(verifyRequest: VerifyRequest): VerifyResponse {
         val user = userRepository.findByEmail(verifyRequest.username)
             .orElseThrow { AuthenticationException("Username or password does not match required password") }
         if (!passwordEncoder.matches(verifyRequest.password, user.password)) {
             throw AuthenticationException("Username or password does not match required password")
         }
+        return VerifyResponse(user.id!!, user.role)
 
     }
 

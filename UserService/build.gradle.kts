@@ -36,12 +36,21 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity6")
     testImplementation("org.springframework.security:spring-security-test")
+    testImplementation("org.testcontainers:junit-jupiter")
+    testImplementation("org.springframework.boot:spring-boot-testcontainers")
+    testImplementation("org.testcontainers:kafka")
+    testImplementation("org.testcontainers:postgresql")
+    testImplementation("com.redis:testcontainers-redis:2.2.4")
+
     runtimeOnly("org.postgresql:postgresql")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testImplementation("org.springframework.kafka:spring-kafka-test")
     runtimeOnly("org.springframework.boot:spring-boot-docker-compose")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    // https://mvnrepository.com/artifact/com.icegreen/greenmail
+    testImplementation("com.icegreen:greenmail:2.1.7")
 }
 
 dependencyManagement {
