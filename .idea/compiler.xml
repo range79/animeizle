@@ -11,6 +11,9 @@
       <module name="Api-gateway" options="-parameters" />
       <module name="Api-gateway.main" options="-parameters" />
       <module name="Api-gateway.test" options="-parameters" />
+      <module name="AuthService" options="-parameters" />
+      <module name="AuthService_main" options="-parameters" />
+      <module name="AuthService_test" options="-parameters" />
       <module name="CommentService" options="-parameters" />
       <module name="CommentService_main" options="-parameters" />
       <module name="CommentService_test" options="-parameters" />
