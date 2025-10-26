@@ -38,4 +38,8 @@ class UserController(
     fun getUserRoles(@PathVariable userid: UUID): Set<Role> {
         return userService.getRoles(userid)
     }
+    @GetMapping("/{userid}")
+    fun userExits(@PathVariable userid: UUID): Boolean {
+        return userService.exitsByUserId(userid)
+    }
 }

@@ -14,4 +14,5 @@ interface UserService {
     fun forgotPassword(forgotPasswordRequest: ForgotPasswordRequest)
     fun getRoles(userId: UUID): Set<Role>
     fun verifyUser(verifyRequest: VerifyRequest): VerifyResponse
+    fun exitsByUserId(userid: UUID): Boolean
 }

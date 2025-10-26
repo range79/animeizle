@@ -5,46 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65e0a340-c3af-43c6-a8fe-19b2167fa95b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/domain/entity/Role.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/domain/repository/impl/AuthTokenRepositoryImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/dto/VerifyResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/exception/AbstractExceptionHandler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/exception/TokenNotFoundException.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/exception/UserNotFoundException.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/exception/UserServiceException.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/service/TokenService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/service/impl/TokenServiceImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/com/range/userservice/dto/VerifyResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/src/test/kotlin/com/range/userservice/controller/UserControllerTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/src/test/kotlin/com/range/userservice/domain/repository/impl/PasswordResetTokenRepositoryImplTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/src/test/resources/application-test.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/AndroidProjectSystem.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/UserService.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/service/EpisodeService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Config Server/src/main/resources/userService.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserProfileService/src/main/kotlin/com/range/userprofileservice/config/AmazonS3Config.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserProfileService/src/main/kotlin/com/range/userprofileservice/controller/UserProfileController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserProfileService/src/main/kotlin/com/range/userprofileservice/domain/entity/UserProfile.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserProfileService/src/main/kotlin/com/range/userprofileservice/domain/repository/UserProfileRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserProfileService/src/main/kotlin/com/range/userprofileservice/dto/UserProfileRequest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserProfileService/src/main/kotlin/com/range/userprofileservice/dto/UserShortProfileResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserProfileService/src/main/kotlin/com/range/userprofileservice/exception/AbstractExceptionHandler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserProfileService/src/main/kotlin/com/range/userprofileservice/exception/UserNotExitsException.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserProfileService/src/main/kotlin/com/range/userprofileservice/exception/UserProfileNotFound.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserProfileService/src/main/kotlin/com/range/userprofileservice/service/ProfilePhotoService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserProfileService/src/main/kotlin/com/range/userprofileservice/service/UserProfileService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserProfileService/src/main/kotlin/com/range/userprofileservice/service/UserService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserProfileService/src/main/kotlin/com/range/userprofileservice/service/impl/ProfilePhotoServiceImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserProfileService/src/main/kotlin/com/range/userprofileservice/service/impl/UserProfileServiceImpl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Permanent_Script_Dependencies.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/CommentService.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/EurekaServer.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/UserService.main.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/controller/AuthController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/controller/AuthController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/domain/repository/TokenRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/domain/repository/AuthTokenRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/domain/repository/impl/TokenRepositoryImpl.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/service/AuthService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/service/AuthService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/service/UserServiceClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/service/UserServiceClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/service/impl/AuthServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/service/impl/AuthServiceImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/util/JwtUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/src/main/kotlin/com/range/authservice/util/JwtUtil.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/src/main/kotlin/com/range/userservice/config/SecurityConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/com/range/userservice/config/SecurityConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommentService/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/CommentService/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/api/CommentApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/api/CommentApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/controller/CommentController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/controller/CommentController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/domain/entity/Comment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/domain/entity/Comment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/domain/repository/CommentRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/domain/repository/CommentRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/mapper/CommentMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/mapper/CommentMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/service/CommentService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/service/CommentService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/service/impl/CommentServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/CommentService/src/main/kotlin/com/range/commentservice/service/impl/CommentServiceImpl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserService/src/main/kotlin/com/range/userservice/controller/UserController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/com/range/userservice/controller/UserController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/src/main/kotlin/com/range/userservice/domain/repository/PasswordResetTokenRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/com/range/userservice/domain/repository/PasswordResetTokenRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/src/main/kotlin/com/range/userservice/domain/repository/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/com/range/userservice/domain/repository/UserRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/src/main/kotlin/com/range/userservice/domain/repository/impl/PasswordResetTokenRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/com/range/userservice/domain/repository/impl/PasswordResetTokenRepositoryImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/src/main/kotlin/com/range/userservice/exception/AbstractExceptionHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/com/range/userservice/exception/AbstractExceptionHandler.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserService/src/main/kotlin/com/range/userservice/service/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/com/range/userservice/service/UserService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserService/src/main/kotlin/com/range/userservice/service/impl/UserServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/kotlin/com/range/userservice/service/impl/UserServiceImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/src/test/kotlin/com/range/userservice/UserServiceApplicationTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/test/kotlin/com/range/userservice/UserServiceApplicationTests.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +48,9 @@
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/Api-gateway">
       <ProjectState />
     </projectState>
     <projectState path="$PROJECT_DIR$/AuthService">
@@ -68,6 +66,9 @@
       <ProjectState />
     </projectState>
     <projectState path="$PROJECT_DIR$/MainService">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/UserProfileService">
       <ProjectState />
     </projectState>
     <projectState path="$PROJECT_DIR$/UserService">
@@ -88,12 +89,7 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="UserService" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="UserService" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="CommentService" type="f1a62948:ProjectNode" />
               </path>
             </expand>
             <select />
@@ -106,12 +102,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="kotlin.jupyter.empty" />
-        <option value="Kotlin Interface" />
         <option value="HTML File" />
         <option value="Spring Component" />
         <option value="Class" />
-        <option value="Kotlin Class" />
         <option value="Kotlin JUnit5 Test Class" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Class" />
+        <option value="Kotlin Interface" />
       </list>
     </option>
   </component>
@@ -130,7 +127,7 @@
     &quot;accountId&quot;: &quot;66067c81-32fa-47db-a21c-53617c61bc1d&quot;
   }
 }</component>
-  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$/UserService" gradleHome="$USER_HOME$/.gradle/wrapper/dists/gradle-8.14.3-bin/cv11ve7ro1n3o1j4so8xd9n66/gradle-8.14.3" javaHome="$USER_HOME$/.jdks/graalvm-ce-23.0.2" gradleVersion="8.14.3" />
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$/UserProfileService" gradleHome="$USER_HOME$/.gradle/wrapper/dists/gradle-8.14.3-bin/cv11ve7ro1n3o1j4so8xd9n66/gradle-8.14.3" javaHome="$USER_HOME$/.jdks/graalvm-ce-23.0.2" gradleVersion="8.14.3" />
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-client/3.1.11/c19688eca66ee0bd172e5d8471417427738b4d75/jersey-client-3.1.11-sources.jar!/org/glassfish/jersey/client/JerseyClient.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-test-autoconfigure/3.5.6/7842c1defd482a6c4f1b5c16e8d4841760233fb/spring-boot-test-autoconfigure-3.5.6-sources.jar!/org/springframework/boot/test/autoconfigure/jdbc/AutoConfigureTestDatabase.java" root0="SKIP_INSPECTION" />
@@ -142,6 +139,9 @@
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webflux/6.2.11/fde7e4bcff3f2da1c8f438b919c50716beb2b243/spring-webflux-6.2.11-sources.jar!/org/springframework/web/reactive/function/client/WebClient.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.testcontainers/postgresql/1.21.3/31dcad9724584585afd63143f2c43dc62a08d8a9/postgresql-1.21.3-sources.jar!/org/testcontainers/containers/PostgreSQLContainer.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/UserService/build.gradle.kts" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="oZDBtExw" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -206,17 +206,18 @@
     &quot;git-widget-placeholder&quot;: &quot;test&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/range79/workdir/animeizle/UserService/build.gradle.kts&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/range79/workdir/animeizle/UserProfileService/build.gradle.kts&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;copyright&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.build&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -239,11 +240,11 @@
       <recent name="" />
     </key>
     <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="com.range.userprofileservice.exception" />
       <recent name="com.range.authservice.service" />
       <recent name="com.range.authservice.exception" />
       <recent name="com.range.userservice.service." />
       <recent name="com.range.userservice.service.impl" />
-      <recent name="com.range.userservice.domain.entity" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.range.userservice.controller" />
@@ -256,14 +257,25 @@
       <recent name="com.range.commentservice.dto" />
     </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="com.range.userprofileservice.service" />
+      <recent name="com.range.userprofileservice.service.impl" />
       <recent name="com.range.authservice.dto" />
       <recent name="com.range.authservice.exception" />
       <recent name="com.range.authservice.domain.entity" />
-      <recent name="com.range.authservice.domain" />
-      <recent name="com.range.userservice.service.impl" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.UserControllerTest">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="MainService.aot" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="MainService.aot" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
     <configuration name="PasswordResetTokenRepositoryImplTest.testPing" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -278,6 +290,54 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;com.range.userservice.domain.repository.impl.PasswordResetTokenRepositoryImplTest.testPing&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="PasswordResetTokenRepositoryImplTest.testPing" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/UserService" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.range.userservice.domain.repository.impl.PasswordResetTokenRepositoryImplTest.testPing&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/UserService" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.range.userservice.controller.UserControllerTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -336,6 +396,30 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="UserControllerTest.forgotPassword" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/UserService" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.range.userservice.controller.UserControllerTest.forgotPassword&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="UserControllerTest.register" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -350,6 +434,54 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;com.range.userservice.controller.UserControllerTest.register&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserControllerTest.register" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/UserService" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.range.userservice.controller.UserControllerTest.register&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserControllerTest.shouldVerifyUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/UserService" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.range.userservice.controller.UserControllerTest.shouldVerifyUser&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -403,9 +535,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AniseyirApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="MainService.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.range.animeizle.AniseyirApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Api-gateway.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.range.apigateway.ApiGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Api-gateway.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.range.apigateway.ApiGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="AuthService.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.range.authservice.AuthServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="AuthService.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.range.authservice.AuthServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="CommentService_main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.range.commentservice.CommentServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -420,6 +588,34 @@
     <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="EurekaServer.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.range.eurukaserver.EurekaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="EurekaServer.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.range.eurukaserver.EurekaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserProfileServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="UserProfileService.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.range.userprofileservice.UserProfileServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserProfileServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="UserProfileService.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.range.userprofileservice.UserProfileServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="animeizle.UserService.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.range.userservice.UserServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -444,8 +640,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.26830.84" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
       </set>
     </attachedChunks>
   </component>
@@ -519,6 +715,11 @@
       <workItem from="1761315463047" duration="27000" />
       <workItem from="1761315492055" duration="2732000" />
       <workItem from="1761323598448" duration="2309000" />
+      <workItem from="1761479271942" duration="4464000" />
+      <workItem from="1761483843590" duration="3435000" />
+      <workItem from="1761491880840" duration="6267000" />
+      <workItem from="1761501003548" duration="1221000" />
+      <workItem from="1761505603655" duration="836000" />
     </task>
     <servers />
   </component>
@@ -548,5 +749,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

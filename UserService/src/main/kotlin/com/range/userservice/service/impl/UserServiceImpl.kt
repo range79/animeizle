@@ -60,6 +60,10 @@ class UserServiceImpl(
 
     }
 
+    override fun exitsByUserId(userid: UUID): Boolean {
+        return userRepository.existsById(userid)
+    }
+
     fun RegisterRequest.toModel(password: String): User {
         return User(
             id = null, email = email,

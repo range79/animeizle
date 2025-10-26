@@ -4,6 +4,24 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Api-gateway" />
+        <option name="gradleJvm" value="graalvm-ce-23" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Api-gateway" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/UserProfileService" />
+        <option name="gradleJvm" value="graalvm-ce-23" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/UserProfileService" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/UserService" />
         <option name="gradleJvm" value="graalvm-ce-23" />
         <option name="modules">
