@@ -1,4 +1,4 @@
-package com.range.animeizle.accessToken.domain.service
+package com.range.animeizle.accessToken.service
 
 import java.util.UUID
 

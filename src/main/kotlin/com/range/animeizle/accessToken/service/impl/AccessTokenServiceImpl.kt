@@ -1,8 +1,9 @@
-package com.range.animeizle.accessToken.domain.service.impl
+package com.range.animeizle.accessToken.service.impl
 
 import com.range.animeizle.accessToken.domain.entity.AccessToken
 import com.range.animeizle.accessToken.domain.repository.AccessTokenRepository
-import com.range.animeizle.accessToken.domain.service.AccessTokenService
+import com.range.animeizle.accessToken.exception.UnTrustedDeviceException
+import com.range.animeizle.accessToken.service.AccessTokenService
 import com.range.animeizle.common.util.DeviceInfoHolder
 import org.springframework.stereotype.Service
 import java.util.*
@@ -18,10 +19,9 @@ class AccessTokenServiceImpl(
 
         val deviceName = context.deviceName ?: "unknown"
 
-        // Aynı cihaz için eski token varsa sil (çakışmayı önler)
         accessTokenRepository.deleteByUserIdAndDevice(userId, deviceName)
 
-        val token = AccessToken.Companion.createForUser(userId, deviceName, )
+        val token = AccessToken.createForUser(userId, deviceName)
         accessTokenRepository.save(token)
 
         return token.id
@@ -45,12 +45,13 @@ class AccessTokenServiceImpl(
 
         val deviceName = context.deviceName ?: "unknown"
         if (oldToken.device!=deviceName){
-
+            accessTokenRepository.delete(oldToken)
+        throw UnTrustedDeviceException("Device Untrusted please reLogin")
         }
 
         accessTokenRepository.delete(oldToken)
 
-        val newToken = AccessToken.Companion.createForUser(oldToken.userId, oldToken.device)
+        val newToken = AccessToken.createForUser(oldToken.userId, oldToken.device)
         accessTokenRepository.save(newToken)
 
         return newToken.id
