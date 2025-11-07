@@ -1,8 +1,8 @@
-package com.range.animeizle.accessToken.service
+package com.range.animeizle.refreshToken.service
 
 import java.util.UUID
 
-interface AccessTokenService {
+interface RefreshTokenService {
     fun generateToken(userId: UUID): String
     fun deleteToken(token: String)
     fun rotateToken(token: String): String

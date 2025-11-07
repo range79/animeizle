@@ -1,17 +1,17 @@
-package com.range.animeizle.accessToken.service.impl
+package com.range.animeizle.refreshToken.service.impl
 
-import com.range.animeizle.accessToken.domain.entity.AccessToken
-import com.range.animeizle.accessToken.domain.repository.AccessTokenRepository
-import com.range.animeizle.accessToken.exception.UnTrustedDeviceException
-import com.range.animeizle.accessToken.service.AccessTokenService
+import com.range.animeizle.refreshToken.domain.entity.RefreshToken
+import com.range.animeizle.refreshToken.exception.UnTrustedDeviceException
+import com.range.animeizle.refreshToken.service.RefreshTokenService
 import com.range.animeizle.common.util.DeviceInfoHolder
+import com.range.animeizle.refreshToken.domain.repository.RefreshTokenRepository
 import org.springframework.stereotype.Service
 import java.util.*
 
 @Service
-class AccessTokenServiceImpl(
-    private val accessTokenRepository: AccessTokenRepository
-) : AccessTokenService {
+class RefreshTokenServiceImpl(
+    private val accessTokenRepository: RefreshTokenRepository
+) : RefreshTokenService {
 
     override fun generateToken(userId: UUID): String {
         val context = DeviceInfoHolder.getContext()
@@ -21,7 +21,7 @@ class AccessTokenServiceImpl(
 
         accessTokenRepository.deleteByUserIdAndDevice(userId, deviceName)
 
-        val token = AccessToken.createForUser(userId, deviceName)
+        val token = RefreshToken.createForUser(userId, deviceName)
         accessTokenRepository.save(token)
 
         return token.id
@@ -39,7 +39,7 @@ class AccessTokenServiceImpl(
 
     override fun rotateToken(token: String): String {
         val oldToken = accessTokenRepository.findById(token)
-            .orElseThrow { IllegalArgumentException("Access token not found") }
+            .orElseThrow { IllegalArgumentException("Refresh token not found") }
         val context = DeviceInfoHolder.getContext()
             ?: throw IllegalStateException("Device information not found in context")
 
@@ -51,7 +51,7 @@ class AccessTokenServiceImpl(
 
         accessTokenRepository.delete(oldToken)
 
-        val newToken = AccessToken.createForUser(oldToken.userId, oldToken.device)
+        val newToken = RefreshToken.createForUser(oldToken.userId, oldToken.device)
         accessTokenRepository.save(newToken)
 
         return newToken.id

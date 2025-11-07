@@ -1,4 +1,4 @@
-package com.range.animeizle.accessToken.domain.entity
+package com.range.animeizle.refreshToken.domain.entity
 
 import org.springframework.data.redis.core.RedisHash
 import org.springframework.data.redis.core.TimeToLive
@@ -7,7 +7,7 @@ import java.util.Base64
 import java.util.UUID
 
 @RedisHash("accessToken")
-data class AccessToken(
+data class RefreshToken(
     val id: String,
     val userId: UUID,
     val device: String,
@@ -27,9 +27,9 @@ data class AccessToken(
             return urlEncoder.encodeToString(randomBytes)
         }
 
-        fun createForUser(userId: UUID, device: String): AccessToken {
+        fun createForUser(userId: UUID, device: String): RefreshToken {
 
-            return AccessToken(
+            return RefreshToken(
                 id = generateToken(),
                 userId = userId,
                 device = device,

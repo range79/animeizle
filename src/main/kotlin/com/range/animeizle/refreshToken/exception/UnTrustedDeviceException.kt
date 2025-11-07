@@ -1,4 +1,4 @@
-package com.range.animeizle.accessToken.exception
+package com.range.animeizle.refreshToken.exception
 
 import com.range.animeizle.user.exception.AbstractExceptionHandler
 import org.springframework.http.HttpStatus

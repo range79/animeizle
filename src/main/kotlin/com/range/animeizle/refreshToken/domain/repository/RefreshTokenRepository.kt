@@ -1,9 +1,9 @@
-package com.range.animeizle.accessToken.domain.repository
+package com.range.animeizle.refreshToken.domain.repository
 
-import com.range.animeizle.accessToken.domain.entity.AccessToken
+import com.range.animeizle.refreshToken.domain.entity.RefreshToken
 import org.springframework.data.repository.CrudRepository
 import java.util.UUID
 
-interface AccessTokenRepository: CrudRepository<AccessToken, String> {
+interface RefreshTokenRepository: CrudRepository<RefreshToken, String> {
     fun deleteByUserIdAndDevice(userId: UUID, device: String)
 }
