@@ -1,5 +1,7 @@
 package com.range.animeizle.user.service.impl
 
+import com.range.animeizle.common.util.JWTUtil
+import com.range.animeizle.user.domain.entity.User
 import com.range.animeizle.user.domain.repository.UserRepository
 import com.range.animeizle.user.dto.AuthResponse
 import com.range.animeizle.user.dto.LoginRequest
@@ -14,7 +16,9 @@ import org.springframework.stereotype.Service
 @Service
 class AuthServiceImpl(
     private val userRepository: UserRepository,
-    private val passwordEncoder: PasswordEncoder
+    private val passwordEncoder: PasswordEncoder,
+    private val jwtUtil: JWTUtil
+
 ) : AuthService {
     override fun register(registerRequest: RegisterRequest): AuthResponse {
         if (userRepository.existsUserByEmail(registerRequest.email)) {
@@ -23,9 +27,10 @@ class AuthServiceImpl(
         if (userRepository.existsUserByUsername(registerRequest.username)) {
             throw UsernameAlreadyUsedException("${registerRequest.username} is already used!")
         }
-
-
-
+        val password = passwordEncoder.encode(registerRequest.password)
+        val user = User.generateUser(registerRequest, password)
+        val refreshToken =jwtUtil.generateToken(user.id, user.role)
+        val accessToken=null
 
 
     }

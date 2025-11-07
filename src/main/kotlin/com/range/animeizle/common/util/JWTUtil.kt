@@ -1,4 +1,4 @@
-package com.range.muhasebe.common.security.jwt
+package com.range.animeizle.common.util
 
 import com.range.animeizle.common.security.CustomUserDetails
 import com.range.animeizle.user.domain.entity.Role

@@ -1,5 +1,6 @@
 package com.range.animeizle.user.domain.entity
 
+import com.range.animeizle.user.dto.RegisterRequest
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
@@ -16,5 +17,19 @@ data class User (
     var username: String,
     var password: String,
     var email: String,
+    var twoFactorEnabled: Boolean = false,
     var role: Role? = Role.USER,
-)
+){
+    companion object{
+        fun generateUser(registerRequest: RegisterRequest,password: String): User {
+            return User(
+                id = null,
+                username = registerRequest.username,
+                password = registerRequest.password,
+                email = registerRequest.email,
+                twoFactorEnabled = false,
+                role = Role.USER
+                )
+        }
+    }
+}

@@ -1,6 +1,7 @@
 package com.range.animeizle.common.security
 
-import com.range.muhasebe.common.security.jwt.JWTFilter
+import com.range.animeizle.common.filter.DeviceFilter
+import com.range.animeizle.common.filter.JWTFilter
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -10,7 +11,9 @@ import org.springframework.security.web.SecurityFilterChain
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
 
 @Configuration
-class SecurityConfig(private val jwtFilter: JWTFilter,
+class SecurityConfig(
+    private val jwtFilter: JWTFilter,
+    private val deviceFilter: DeviceFilter
                     ) {
     @Value("\${api.prefix}")
     private lateinit var prefix: String
@@ -30,7 +33,7 @@ class SecurityConfig(private val jwtFilter: JWTFilter,
             }
 
 
-
+            http.addFilterBefore(deviceFilter, UsernamePasswordAuthenticationFilter::class.java)
             http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter::class.java)
         }
             return http.build()

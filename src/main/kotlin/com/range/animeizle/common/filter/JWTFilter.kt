@@ -1,8 +1,7 @@
-package com.range.muhasebe.common.security.jwt
+package com.range.animeizle.common.filter
 
-import com.range.muhasebe.common.exception.TokenException
-import com.range.muhasebe.common.security.details.CustomUserDetailsService
-import com.range.muhasebe.common.service.JWTBlacklistService
+import com.range.animeizle.common.security.CustomUserDetailsService
+import com.range.animeizle.common.util.JWTUtil
 import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
@@ -14,8 +13,6 @@ import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource
 import org.springframework.stereotype.Component
 import org.springframework.web.filter.OncePerRequestFilter
-import kotlin.text.startsWith
-import kotlin.text.substring
 
 @Component
 class JWTFilter(
@@ -50,10 +47,8 @@ class JWTFilter(
 
             if (token != null && SecurityContextHolder.getContext().authentication == null) {
                 val id = jwtUtil.getUserId(token)
-                if (jwtBlacklistService.checkToken(token)){
-                    throw TokenException(null)
-                }
-                val userDetails: UserDetails = customUserDetailsService.loadUserByUserID(id)
+
+                val userDetails: UserDetails = customUserDetailsService.loadUserById(id)
                 if (jwtUtil.validateToken(token, userDetails)) {
                     val authToken =
                         UsernamePasswordAuthenticationToken(
