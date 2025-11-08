@@ -1,10 +1,10 @@
 package com.range.animeizle.refreshToken.service.impl
 
+import com.range.animeizle.common.util.DeviceInfoHolder
 import com.range.animeizle.refreshToken.domain.entity.RefreshToken
+import com.range.animeizle.refreshToken.domain.repository.RefreshTokenRepository
 import com.range.animeizle.refreshToken.exception.UnTrustedDeviceException
 import com.range.animeizle.refreshToken.service.RefreshTokenService
-import com.range.animeizle.common.util.DeviceInfoHolder
-import com.range.animeizle.refreshToken.domain.repository.RefreshTokenRepository
 import org.springframework.stereotype.Service
 import java.util.*
 
@@ -21,7 +21,7 @@ class RefreshTokenServiceImpl(
 
         accessTokenRepository.deleteByUserIdAndDevice(userId, deviceName)
 
-        val token = RefreshToken.createForUser(userId, deviceName)
+        val token = RefreshToken.Companion.createForUser(userId, deviceName)
         accessTokenRepository.save(token)
 
         return token.id
@@ -51,7 +51,7 @@ class RefreshTokenServiceImpl(
 
         accessTokenRepository.delete(oldToken)
 
-        val newToken = RefreshToken.createForUser(oldToken.userId, oldToken.device)
+        val newToken = RefreshToken.Companion.createForUser(oldToken.userId, oldToken.device)
         accessTokenRepository.save(newToken)
 
         return newToken.id
