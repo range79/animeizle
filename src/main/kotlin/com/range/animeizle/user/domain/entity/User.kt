@@ -13,7 +13,7 @@ import java.util.UUID
 data class User (
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    val id: UUID? = null,
+    val id: UUID=UUID.randomUUID(),
     var username: String,
     var password: String,
     var email: String,
@@ -23,7 +23,6 @@ data class User (
     companion object{
         fun generateUser(registerRequest: RegisterRequest,password: String): User {
             return User(
-                id = null,
                 username = registerRequest.username,
                 password = registerRequest.password,
                 email = registerRequest.email,

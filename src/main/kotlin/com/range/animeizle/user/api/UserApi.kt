@@ -9,5 +9,4 @@ interface UserApi {
     fun me(): UserResponse
     fun getUserWithId(id: UUID): UserResponse
     fun deleteAccount()
-    //TODO i'll add more
 }

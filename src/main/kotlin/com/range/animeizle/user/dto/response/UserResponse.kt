@@ -1,4 +1,8 @@
 package com.range.animeizle.user.dto.response
 
-class UserResponse {
-}
+import java.util.UUID
+
+data class UserResponse(
+    val id: UUID,
+    val username: String,
+)
