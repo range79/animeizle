@@ -11,5 +11,5 @@ interface AuthService {
     fun login(loginRequest: LoginRequest): AuthResponse
     fun forgotPassword(email: String)
     fun resetPassword(resetPasswordRequest: ResetPasswordRequest): AuthResponse
-    fun twoFactorAuth(email: String, password: String)
+    fun twoFactorAuth(email: String, code: Int)
 }

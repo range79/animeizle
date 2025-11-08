@@ -1,10 +1,8 @@
 package com.range.animeizle.user.service.impl
 
-import com.range.animeizle.common.exception.AuthenticationException
-import com.range.animeizle.common.exception.EmailAlreadyUsedException
-import com.range.animeizle.common.exception.TwoFactoryAuthException
-import com.range.animeizle.common.exception.UsernameAlreadyUsedException
+import com.range.animeizle.common.exception.*
 import com.range.animeizle.common.util.JWTUtil
+import com.range.animeizle.token.passwordResetToken.service.PasswordResetService
 import com.range.animeizle.token.refreshToken.service.RefreshTokenService
 import com.range.animeizle.token.twoFactoryAuth.service.TwoFactoryAuthTokenService
 import com.range.animeizle.user.domain.entity.User
@@ -13,8 +11,6 @@ import com.range.animeizle.user.dto.AuthResponse
 import com.range.animeizle.user.dto.LoginRequest
 import com.range.animeizle.user.dto.RegisterRequest
 import com.range.animeizle.user.dto.ResetPasswordRequest
-import com.range.animeizle.user.exception.EmailAlreadyUsedException
-import com.range.animeizle.user.exception.UsernameAlreadyUsedException
 import com.range.animeizle.user.service.AuthService
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
@@ -26,7 +22,8 @@ class AuthServiceImpl(
     private val passwordEncoder: PasswordEncoder,
     private val jwtUtil: JWTUtil,
     private val refreshTokenService: RefreshTokenService,
-    private val twoFactoryAuthTokenService: TwoFactoryAuthTokenService
+    private val twoFactoryAuthTokenService: TwoFactoryAuthTokenService,
+    private val passwordResetService: PasswordResetService
 
 ) : AuthService {
     @Transactional
@@ -39,9 +36,7 @@ class AuthServiceImpl(
         }
         val password = passwordEncoder.encode(registerRequest.password)
         val user = User.generateUser(registerRequest, password)
-        val accessToken = jwtUtil.generateToken(user.id, user.role)
-        val refreshToken = refreshTokenService.generateToken(user.id!!)
-        return AuthResponse(refreshToken = refreshToken, accessToken = accessToken)
+        return authResponseBuilder(user)
 
     }
 
@@ -62,24 +57,37 @@ class AuthServiceImpl(
             throw TwoFactoryAuthException("Two Factor Enabled! Check Your Email!")
         }
 
-        val accessToken = jwtUtil.generateToken(user.id, user.role)
-        val refreshToken = refreshTokenService.generateToken(user.id!!)
-        return AuthResponse(refreshToken = refreshToken, accessToken = accessToken)
+        return authResponseBuilder(user)
     }
 
     override fun forgotPassword(email: String) {
-
+        val token = passwordResetService.generateToken(email)
+        emailService.sendPasswordResetEmail(token)
     }
 
+    @Transactional
     override fun resetPassword(resetPasswordRequest: ResetPasswordRequest): AuthResponse {
-        TODO("Not yet implemented")
+        val email = passwordResetService.getEmailFromToken(resetPasswordRequest.token)
+        val user = userRepository.findByEmail(email).orElseThrow {
+            EmailNotFoundException("Email doesn't exist!")
+        }
+        user.password = passwordEncoder.encode(resetPasswordRequest.password)
+        userRepository.save(user)
+        return authResponseBuilder(user)
+
     }
 
-    override fun twoFactorAuth(email: String, password: String) {
+    override fun twoFactorAuth(email: String, code: Int) {
         TODO("Not yet implemented")
     }
 
     private fun isEmail(usernameOrEmail: String): Boolean {
         TODO()
+    }
+
+    fun authResponseBuilder(user: User): AuthResponse {
+        val accessToken = jwtUtil.generateToken(user.id, user.role)
+        val refreshToken = refreshTokenService.generateToken(user.id!!)
+        return AuthResponse(refreshToken = refreshToken, accessToken = accessToken)
     }
 }

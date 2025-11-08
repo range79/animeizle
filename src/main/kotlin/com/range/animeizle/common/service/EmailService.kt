@@ -1,0 +1,9 @@
+package com.range.animeizle.common.service
+
+import org.springframework.stereotype.Service
+
+@Service
+interface EmailService {
+    fun sendPasswordResetEmail(email: String, resetLink: String)
+    fun sendTwoFactorCode(email: String, code: Int)
+}
