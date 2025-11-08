@@ -1,6 +1,7 @@
 package com.range.animeizle.user.service.impl
 
 import com.range.animeizle.common.exception.*
+import com.range.animeizle.common.service.EmailService
 import com.range.animeizle.common.util.JWTUtil
 import com.range.animeizle.token.passwordResetToken.service.PasswordResetService
 import com.range.animeizle.token.refreshToken.service.RefreshTokenService
@@ -23,7 +24,8 @@ class AuthServiceImpl(
     private val jwtUtil: JWTUtil,
     private val refreshTokenService: RefreshTokenService,
     private val twoFactoryAuthTokenService: TwoFactoryAuthTokenService,
-    private val passwordResetService: PasswordResetService
+    private val passwordResetService: PasswordResetService,
+    private val emailService: EmailService
 
 ) : AuthService {
     @Transactional
@@ -54,6 +56,8 @@ class AuthServiceImpl(
             throw AuthenticationException("Username or password invalid!")
         }
         if (user.twoFactorEnabled) {
+           val token = twoFactoryAuthTokenService.generateToken(email = user.email)
+            emailService.sendTwoFactorCode(user.email, token)
             throw TwoFactoryAuthException("Two Factor Enabled! Check Your Email!")
         }
 
@@ -62,7 +66,7 @@ class AuthServiceImpl(
 
     override fun forgotPassword(email: String) {
         val token = passwordResetService.generateToken(email)
-        emailService.sendPasswordResetEmail(token)
+        emailService.sendPasswordResetEmail(email,token)
     }
 
     @Transactional
@@ -74,11 +78,16 @@ class AuthServiceImpl(
         user.password = passwordEncoder.encode(resetPasswordRequest.password)
         userRepository.save(user)
         return authResponseBuilder(user)
-
     }
 
-    override fun twoFactorAuth(email: String, code: Int) {
-        TODO("Not yet implemented")
+    override fun twoFactorAuth(email: String, code: Int) : AuthResponse{
+        if ( !twoFactoryAuthTokenService.validateToken(email, code)){
+            throw TwoFactoryAuthException("Two Factor Authentication Failed!")
+        }
+        val user = userRepository.findByEmail(email).orElseThrow{
+            AuthenticationException("User doesn't exist!")
+        }
+        return authResponseBuilder(user)
     }
 
     private fun isEmail(usernameOrEmail: String): Boolean {
