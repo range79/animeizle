@@ -8,10 +8,11 @@ import com.range.animeizle.token.refreshToken.service.RefreshTokenService
 import com.range.animeizle.token.twoFactoryAuth.service.TwoFactoryAuthTokenService
 import com.range.animeizle.user.domain.entity.User
 import com.range.animeizle.user.domain.repository.UserRepository
-import com.range.animeizle.user.dto.AuthResponse
-import com.range.animeizle.user.dto.LoginRequest
-import com.range.animeizle.user.dto.RegisterRequest
-import com.range.animeizle.user.dto.ResetPasswordRequest
+import com.range.animeizle.user.dto.response.AuthResponse
+import com.range.animeizle.user.dto.request.LoginRequest
+import com.range.animeizle.user.dto.request.RegisterRequest
+import com.range.animeizle.user.dto.request.ResetPasswordRequest
+import com.range.animeizle.user.dto.request.TwoFactoryAuthRequest
 import com.range.animeizle.user.service.AuthService
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
@@ -81,11 +82,11 @@ class AuthServiceImpl(
         return authResponseBuilder(user)
     }
 
-    override fun twoFactorAuth(email: String, code: Int) : AuthResponse{
-        if ( !twoFactoryAuthTokenService.validateToken(email, code)){
+    override fun twoFactorAuth(twoFactoryAuthRequest: TwoFactoryAuthRequest) : AuthResponse{
+        if ( !twoFactoryAuthTokenService.validateToken(twoFactoryAuthRequest.email,twoFactoryAuthRequest.code)){
             throw TwoFactoryAuthException("Two Factor Authentication Failed!")
         }
-        val user = userRepository.findByEmail(email).orElseThrow{
+        val user = userRepository.findByEmail(twoFactoryAuthRequest.email).orElseThrow{
             AuthenticationException("User doesn't exist!")
         }
         return authResponseBuilder(user)

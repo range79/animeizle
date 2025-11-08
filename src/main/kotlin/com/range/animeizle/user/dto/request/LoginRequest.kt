@@ -1,4 +1,4 @@
-package com.range.animeizle.user.dto
+package com.range.animeizle.user.dto.request
 
 data class LoginRequest(
     val usernameOrEmail: String,

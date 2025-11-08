@@ -1,6 +1,6 @@
 package com.range.animeizle.common.exception
 
-import com.range.animeizle.user.dto.ErrorResponse
+import com.range.animeizle.common.dto.ErrorResponse
 import jakarta.servlet.http.HttpServletRequest
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.ControllerAdvice
