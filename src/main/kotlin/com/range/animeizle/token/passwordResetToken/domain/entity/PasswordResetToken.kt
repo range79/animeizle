@@ -1,4 +1,4 @@
-package com.range.animeizle.token.refreshToken.domain.entity
+package com.range.animeizle.token.passwordResetToken.domain.entity
 
 import org.springframework.data.redis.core.RedisHash
 import org.springframework.data.redis.core.TimeToLive
@@ -6,13 +6,12 @@ import java.security.SecureRandom
 import java.util.Base64
 import java.util.UUID
 
-@RedisHash("refreshToken")
-data class RefreshToken(
+@RedisHash("PasswordResetToken")
+data class PasswordResetToken(
     val id: String,
-    val userId: UUID,
-    val device: String,
+    val email: String,
     @TimeToLive
-    val expiration: Long = 2_592_000L
+    val expiration: Long = 900
 
 
 ) {
@@ -27,12 +26,10 @@ data class RefreshToken(
             return urlEncoder.encodeToString(randomBytes)
         }
 
-        fun createForUser(userId: UUID, device: String): RefreshToken {
-
-            return RefreshToken(
+        fun createForUser(email: String,): PasswordResetToken {
+            return PasswordResetToken(
                 id = generateToken(),
-                userId = userId,
-                device = device,
+                email = email,
             )
         }
     }

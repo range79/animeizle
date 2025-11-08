@@ -1,11 +1,10 @@
 package com.range.animeizle.common.security
 
+import com.range.animeizle.common.exception.UserNotFoundException
 import com.range.animeizle.user.domain.repository.UserRepository
-import com.range.animeizle.user.exception.UserNotFoundException
 import org.springframework.security.core.userdetails.UserDetails
-import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.stereotype.Service
-import java.util.UUID
+import java.util.*
 
 @Service
 class CustomUserDetailsService(

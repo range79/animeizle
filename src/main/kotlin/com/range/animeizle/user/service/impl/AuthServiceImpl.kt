@@ -1,15 +1,17 @@
 package com.range.animeizle.user.service.impl
 
+import com.range.animeizle.common.exception.AuthenticationException
+import com.range.animeizle.common.exception.EmailAlreadyUsedException
+import com.range.animeizle.common.exception.UsernameAlreadyUsedException
 import com.range.animeizle.common.util.JWTUtil
-import com.range.animeizle.token.passwordResetToken.service.TwoFactoryAuthTokenService
 import com.range.animeizle.token.refreshToken.service.RefreshTokenService
+import com.range.animeizle.token.twoFactoryAuth.service.TwoFactoryAuthTokenService
 import com.range.animeizle.user.domain.entity.User
 import com.range.animeizle.user.domain.repository.UserRepository
 import com.range.animeizle.user.dto.AuthResponse
 import com.range.animeizle.user.dto.LoginRequest
 import com.range.animeizle.user.dto.RegisterRequest
 import com.range.animeizle.user.dto.ResetPasswordRequest
-import com.range.animeizle.user.exception.AuthenticationException
 import com.range.animeizle.user.exception.EmailAlreadyUsedException
 import com.range.animeizle.user.exception.UsernameAlreadyUsedException
 import com.range.animeizle.user.service.AuthService
@@ -55,7 +57,7 @@ class AuthServiceImpl(
         if (!passwordEncoder.matches(loginRequest.password, user.password)) {
             throw AuthenticationException("Username or password invalid!")
         }
-//todo add 2 fa verification
+if()
 
         val accessToken = jwtUtil.generateToken(user.id, user.role)
         val refreshToken = refreshTokenService.generateToken(user.id!!)

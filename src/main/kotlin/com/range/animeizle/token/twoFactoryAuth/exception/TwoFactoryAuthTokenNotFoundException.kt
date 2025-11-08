@@ -1,4 +1,4 @@
-package com.range.animeizle.token.passwordResetToken.exception
+package com.range.animeizle.token.twoFactoryAuth.exception
 
 import com.range.animeizle.user.exception.AbstractExceptionHandler
 import org.springframework.http.HttpStatus

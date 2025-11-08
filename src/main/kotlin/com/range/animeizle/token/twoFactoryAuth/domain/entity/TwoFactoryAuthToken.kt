@@ -1,11 +1,11 @@
-package com.range.animeizle.token.passwordResetToken.domain.entity
+package com.range.animeizle.token.twoFactoryAuth.domain.entity
 
 import org.springframework.data.redis.core.RedisHash
 import org.springframework.data.redis.core.TimeToLive
 import java.security.SecureRandom
 import java.util.UUID
 
-@RedisHash("accessToken")
+@RedisHash("twoFactoryAuth")
 data class TwoFactoryAuthToken(
     val id: UUID = UUID.randomUUID(),
     val code: Int,

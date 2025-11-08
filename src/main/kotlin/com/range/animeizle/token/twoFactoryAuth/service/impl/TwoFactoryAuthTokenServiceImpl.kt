@@ -1,8 +1,8 @@
-package com.range.animeizle.token.passwordResetToken.service.impl
+package com.range.animeizle.token.twoFactoryAuth.service.impl
 
-import com.range.animeizle.token.passwordResetToken.domain.entity.TwoFactoryAuthToken
-import com.range.animeizle.token.passwordResetToken.domain.repository.TwoFactoryAuthTokenRepository
-import com.range.animeizle.token.passwordResetToken.service.TwoFactoryAuthTokenService
+import com.range.animeizle.token.twoFactoryAuth.domain.entity.TwoFactoryAuthToken
+import com.range.animeizle.token.twoFactoryAuth.domain.repository.TwoFactoryAuthTokenRepository
+import com.range.animeizle.token.twoFactoryAuth.service.TwoFactoryAuthTokenService
 import org.springframework.stereotype.Service
 
 @Service

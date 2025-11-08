@@ -1,4 +1,4 @@
-package com.range.animeizle.user.exception
+package com.range.animeizle.common.exception
 
 import com.range.animeizle.user.dto.ErrorResponse
 import jakarta.servlet.http.HttpServletRequest

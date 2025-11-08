@@ -1,6 +1,6 @@
-package com.range.animeizle.token.passwordResetToken.domain.repository
+package com.range.animeizle.token.twoFactoryAuth.domain.repository
 
-import com.range.animeizle.token.passwordResetToken.domain.entity.TwoFactoryAuthToken
+import com.range.animeizle.token.twoFactoryAuth.domain.entity.TwoFactoryAuthToken
 import org.springframework.data.repository.CrudRepository
 import org.springframework.stereotype.Repository
 import java.util.*

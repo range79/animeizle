@@ -1,4 +1,4 @@
-package com.range.animeizle.token.passwordResetToken.service
+package com.range.animeizle.token.twoFactoryAuth.service
 
 interface TwoFactoryAuthTokenService {
     fun generateToken(email:String): Int
