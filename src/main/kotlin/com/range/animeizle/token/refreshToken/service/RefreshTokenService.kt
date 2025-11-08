@@ -1,4 +1,4 @@
-package com.range.animeizle.refreshToken.service
+package com.range.animeizle.token.refreshToken.service
 
 import java.util.UUID
 

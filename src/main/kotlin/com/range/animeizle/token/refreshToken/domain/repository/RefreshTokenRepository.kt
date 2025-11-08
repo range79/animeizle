@@ -1,6 +1,6 @@
-package com.range.animeizle.refreshToken.domain.repository
+package com.range.animeizle.token.refreshToken.domain.repository
 
-import com.range.animeizle.refreshToken.domain.entity.RefreshToken
+import com.range.animeizle.token.refreshToken.domain.entity.RefreshToken
 import org.springframework.data.repository.CrudRepository
 import java.util.*
 

@@ -1,7 +1,8 @@
 package com.range.animeizle.user.service.impl
 
-import com.range.animeizle.refreshToken.service.RefreshTokenService
 import com.range.animeizle.common.util.JWTUtil
+import com.range.animeizle.token.passwordResetToken.service.TwoFactoryAuthTokenService
+import com.range.animeizle.token.refreshToken.service.RefreshTokenService
 import com.range.animeizle.user.domain.entity.User
 import com.range.animeizle.user.domain.repository.UserRepository
 import com.range.animeizle.user.dto.AuthResponse
@@ -21,7 +22,8 @@ class AuthServiceImpl(
     private val userRepository: UserRepository,
     private val passwordEncoder: PasswordEncoder,
     private val jwtUtil: JWTUtil,
-    private val refreshTokenService: RefreshTokenService
+    private val refreshTokenService: RefreshTokenService,
+    private val twoFactoryAuthTokenService: TwoFactoryAuthTokenService
 
 ) : AuthService {
     @Transactional
@@ -61,7 +63,7 @@ class AuthServiceImpl(
     }
 
     override fun forgotPassword(email: String) {
-        TODO("Not yet implemented")
+
     }
 
     override fun resetPassword(resetPasswordRequest: ResetPasswordRequest): AuthResponse {
@@ -69,6 +71,6 @@ class AuthServiceImpl(
     }
 
     private fun isEmail(usernameOrEmail: String): Boolean {
-
+        TODO()
     }
 }

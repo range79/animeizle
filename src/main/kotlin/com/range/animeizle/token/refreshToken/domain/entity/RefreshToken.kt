@@ -1,4 +1,4 @@
-package com.range.animeizle.refreshToken.domain.entity
+package com.range.animeizle.token.refreshToken.domain.entity
 
 import org.springframework.data.redis.core.RedisHash
 import org.springframework.data.redis.core.TimeToLive

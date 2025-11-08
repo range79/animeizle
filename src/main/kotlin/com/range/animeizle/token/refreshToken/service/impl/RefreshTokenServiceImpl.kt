@@ -1,10 +1,10 @@
-package com.range.animeizle.refreshToken.service.impl
+package com.range.animeizle.token.refreshToken.service.impl
 
 import com.range.animeizle.common.util.DeviceInfoHolder
-import com.range.animeizle.refreshToken.domain.entity.RefreshToken
-import com.range.animeizle.refreshToken.domain.repository.RefreshTokenRepository
-import com.range.animeizle.refreshToken.exception.UnTrustedDeviceException
-import com.range.animeizle.refreshToken.service.RefreshTokenService
+import com.range.animeizle.token.refreshToken.domain.entity.RefreshToken
+import com.range.animeizle.token.refreshToken.domain.repository.RefreshTokenRepository
+import com.range.animeizle.token.refreshToken.exception.UnTrustedDeviceException
+import com.range.animeizle.token.refreshToken.service.RefreshTokenService
 import org.springframework.stereotype.Service
 import java.util.*
 

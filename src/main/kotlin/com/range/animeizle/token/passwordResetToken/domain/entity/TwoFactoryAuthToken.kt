@@ -1,4 +1,4 @@
-package com.range.animeizle.passwordResetToken.domain.entity
+package com.range.animeizle.token.passwordResetToken.domain.entity
 
 import org.springframework.data.redis.core.RedisHash
 import org.springframework.data.redis.core.TimeToLive
