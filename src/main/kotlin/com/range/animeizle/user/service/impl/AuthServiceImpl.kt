@@ -2,6 +2,7 @@ package com.range.animeizle.user.service.impl
 
 import com.range.animeizle.common.exception.AuthenticationException
 import com.range.animeizle.common.exception.EmailAlreadyUsedException
+import com.range.animeizle.common.exception.TwoFactoryAuthException
 import com.range.animeizle.common.exception.UsernameAlreadyUsedException
 import com.range.animeizle.common.util.JWTUtil
 import com.range.animeizle.token.refreshToken.service.RefreshTokenService
@@ -57,7 +58,9 @@ class AuthServiceImpl(
         if (!passwordEncoder.matches(loginRequest.password, user.password)) {
             throw AuthenticationException("Username or password invalid!")
         }
-if()
+        if (user.twoFactorEnabled) {
+            throw TwoFactoryAuthException("Two Factor Enabled! Check Your Email!")
+        }
 
         val accessToken = jwtUtil.generateToken(user.id, user.role)
         val refreshToken = refreshTokenService.generateToken(user.id!!)
@@ -69,6 +72,10 @@ if()
     }
 
     override fun resetPassword(resetPasswordRequest: ResetPasswordRequest): AuthResponse {
+        TODO("Not yet implemented")
+    }
+
+    override fun twoFactorAuth(email: String, password: String) {
         TODO("Not yet implemented")
     }
 
