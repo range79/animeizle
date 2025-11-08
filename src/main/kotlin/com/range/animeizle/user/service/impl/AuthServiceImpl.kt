@@ -36,6 +36,7 @@ class AuthServiceImpl(
         if (userRepository.existsUserByUsername(registerRequest.username)) {
             throw UsernameAlreadyUsedException("${registerRequest.username} is already used!")
         }
+        isValidUsername(registerRequest.username)
         val password = passwordEncoder.encode(registerRequest.password)
         val user = User.generateUser(registerRequest, password)
         return authResponseBuilder(user)
@@ -91,7 +92,13 @@ class AuthServiceImpl(
     }
 
     private fun isEmail(usernameOrEmail: String): Boolean {
-        TODO()
+        return usernameOrEmail.contains("@") && usernameOrEmail.contains(".")
+    }
+    private fun isValidUsername(username: String): Boolean {
+        if (username.contains("@") || username.contains(".")) {
+            throw InvalidUsernameException("Username cannot contain '@' or '.'")
+        }
+        return true
     }
 
     fun authResponseBuilder(user: User): AuthResponse {
