@@ -1,20 +1,16 @@
 package com.range.animeizle.user.api
 
-import com.range.animeizle.user.dto.response.AuthResponse
 import com.range.animeizle.user.dto.request.LoginRequest
 import com.range.animeizle.user.dto.request.RegisterRequest
 import com.range.animeizle.user.dto.request.ResetPasswordRequest
 import com.range.animeizle.user.dto.request.TwoFactoryAuthRequest
+import com.range.animeizle.user.dto.response.AuthResponse
 import org.springframework.http.HttpStatus
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestParam
-import org.springframework.web.bind.annotation.ResponseStatus
+import org.springframework.web.bind.annotation.*
 
 @RequestMapping("\${api.prefix}/auth")
-interface AuthApi
-{
+interface AuthApi {
+
     @PostMapping("/register")
     fun register(@RequestBody registerRequest: RegisterRequest): AuthResponse
 
@@ -23,11 +19,11 @@ interface AuthApi
 
     @PostMapping("/forgot-password")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    fun forgotPassword(@RequestParam email: String)
+    fun forgotPassword(@RequestParam("email") email: String)
 
     @PostMapping("/reset-password")
     fun resetPassword(@RequestBody resetPasswordRequest: ResetPasswordRequest): AuthResponse
 
     @PostMapping("/two-factor-auth")
-    fun twoFactorAuth(@RequestBody twoFactoryAuthRequest: TwoFactoryAuthRequest): AuthResponse
+    fun twoFactorAuth(@RequestBody twoFactorAuthRequest: TwoFactoryAuthRequest): AuthResponse
 }
