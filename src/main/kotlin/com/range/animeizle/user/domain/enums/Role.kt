@@ -1,4 +1,4 @@
-package com.range.animeizle.user.domain.entity
+package com.range.animeizle.user.domain.enums
 
 import org.springframework.security.core.GrantedAuthority
 

@@ -21,7 +21,7 @@ class RefreshTokenServiceImpl(
 
         accessTokenRepository.deleteByUserIdAndDevice(userId, deviceName)
 
-        val token = RefreshToken.Companion.createForUser(userId, deviceName)
+        val token = RefreshToken.createForUser(userId, deviceName)
         accessTokenRepository.save(token)
 
         return token.id
@@ -51,7 +51,7 @@ class RefreshTokenServiceImpl(
 
         accessTokenRepository.delete(oldToken)
 
-        val newToken = RefreshToken.Companion.createForUser(oldToken.userId, oldToken.device)
+        val newToken = RefreshToken.createForUser(oldToken.userId, oldToken.device)
         accessTokenRepository.save(newToken)
 
         return newToken.id

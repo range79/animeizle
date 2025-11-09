@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.InjectMocks
 import org.mockito.Mock
-import org.mockito.Mockito
 import org.mockito.Mockito.*
 import org.mockito.junit.jupiter.MockitoExtension
 import java.util.*
@@ -27,10 +26,9 @@ class RefreshTokenServiceImplTest {
 
     private val userId = UUID.randomUUID()
 
-    // 🔹 Kotlin üçün təhlükəsiz matcher helper
     @Suppress("UNCHECKED_CAST")
     private fun <T> anySafe(): T {
-        Mockito.any<T>()
+        any<T>()
         return null as T
     }
 
@@ -51,7 +49,6 @@ class RefreshTokenServiceImplTest {
 
         val tokenId = refreshTokenServiceImpl.generateToken(userId)
 
-        // assert
         verify(refreshTokenRepository).deleteByUserIdAndDevice(userId, "TestDevice")
         verify(refreshTokenRepository).save(anySafe())
         assertNotNull(tokenId)

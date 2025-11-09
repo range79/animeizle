@@ -1,6 +1,6 @@
 package com.range.animeizle.common.security
 
-import com.range.animeizle.user.domain.entity.Role
+import com.range.animeizle.user.domain.enums.Role
 import com.range.animeizle.user.domain.entity.User
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.SimpleGrantedAuthority

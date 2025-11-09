@@ -41,6 +41,8 @@ dependencies {
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.13.0")
     // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-jackson
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.13.0")
+
+    implementation("software.amazon.awssdk:s3:2.33.12")
 }
 
 kotlin {

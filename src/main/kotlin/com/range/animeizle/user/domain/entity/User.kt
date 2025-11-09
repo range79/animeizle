@@ -1,5 +1,6 @@
 package com.range.animeizle.user.domain.entity
 
+import com.range.animeizle.user.domain.enums.Role
 import com.range.animeizle.user.dto.request.RegisterRequest
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue

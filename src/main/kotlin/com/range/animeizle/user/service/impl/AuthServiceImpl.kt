@@ -104,7 +104,7 @@ class AuthServiceImpl(
 
     fun authResponseBuilder(user: User): AuthResponse {
         val accessToken = jwtUtil.generateToken(user.id, user.role)
-        val refreshToken = refreshTokenService.generateToken(user.id!!)
+        val refreshToken = refreshTokenService.generateToken(user.id)
         return AuthResponse(refreshToken = refreshToken, accessToken = accessToken)
     }
 }

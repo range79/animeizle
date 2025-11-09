@@ -1,7 +1,7 @@
 package com.range.animeizle.common.util
 
 import com.range.animeizle.common.security.CustomUserDetails
-import com.range.animeizle.user.domain.entity.Role
+import com.range.animeizle.user.domain.enums.Role
 import io.jsonwebtoken.Claims
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.security.Keys
