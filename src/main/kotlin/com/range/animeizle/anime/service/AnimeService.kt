@@ -1,0 +1,22 @@
+package com.range.animeizle.anime.service
+
+import com.range.animeizle.anime.domain.entity.Anime
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
+import org.springframework.web.multipart.MultipartFile
+import java.util.*
+
+interface AnimeService {
+
+    fun getAll(pageable: Pageable): Page<Anime>
+
+    fun getById(id: UUID): Anime?
+
+    fun searchByTitle(title: String, pageable: Pageable): Page<Anime>
+
+    fun create(anime: Anime, image: MultipartFile?): Anime
+
+    fun update(id: UUID, updated: Anime, image: MultipartFile?): Anime?
+
+    fun delete(id: UUID): Boolean
+}
