@@ -2,11 +2,14 @@ package com.range.animeizle.anime.service.impl
 
 import com.range.animeizle.anime.domain.entity.Anime
 import com.range.animeizle.anime.domain.repository.AnimeRepository
+import com.range.animeizle.anime.dto.AnimeUpdateRequest
+import com.range.animeizle.anime.exception.AnimeNotFoundException
 import com.range.animeizle.anime.service.AnimeService
 import com.range.animeizle.common.service.AmazonService
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.multipart.MultipartFile
 import java.util.*
 
@@ -17,16 +20,19 @@ class AnimeServiceImpl(
 ) : AnimeService {
 
     private val bucketName = "anime-photos"
-
+    @Transactional(readOnly = true)
     override fun getAll(pageable: Pageable): Page<Anime> =
         animeRepository.findAll(pageable)
-
-    override fun getById(id: UUID): Anime? =
-        animeRepository.findById(id).orElse(null)
-
+    @Transactional(readOnly = true)
+    override fun getById(id: UUID): Anime =
+        animeRepository.findById(id).orElseThrow {
+            AnimeNotFoundException("Anime Not Found")
+        }
+    @Transactional(readOnly = true)
     override fun searchByTitle(title: String, pageable: Pageable): Page<Anime> =
         animeRepository.findByTitleContainingIgnoreCase(title, pageable)
 
+    @Transactional
     override fun create(anime: Anime, image: MultipartFile?): Anime {
         if (image != null && !image.isEmpty) {
             val fileName = "${UUID.randomUUID()}-${image.originalFilename}"
@@ -35,8 +41,11 @@ class AnimeServiceImpl(
         return animeRepository.save(anime)
     }
 
-    override fun update(id: UUID, updated: Anime, image: MultipartFile?): Anime? {
-        val existing = animeRepository.findById(id).orElse(null) ?: return null
+    @Transactional
+    override fun update(id: UUID, updated: AnimeUpdateRequest, image: MultipartFile?): Anime {
+        val existing = animeRepository.findById(id).orElseThrow {
+            AnimeNotFoundException("Anime Not Found")
+        }
 
         existing.title = updated.title
         existing.description = updated.description
@@ -49,14 +58,15 @@ class AnimeServiceImpl(
         return animeRepository.save(existing)
     }
 
-    override fun delete(id: UUID): Boolean {
-        val anime = animeRepository.findById(id).orElse(null) ?: return false
+    @Transactional
+    override fun delete(id: UUID) {
+        val anime = animeRepository.findById(id).orElse(null) ?: throw AnimeNotFoundException("Anime not found")
 
         if (anime.imageUrl.isNotEmpty()) {
             val filename = anime.imageUrl.substringAfterLast("/")
             amazonService.deletePhoto(bucketName, filename)
         }
         animeRepository.deleteById(id)
-        return true
+
     }
 }
