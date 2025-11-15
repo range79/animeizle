@@ -15,21 +15,24 @@ class UserServiceImpl(
     private val securityContextUtil: SecurityContextUtil
 ) :
     UserService {
-    override fun me() : UserResponse{
+    override fun me(): UserResponse {
 
         val id = securityContextUtil.getCurrentUserId()
         val user = userRepository.findById(id).orElseThrow { UserNotFoundException("User Not found") }
         return user.toUSerResponse()
     }
 
-    override fun getUser(id: UUID) : UserResponse{
+    override fun getUser(id: UUID): UserResponse {
         return userRepository.findById(id)
             .orElseThrow { UserNotFoundException("User not found") }
             .toUSerResponse()
     }
 
     override fun delete() {
-        TODO("Not yet implemented")
+        val id = securityContextUtil.getCurrentUserId()
+        val user = userRepository.findById(id).orElseThrow { UserNotFoundException("User not found") }
+        user.deleted = true
+        userRepository.save(user)
     }
 
     private fun User.toUSerResponse(): UserResponse {

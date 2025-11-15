@@ -7,10 +7,12 @@ import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.Table
+import org.hibernate.annotations.SQLRestriction
 import java.util.UUID
 
-@Table(name = "user")
+@Table(name = "users")
 @Entity
+@SQLRestriction("deleted = false")
 data class User (
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -20,9 +22,10 @@ data class User (
     var email: String,
     var twoFactorEnabled: Boolean = false,
     var role: Role? = Role.USER,
+    var deleted: Boolean = false,
 ){
     companion object{
-        fun generateUser(registerRequest: RegisterRequest,password: String): User {
+        fun generateUser(registerRequest: RegisterRequest, hashedPassword: String): User {
             return User(
                 username = registerRequest.username,
                 password = registerRequest.password,

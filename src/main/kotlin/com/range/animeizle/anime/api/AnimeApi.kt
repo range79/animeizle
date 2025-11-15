@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*
 import org.springframework.web.multipart.MultipartFile
 import java.util.*
 
-@RequestMapping("/api/anime")
+@RequestMapping("\${api.prefix}/anime")
 interface AnimeApi {
 
     @GetMapping
@@ -20,13 +20,13 @@ interface AnimeApi {
     @GetMapping("/search")
     fun search(@RequestParam title: String, pageable: Pageable): Page<Anime>
 
-    @PostMapping(consumes = [ "multipart/form-data" ])
+    @PostMapping(consumes = ["multipart/form-data"])
     fun createAnime(
         @RequestPart("anime") anime: Anime,
         @RequestPart("image", required = false) image: MultipartFile?
     ): Anime
 
-    @PutMapping("/{id}", consumes = [ "multipart/form-data" ])
+    @PutMapping("/{id}", consumes = ["multipart/form-data"])
     fun updateAnime(
         @PathVariable id: UUID,
         @RequestPart("anime") anime: AnimeUpdateRequest,

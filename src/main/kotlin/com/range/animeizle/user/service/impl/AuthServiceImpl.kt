@@ -14,6 +14,7 @@ import com.range.animeizle.user.dto.request.RegisterRequest
 import com.range.animeizle.user.dto.request.ResetPasswordRequest
 import com.range.animeizle.user.dto.request.TwoFactoryAuthRequest
 import com.range.animeizle.user.service.AuthService
+import com.range.animeizle.user.service.UserAccountService
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -26,7 +27,8 @@ class AuthServiceImpl(
     private val refreshTokenService: RefreshTokenService,
     private val twoFactoryAuthTokenService: TwoFactoryAuthTokenService,
     private val passwordResetService: PasswordResetService,
-    private val emailService: EmailService
+    private val emailService: EmailService,
+    private val userAccountService: UserAccountService
 
 ) : AuthService {
     @Transactional
@@ -45,30 +47,28 @@ class AuthServiceImpl(
     }
 
     override fun login(loginRequest: LoginRequest): AuthResponse {
-        var user: User
-        if (isEmail(loginRequest.usernameOrEmail)) {
-            user = userRepository.findByEmail(loginRequest.usernameOrEmail).orElseThrow {
-                AuthenticationException("Username or password invalid!")
-            }
-        } else {
-            user = userRepository.findByUsername(loginRequest.usernameOrEmail)
-                .orElseThrow { AuthenticationException("Username or password invalid!") }
-        }
+        val identifier = loginRequest.usernameOrEmail
+
+        val user = findActiveUser(identifier) ?: handleDeletedUser(identifier)
+
         if (!passwordEncoder.matches(loginRequest.password, user.password)) {
             throw AuthenticationException("Username or password invalid!")
         }
+
         if (user.twoFactorEnabled) {
-           val token = twoFactoryAuthTokenService.generateToken(email = user.email)
-            emailService.sendTwoFactorCode(user.email, token)
-            throw TwoFactoryAuthException("Two Factor Enabled! Check Your Email!")
+            throw initiateTwoFactorAuth(user)
         }
 
         return authResponseBuilder(user)
     }
 
+
+
+
+
     override fun forgotPassword(email: String) {
         val token = passwordResetService.generateToken(email)
-        emailService.sendPasswordResetEmail(email,token)
+        emailService.sendPasswordResetEmail(email, token)
     }
 
     @Transactional
@@ -82,11 +82,11 @@ class AuthServiceImpl(
         return authResponseBuilder(user)
     }
 
-    override fun twoFactorAuth(twoFactoryAuthRequest: TwoFactoryAuthRequest) : AuthResponse{
-        if ( !twoFactoryAuthTokenService.validateToken(twoFactoryAuthRequest.email,twoFactoryAuthRequest.code)){
+    override fun twoFactorAuth(twoFactoryAuthRequest: TwoFactoryAuthRequest): AuthResponse {
+        if (!twoFactoryAuthTokenService.validateToken(twoFactoryAuthRequest.email, twoFactoryAuthRequest.code)) {
             throw TwoFactoryAuthException("Two Factor Authentication Failed!")
         }
-        val user = userRepository.findByEmail(twoFactoryAuthRequest.email).orElseThrow{
+        val user = userRepository.findByEmail(twoFactoryAuthRequest.email).orElseThrow {
             AuthenticationException("User doesn't exist!")
         }
         return authResponseBuilder(user)
@@ -95,6 +95,7 @@ class AuthServiceImpl(
     private fun isEmail(usernameOrEmail: String): Boolean {
         return usernameOrEmail.contains("@") && usernameOrEmail.contains(".")
     }
+
     private fun isValidUsername(username: String): Boolean {
         if (username.contains("@") || username.contains(".")) {
             throw InvalidUsernameException("Username cannot contain '@' or '.'")
@@ -106,5 +107,31 @@ class AuthServiceImpl(
         val accessToken = jwtUtil.generateToken(user.id, user.role)
         val refreshToken = refreshTokenService.generateToken(user.id)
         return AuthResponse(refreshToken = refreshToken, accessToken = accessToken)
+    }
+    private fun findActiveUser(identifier: String): User? {
+        return if (isEmail(identifier)) {
+            userRepository.findByEmail(identifier).orElse(null)
+        } else {
+            userRepository.findByUsername(identifier).orElse(null)
+        }
+    }
+
+    private fun handleDeletedUser(identifier: String): User {
+        val deletedUser = if (isEmail(identifier)) {
+            userRepository.findDeletedUserByEmail(identifier)
+        } else {
+            userRepository.findDeletedUserByUsername(identifier)
+        }.orElseThrow {
+            AuthenticationException("Username or password invalid!")
+        }
+
+        userAccountService.sendActivationToUser(deletedUser.email)
+
+        throw AccountDeletedException("Account is deactivated! An activation link has been sent to your email.")
+    }
+    private fun initiateTwoFactorAuth(user: User): TwoFactoryAuthException {
+        val token = twoFactoryAuthTokenService.generateToken(email = user.email)
+        emailService.sendTwoFactorCode(user.email, token)
+        return TwoFactoryAuthException("Two Factor Enabled! Check Your Email!")
     }
 }
