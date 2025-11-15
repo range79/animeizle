@@ -42,7 +42,7 @@ class AnimeController(
         anime: AnimeUpdateRequest,
         image: MultipartFile?
     ): Anime {
-return animeService.update(id,anime)
+return animeService.update(id,anime,image)
     }
 
     override fun deleteAnime(id: UUID) {
