@@ -6,4 +6,5 @@ import java.util.*
 
 interface RefreshTokenRepository: CrudRepository<RefreshToken, String> {
     fun deleteByUserIdAndDevice(userId: UUID, device: String)
+    fun deleteAllByUserId(userId: UUID)
 }

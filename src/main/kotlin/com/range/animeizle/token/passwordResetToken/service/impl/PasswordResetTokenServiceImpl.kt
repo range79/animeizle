@@ -2,14 +2,14 @@ package com.range.animeizle.token.passwordResetToken.service.impl
 
 import com.range.animeizle.token.passwordResetToken.domain.entity.PasswordResetToken
 import com.range.animeizle.token.passwordResetToken.domain.repository.PasswordResetTokenRepository
-import com.range.animeizle.token.passwordResetToken.exceptıon.PasswordTokenIsNotValidException
-import com.range.animeizle.token.passwordResetToken.service.PasswordResetService
+import com.range.animeizle.token.passwordResetToken.exception.PasswordTokenIsNotValidException
+import com.range.animeizle.token.passwordResetToken.service.PasswordResetTokenService
 import org.springframework.stereotype.Service
 
 @Service
-class PasswordResetServiceImpl(
+class PasswordResetTokenServiceImpl(
     private val passwordResetTokenRepository: PasswordResetTokenRepository
-) : PasswordResetService {
+) : PasswordResetTokenService {
 
     override fun generateToken(email: String): String {
         val normalizedEmail = email.trim().lowercase()

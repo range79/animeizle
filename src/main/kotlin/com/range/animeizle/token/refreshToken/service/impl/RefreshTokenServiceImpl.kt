@@ -37,6 +37,10 @@ class RefreshTokenServiceImpl(
         accessTokenRepository.deleteByUserIdAndDevice(userId, device)
     }
 
+    override fun deletedAllUserTokens(userId: UUID) {
+        accessTokenRepository.deleteAllByUserId(userId)
+    }
+
     override fun rotateToken(token: String): String {
         val oldToken = accessTokenRepository.findById(token)
             .orElseThrow { IllegalArgumentException("Refresh token not found") }

@@ -2,7 +2,7 @@ package com.range.animeizle.token.passwordResetToken.service.impl
 
 import com.range.animeizle.token.passwordResetToken.domain.entity.PasswordResetToken
 import com.range.animeizle.token.passwordResetToken.domain.repository.PasswordResetTokenRepository
-import com.range.animeizle.token.passwordResetToken.exceptıon.PasswordTokenIsNotValidException
+import com.range.animeizle.token.passwordResetToken.exception.PasswordTokenIsNotValidException
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertNotNull
 import org.junit.jupiter.api.assertThrows
@@ -21,7 +21,7 @@ class PasswordResetServiceImplTest {
     private lateinit var passwordResetTokenRepository: PasswordResetTokenRepository
 
     @InjectMocks
-    private lateinit var passwordResetServiceImpl: PasswordResetServiceImpl
+    private lateinit var passwordResetTokenServiceImpl: PasswordResetTokenServiceImpl
 
     private val email = "test@gmail.com"
 
@@ -31,7 +31,7 @@ class PasswordResetServiceImplTest {
         val token = PasswordResetToken.createForUser(email)
         `when`(passwordResetTokenRepository.findById(token.id)).thenReturn(Optional.of(token))
 
-        val result = passwordResetServiceImpl.getEmailFromToken(token.id)
+        val result = passwordResetTokenServiceImpl.getEmailFromToken(token.id)
 
         assertEquals(email, result)
         verify(passwordResetTokenRepository, times(1)).findById(token.id)
@@ -42,7 +42,7 @@ class PasswordResetServiceImplTest {
         `when`(passwordResetTokenRepository.findById("nonexistent")).thenReturn(Optional.empty())
 
         assertThrows<PasswordTokenIsNotValidException> {
-            passwordResetServiceImpl.getEmailFromToken("nonexistent")
+            passwordResetTokenServiceImpl.getEmailFromToken("nonexistent")
         }
     }
 
@@ -51,7 +51,7 @@ class PasswordResetServiceImplTest {
     fun `generateToken should delete old token if exists`() {
 
         `when`(passwordResetTokenRepository.existsByEmail(email)).thenReturn(true)
-        val tokenId = passwordResetServiceImpl.generateToken(email)
+        val tokenId = passwordResetTokenServiceImpl.generateToken(email)
         verify(passwordResetTokenRepository, times(1)).existsByEmail(email)
         verify(passwordResetTokenRepository, times(1)).deleteByEmail(email)
         verify(passwordResetTokenRepository, times(1)).save(any(PasswordResetToken::class.java))

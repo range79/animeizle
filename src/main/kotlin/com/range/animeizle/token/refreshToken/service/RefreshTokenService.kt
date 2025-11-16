@@ -7,4 +7,5 @@ interface RefreshTokenService {
     fun deleteToken(token: String)
     fun rotateToken(token: String): String
     fun deleteTokenByUserIdAndDeviceId(userId: UUID, device: String)
+    fun deletedAllUserTokens(userId: UUID)
 }

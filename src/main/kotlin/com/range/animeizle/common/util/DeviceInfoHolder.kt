@@ -1,5 +1,7 @@
 package com.range.animeizle.common.util
 
+import com.range.animeizle.common.exception.DeviceNotFoundException
+
 object DeviceInfoHolder {
     private val context = ThreadLocal<RequestContext?>()
 
@@ -7,8 +9,8 @@ object DeviceInfoHolder {
         context.set(ctx)
     }
 
-    fun getContext(): RequestContext? {
-        return context.get()
+    fun getContext(): RequestContext {
+        return context.get()?: throw DeviceNotFoundException("Device information not found in context")
     }
 
     fun clear() {
@@ -17,4 +19,4 @@ object DeviceInfoHolder {
 }
 
 @JvmRecord
-data class RequestContext(val ip: String?, val deviceName: String?)
+data class RequestContext(val ip: String?, val deviceName: String)

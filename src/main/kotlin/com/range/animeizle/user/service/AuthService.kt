@@ -9,7 +9,5 @@ import com.range.animeizle.user.dto.request.TwoFactoryAuthRequest
 interface AuthService {
     fun register(registerRequest: RegisterRequest): AuthResponse
     fun login(loginRequest: LoginRequest): AuthResponse
-    fun forgotPassword(email: String)
-    fun resetPassword(resetPasswordRequest: ResetPasswordRequest): AuthResponse
-    fun twoFactorAuth(twoFactoryAuthRequest: TwoFactoryAuthRequest): AuthResponse
+    fun logoutFromDevice()
 }

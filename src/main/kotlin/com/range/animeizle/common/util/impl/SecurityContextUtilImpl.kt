@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component
 import java.util.UUID
 
 @Component
-class SecurityContextUtilUtilImpl: SecurityContextUtil {
+class SecurityContextUtilImpl: SecurityContextUtil {
 
    override fun getCurrentUserId(): UUID {
         val principal = SecurityContextHolder.getContext().authentication?.principal

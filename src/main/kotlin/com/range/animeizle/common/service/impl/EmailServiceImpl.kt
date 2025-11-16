@@ -26,4 +26,8 @@ class EmailServiceImpl(
         message.setText("Your two-factor authentication code is: $code")
         mailSender.send(message)
     }
+
+    override fun sendAccountBackEmail(email: String, token: String) {
+        TODO("Not yet implemented")
+    }
 }
