@@ -1,1 +1,1 @@
-rootProject.name = "animeWatch"
+rootProject.name = "rangeWatch"
