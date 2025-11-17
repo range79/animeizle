@@ -21,7 +21,7 @@ data class User (
     var password: String,
     var email: String,
     var twoFactorEnabled: Boolean = false,
-    var role: Role? = Role.USER,
+    var role: Role = Role.USER,
     var deleted: Boolean = false,
 ){
     companion object{

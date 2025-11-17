@@ -5,5 +5,5 @@ import java.util.UUID
 
 data class TokenFactoryRequest (
     val userId: UUID,
-    val role: Role
+    val role: Role?
 )

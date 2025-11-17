@@ -32,21 +32,32 @@ class UserServiceImpl(
     }
 
 
-    override fun delete() {
+    override fun deleteMe() {
         val id = securityContextUtil.getCurrentUserId()
         val user = userRepository.findById(id).orElseThrow { UserNotFoundException("User not found") }
         user.deleted = true
         userRepository.save(user)
     }
 
-    override fun update(id: UUID, updateUserRequest: UpdateUserRequest) {
+    override fun updateUser(id: UUID, updateUserRequest: UpdateUserRequest) {
       val user = userRepository.findById(id).orElseThrow { UserNotFoundException("User not found") }
         user.username = updateUserRequest.username
         user.email = updateUserRequest.email
-        user.password = passwordEncoder.encode(updateUserRequest.password)
         user.twoFactorEnabled = updateUserRequest.twoFactorEnabled
         userRepository.save(user)
 
+    }
+
+    override fun getUserWithEmail(email: String): User {
+
+        return userRepository.findByEmail(email)
+            .orElseThrow { UserNotFoundException("User not found") }
+    }
+
+    override fun updateUserPassword(id: UUID, newPassword: String) {
+        val user = userRepository.findById(id).orElseThrow { UserNotFoundException("User not found") }
+        user.password = passwordEncoder.encode(newPassword)
+        userRepository.save(user)
     }
 
 

@@ -2,6 +2,7 @@ package com.range.animeWatch.user.service.impl
 
 import com.range.animeWatch.common.exception.AuthenticationException
 import com.range.animeWatch.common.exception.TwoFactoryAuthException
+import com.range.animeWatch.token.tokenfactory.dto.TokenFactoryRequest
 import com.range.animeWatch.token.tokenfactory.service.TokenFactoryService
 import com.range.animeWatch.token.twoFactoryAuth.service.TwoFactoryAuthTokenService
 import com.range.animeWatch.user.domain.repository.UserRepository
@@ -24,7 +25,8 @@ class TwoFactoryAuthServiceImpl(
         val user = userRepository.findByEmail(twoFactoryAuthRequest.email).orElseThrow {
             AuthenticationException("User doesn't exist!")
         }
-        return tokenFactoryService.createTokens(user)
+        val token = TokenFactoryRequest(user.id, user.role)
+        return tokenFactoryService.createTokens(token)
     }
 
 }

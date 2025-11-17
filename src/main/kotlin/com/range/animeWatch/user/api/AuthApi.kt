@@ -16,14 +16,14 @@ interface AuthApi {
 
     @PostMapping("/login")
     fun login(@RequestBody loginRequest: LoginRequest): AuthResponse
-
-    @PostMapping("/forgot-password")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    fun forgotPassword(@RequestParam("email") email: String)
-
-    @PostMapping("/reset-password")
-    fun resetPassword(@RequestBody resetPasswordRequest: ResetPasswordRequest): AuthResponse
-
-    @PostMapping("/two-factor-auth")
-    fun twoFactorAuth(@RequestBody twoFactorAuthRequest: TwoFactoryAuthRequest): AuthResponse
+//
+//    @PostMapping("/forgot-password")
+//    @ResponseStatus(HttpStatus.NO_CONTENT)
+//    fun forgotPassword(@RequestParam("email") email: String)
+//
+//    @PostMapping("/reset-password")
+//    fun resetPassword(@RequestBody resetPasswordRequest: ResetPasswordRequest): AuthResponse
+//
+//    @PostMapping("/two-factor-auth")
+//    fun twoFactorAuth(@RequestBody twoFactorAuthRequest: TwoFactoryAuthRequest): AuthResponse
 }

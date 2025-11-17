@@ -3,6 +3,7 @@ package com.range.animeWatch.user.service.impl
 import com.range.animeWatch.common.exception.AccountDeletedException
 import com.range.animeWatch.common.exception.AuthenticationException
 import com.range.animeWatch.user.domain.entity.User
+import com.range.animeWatch.user.domain.enums.Role
 import com.range.animeWatch.user.domain.repository.UserRepository
 import com.range.animeWatch.user.dto.request.LoginRequest
 import com.range.animeWatch.user.dto.response.LoginResponse
@@ -24,7 +25,7 @@ class AuthLoginServiceImpl(
         }
         return LoginResponse(
             userId = user.id,
-            username = user.username,
+            role= user.role?: Role.USER,
             email = user.email,
             twoFactorRequired = user.twoFactorEnabled
         )

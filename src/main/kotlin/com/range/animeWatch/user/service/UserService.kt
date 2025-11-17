@@ -8,7 +8,8 @@ import java.util.UUID
 interface UserService {
     fun me(): UserResponse;
     fun getUser(id: UUID): User
-    fun delete()
-   fun update(id: UUID, updateUserRequest: UpdateUserRequest)
-   fun updateWithEmail(id: UUID, updateUserRequest: UpdateUserRequest)
+    fun deleteMe()
+    fun updateUser(id: UUID, updateUserRequest: UpdateUserRequest)
+    fun getUserWithEmail(email: String): User
+    fun updateUserPassword(id: UUID, newPassword: String)
 }
