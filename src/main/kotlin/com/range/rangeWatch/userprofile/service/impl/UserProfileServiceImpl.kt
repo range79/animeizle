@@ -1,18 +1,18 @@
-package com.range.rangeWatch.user.service.impl
+package com.range.rangeWatch.userprofile.service.impl
 
 import com.range.rangeWatch.common.exception.UserNotFoundException
 import com.range.rangeWatch.common.exception.UserProfileNotFoundException
 import com.range.rangeWatch.common.service.AmazonService
 import com.range.rangeWatch.common.util.SecurityContextUtil
 import com.range.rangeWatch.user.domain.entity.User
-import com.range.rangeWatch.user.domain.entity.UserProfile
-import com.range.rangeWatch.user.domain.repository.UserProfileRepository
-import com.range.rangeWatch.user.dto.request.UserProfileRequest
-import com.range.rangeWatch.user.dto.response.UserProfileResponse
-import com.range.rangeWatch.user.service.UserProfileService
+import com.range.rangeWatch.userprofile.domain.entity.UserProfile
+import com.range.rangeWatch.userprofile.domain.repository.UserProfileRepository
+import com.range.rangeWatch.userprofile.dto.request.UserProfileRequest
+import com.range.rangeWatch.userprofile.dto.response.UserProfileResponse
+import com.range.rangeWatch.userprofile.service.UserProfileService
 import org.springframework.stereotype.Service
 import org.springframework.web.multipart.MultipartFile
-import java.util.*
+import java.util.UUID
 
 @Service
 class UserProfileServiceImpl(
@@ -22,7 +22,7 @@ class UserProfileServiceImpl(
 ) : UserProfileService {
 
     override fun create(user: User, request: UserProfileRequest) {
-        val userProfile = UserProfile.create(user, request)
+        val userProfile = UserProfile.Companion.create(user, request)
         userProfileRepository.save(userProfile)
     }
 
@@ -37,14 +37,14 @@ class UserProfileServiceImpl(
         val profile = userProfileRepository.findByUserUsername(username)
             .orElseThrow { UserProfileNotFoundException("User profile not found for username: $username") }
 
-        return UserProfileResponse.fromEntity(profile)
+        return UserProfileResponse.Companion.fromEntity(profile)
     }
 
     override fun me(): UserProfileResponse {
         val userId = securityContextUtil.getCurrentUserId()
         val profile = userProfileRepository.findById(userId)
             .orElseThrow { UserProfileNotFoundException("User profile not found for current user") }
-        return UserProfileResponse.fromEntity(profile)
+        return UserProfileResponse.Companion.fromEntity(profile)
     }
 
     override fun addProfilePicture(multipartFile: MultipartFile) {

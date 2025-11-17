@@ -1,9 +1,9 @@
-package com.range.rangeWatch.user.dto.response
+package com.range.rangeWatch.userprofile.dto.response
 
-import com.range.rangeWatch.user.domain.entity.UserProfile
 import com.range.rangeWatch.user.domain.enums.Gender
+import com.range.rangeWatch.userprofile.domain.entity.UserProfile
 import java.time.LocalDate
-import java.util.*
+import java.util.UUID
 
 data class UserProfileResponse(
     var id: UUID?,

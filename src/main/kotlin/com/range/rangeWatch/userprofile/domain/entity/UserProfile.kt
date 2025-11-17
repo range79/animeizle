@@ -1,7 +1,8 @@
-package com.range.rangeWatch.user.domain.entity
+package com.range.rangeWatch.userprofile.domain.entity
 
+import com.range.rangeWatch.user.domain.entity.User
 import com.range.rangeWatch.user.domain.enums.Gender
-import com.range.rangeWatch.user.dto.request.UserProfileRequest
+import com.range.rangeWatch.userprofile.dto.request.UserProfileRequest
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType
 import jakarta.persistence.Id
@@ -11,6 +12,7 @@ import jakarta.persistence.OneToOne
 import jakarta.persistence.Table
 import java.time.LocalDate
 import java.util.UUID
+
 @Table(name = "user_profile")
 @Entity
 data class UserProfile(
@@ -29,7 +31,7 @@ data class UserProfile(
 ){
     companion object
     {
-        fun create(user: User,profileRequest: UserProfileRequest): UserProfile{
+        fun create(user: User, profileRequest: UserProfileRequest): UserProfile{
             return UserProfile(
                 user.id,
                 bio = profileRequest.bio,

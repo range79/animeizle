@@ -1,4 +1,4 @@
-package com.range.rangeWatch.user.dto.request
+package com.range.rangeWatch.userprofile.dto.request
 
 import com.range.rangeWatch.user.domain.enums.Gender
 import jakarta.validation.constraints.NotEmpty
