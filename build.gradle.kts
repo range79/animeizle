@@ -8,7 +8,7 @@ plugins {
 
 group = "com.range"
 version = "0.0.1-SNAPSHOT"
-description = "animeIzle"
+description = "rangeWatch"
 
 java {
     toolchain {
