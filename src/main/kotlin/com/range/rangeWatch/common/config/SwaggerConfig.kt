@@ -15,7 +15,7 @@ class SwaggerConfig {
     fun customOpenAPI(): OpenAPI {
         val securitySchemeName = "bearerAuth"
         return OpenAPI()
-            .info(Info().title("Anime API").version("v1"))
+            .info(Info().title("RangeWatch API").version("v1"))
             .addSecurityItem(SecurityRequirement().addList(securitySchemeName))
             .components(
                 Components().addSecuritySchemes(

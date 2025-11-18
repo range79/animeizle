@@ -26,7 +26,7 @@ class UserCommandServiceImpl(
     }
 
     override fun updateUser(id: UUID, updateUserRequest: UpdateUserRequest) {
-      val user = userRepository.findById(id).orElseThrow { UserNotFoundException("User not found") }
+        val user = userRepository.findById(id).orElseThrow { UserNotFoundException("User not found") }
         user.username = updateUserRequest.username
         user.email = updateUserRequest.email
         user.twoFactorEnabled = updateUserRequest.twoFactorEnabled
@@ -35,10 +35,15 @@ class UserCommandServiceImpl(
     }
 
 
-
     override fun updateUserPassword(id: UUID, newPassword: String) {
         val user = userRepository.findById(id).orElseThrow { UserNotFoundException("User not found") }
         user.password = passwordEncoder.encode(newPassword)
+        userRepository.save(user)
+    }
+
+    override fun updateTwoFactor(id: UUID, enabled: Boolean) {
+        val user = userRepository.findById(id).orElseThrow { UserNotFoundException("User not found") }
+        user.twoFactorEnabled = enabled
         userRepository.save(user)
     }
 

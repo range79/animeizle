@@ -18,6 +18,10 @@ class AuthController(private val authService: AuthService) : AuthApi {
         return authService.login(loginRequest)
     }
 
+    override fun logout() {
+        return authService.logoutFromDevice()
+    }
+
 //    override fun forgotPassword(email: String) {
 //        authService.forgotPassword(email)
 //    }

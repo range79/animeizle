@@ -7,4 +7,5 @@ interface UserCommandService {
     fun deleteMe()
     fun updateUser(id: UUID, updateUserRequest: UpdateUserRequest)
     fun updateUserPassword(id: UUID, newPassword: String)
+    fun updateTwoFactor(id: UUID, enabled: Boolean)
 }

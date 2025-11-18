@@ -10,7 +10,8 @@ class UserController(
     private val userCommandService: UserCommandService
 ) : UserApi {
     override fun me(): UserResponse {
-        return userCommandService.me()
+TODO()
+    //        return userCommandService.me()
     }
 
 //    override fun getUserWithId(id: UUID): UserResponse {

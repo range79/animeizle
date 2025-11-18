@@ -24,20 +24,15 @@ class TwoFactoryAuthServiceImpl(
     private val userQueryService: UserQueryService,
 ) : TwoFactoryAuthService {
     override fun activateTwoFactory() {
-        val user = userQueryService.me()
-        user.twoFactorEnabled = true
-        val updatedUser = UpdateUserRequest(
-            username = user.username,
-            email = user.email,
-            twoFactorEnabled = true,
-        )
-        userCommandService.updateUser(user.id, updatedUser)
-
+     val user= userQueryService.me()
+        userCommandService.updateTwoFactor(user.id, true)
     }
 
     override fun deactivateTwoFactory() {
-        TODO("Not yet implemented")
+        val user= userQueryService.me()
+        userCommandService.updateTwoFactor(user.id, false)
     }
+
 
     override fun twoFactorAuth(twoFactoryAuthRequest: TwoFactoryAuthRequest): AuthResponse {
         if (!twoFactoryAuthTokenService.validateToken(twoFactoryAuthRequest.email, twoFactoryAuthRequest.code)) {
