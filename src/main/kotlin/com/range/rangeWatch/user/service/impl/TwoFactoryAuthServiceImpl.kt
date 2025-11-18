@@ -2,13 +2,11 @@ package com.range.rangeWatch.user.service.impl
 
 import com.range.rangeWatch.common.exception.AuthenticationException
 import com.range.rangeWatch.common.exception.TwoFactoryAuthException
-import com.range.rangeWatch.common.util.SecurityContextUtil
 import com.range.rangeWatch.token.tokenfactory.dto.TokenFactoryRequest
 import com.range.rangeWatch.token.tokenfactory.service.TokenFactoryService
 import com.range.rangeWatch.token.twoFactoryAuth.service.TwoFactoryAuthTokenService
 import com.range.rangeWatch.user.domain.repository.UserRepository
 import com.range.rangeWatch.user.dto.request.TwoFactoryAuthRequest
-import com.range.rangeWatch.user.dto.request.UpdateUserRequest
 import com.range.rangeWatch.user.dto.response.AuthResponse
 import com.range.rangeWatch.user.service.TwoFactoryAuthService
 import com.range.rangeWatch.user.service.UserCommandService
@@ -24,12 +22,12 @@ class TwoFactoryAuthServiceImpl(
     private val userQueryService: UserQueryService,
 ) : TwoFactoryAuthService {
     override fun activateTwoFactory() {
-     val user= userQueryService.me()
+        val user = userQueryService.me()
         userCommandService.updateTwoFactor(user.id, true)
     }
 
     override fun deactivateTwoFactory() {
-        val user= userQueryService.me()
+        val user = userQueryService.me()
         userCommandService.updateTwoFactor(user.id, false)
     }
 
