@@ -2,12 +2,14 @@ package com.range.rangeWatch.user.service.impl
 
 import com.range.rangeWatch.user.domain.repository.UserRepository
 import com.range.rangeWatch.user.service.UserAccountService
+import com.range.rangeWatch.user.service.UserQueryService
 import org.springframework.security.core.userdetails.UsernameNotFoundException
 import org.springframework.stereotype.Service
 
 @Service
 class UserAccountServiceImpl(
     private val userRepository: UserRepository,
+    private val userQueryService: UserQueryService
 ) : UserAccountService {
 
 
@@ -18,15 +20,10 @@ class UserAccountServiceImpl(
 
     }
 
-    override fun frozeAccount(email: String) {
-        TODO("Not yet implemented")
-    }
-
     override fun delete() {
-        TODO("Not yet implemented")
+        val  user =userQueryService.me()
+        user.deleted = true
+        userRepository.save(user)
     }
 
-    private fun isEmail(usernameOrEmail: String): Boolean {
-        return usernameOrEmail.contains("@") && usernameOrEmail.contains(".")
-    }
 }
