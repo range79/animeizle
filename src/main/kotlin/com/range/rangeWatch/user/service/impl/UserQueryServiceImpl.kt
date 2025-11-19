@@ -13,7 +13,6 @@ class UserQueryServiceImpl(private val securityContextUtil: SecurityContextUtil,
                            private val userRepository: UserRepository
 ) : UserQueryService {
     override fun me(): User {
-
         val id = securityContextUtil.getCurrentUserId()
         return  userRepository.findById(id).orElseThrow { UserNotFoundException("User Not found") }
 
