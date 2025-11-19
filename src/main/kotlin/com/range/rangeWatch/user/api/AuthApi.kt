@@ -13,6 +13,8 @@ interface AuthApi {
 
     @PostMapping("/login")
     fun login(@RequestBody loginRequest: LoginRequest): AuthResponse
+    @PostMapping("/logout")
+    fun logout()
 //
 //    @PostMapping("/forgot-password")
 //    @ResponseStatus(HttpStatus.NO_CONTENT)

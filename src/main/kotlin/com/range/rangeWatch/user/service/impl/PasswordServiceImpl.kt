@@ -4,6 +4,7 @@ import com.range.rangeWatch.common.service.EmailService
 import com.range.rangeWatch.token.passwordResetToken.service.PasswordResetTokenService
 import com.range.rangeWatch.token.tokenfactory.dto.TokenFactoryRequest
 import com.range.rangeWatch.token.tokenfactory.service.TokenFactoryService
+import com.range.rangeWatch.user.dto.request.ForgotPasswordRequest
 import com.range.rangeWatch.user.dto.request.ResetPasswordRequest
 import com.range.rangeWatch.user.dto.response.AuthResponse
 import com.range.rangeWatch.user.service.PasswordService
@@ -20,13 +21,13 @@ class PasswordServiceImpl(
     private val userQueryService: UserQueryService
 ) : PasswordService {
 
-    override fun forgotPassword(email: String) {
-        val token = passwordResetTokenService.generateToken(email)
-        emailService.sendPasswordResetEmail(email, token)
+    override fun forgotPassword(request: ForgotPasswordRequest) {
+        val token = passwordResetTokenService.generateToken(request.email)
+        emailService.sendPasswordResetEmail(request.email, token)
     }
 
-    override fun resetPassword(resetPasswordRequest: ResetPasswordRequest): AuthResponse {
-        val email = passwordResetTokenService.getEmailFromToken(resetPasswordRequest.token)
+    override fun resetPassword(token:String ,resetPasswordRequest: ResetPasswordRequest): AuthResponse {
+        val email = passwordResetTokenService.getEmailFromToken(token)
         val user = userQueryService.getUserWithEmail(email)
 
         userCommandService.updateUserPassword(user.id, resetPasswordRequest.password)

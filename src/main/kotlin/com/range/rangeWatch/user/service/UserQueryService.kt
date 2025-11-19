@@ -7,4 +7,5 @@ interface UserQueryService {
     fun me(): User
     fun getUser(id: UUID): User
     fun getUserWithEmail(email: String): User
+
 }

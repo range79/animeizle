@@ -17,7 +17,7 @@ interface UserProfileApi {
     @PutMapping("/update")
     fun update(@RequestBody updatedUserProfile: UserProfile)
 
-    @GetMapping("/username/{username}")
+    @GetMapping("/{username}}")
     fun findByUsername(@PathVariable username: String): UserProfileResponse
 
     @GetMapping("/me")

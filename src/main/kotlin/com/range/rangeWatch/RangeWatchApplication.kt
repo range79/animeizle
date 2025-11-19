@@ -5,8 +5,8 @@ import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServic
 import org.springframework.boot.runApplication
 
 @SpringBootApplication(exclude = [UserDetailsServiceAutoConfiguration::class])
-class AnimeWatchApplication
+class RangeWatchApplication
 
 fun main(args: Array<String>) {
-    runApplication<AnimeWatchApplication>(*args)
+    runApplication<RangeWatchApplication>(*args)
 }
