@@ -12,14 +12,7 @@ import java.util.*
 @RequestMapping("\${api.prefix}/anime")
 interface AnimeApi {
 
-    @GetMapping
-    fun getAll(pageable: Pageable): Page<Anime>
 
-    @GetMapping("/{id}")
-    fun getById(@PathVariable id: UUID): Anime
-
-    @GetMapping("/search")
-    fun search(@RequestParam title: String, pageable: Pageable): Page<Anime>
 
     @PostMapping(consumes = ["multipart/form-data"])
     fun createAnime(

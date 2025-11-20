@@ -10,11 +10,7 @@ import java.util.*
 
 interface AnimeService {
 
-    fun getAll(pageable: Pageable): Page<Anime>
 
-    fun getById(id: UUID): Anime
-
-    fun searchByTitle(title: String, pageable: Pageable): Page<Anime>
 
     fun create(anime: AnimeCreateRequest, image: MultipartFile?): Anime
 

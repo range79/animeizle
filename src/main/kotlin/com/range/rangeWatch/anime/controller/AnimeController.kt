@@ -15,20 +15,6 @@ import java.util.UUID
 class AnimeController(
     private val animeService: AnimeService
 ) : AnimeApi {
-    override fun getAll(pageable: Pageable): Page<Anime> {
-        return animeService.getAll(pageable)
-    }
-
-    override fun getById(id: UUID): Anime {
-        return animeService.getById(id)
-    }
-
-    override fun search(
-        title: String,
-        pageable: Pageable
-    ): Page<Anime> {
-        return animeService.searchByTitle(title, pageable)
-    }
 
     override fun createAnime(
         anime: AnimeCreateRequest,

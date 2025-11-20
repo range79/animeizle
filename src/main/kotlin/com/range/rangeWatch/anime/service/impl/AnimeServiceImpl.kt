@@ -23,17 +23,6 @@ class AnimeServiceImpl(
 ) : AnimeService {
 
     private val bucketName = "anime-photos"
-    @Transactional(readOnly = true)
-    override fun getAll(pageable: Pageable): Page<Anime> =
-        animeRepository.findAll(pageable)
-    @Transactional(readOnly = true)
-    override fun getById(id: UUID): Anime =
-        animeRepository.findById(id).orElseThrow {
-            AnimeNotFoundException("Anime Not Found")
-        }
-    @Transactional(readOnly = true)
-    override fun searchByTitle(title: String, pageable: Pageable): Page<Anime> =
-        animeRepository.findByTitleContainingIgnoreCase(title, pageable)
 
     @Transactional
     override fun create(animeRequest: AnimeCreateRequest, imageFile: MultipartFile?): Anime {
