@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class UserProfileQueryController (
-    private val userProfileQueryService: UserProfileQueryService
+    private val userProfileQueryService: UserProfileQueryService,
     private val userProfileMapper: UserProfileMapper
 ): UserProfileQueryApi {
     override fun findByUsername(username: String): UserProfileResponse {
