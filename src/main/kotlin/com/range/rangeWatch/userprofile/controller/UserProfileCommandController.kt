@@ -1,26 +1,18 @@
 package com.range.rangeWatch.userprofile.controller
 
-import com.range.rangeWatch.userprofile.api.UserProfileApi
+import com.range.rangeWatch.userprofile.api.UserProfileCommandApi
 import com.range.rangeWatch.userprofile.domain.entity.UserProfile
 import com.range.rangeWatch.userprofile.dto.response.UserProfileResponse
-import com.range.rangeWatch.userprofile.service.UserProfileService
+import com.range.rangeWatch.userprofile.service.UserProfileCommandService
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.multipart.MultipartFile
 
 @RestController
-class UserProfileController (
-    private val userProfileService: UserProfileService
-): UserProfileApi {
+class UserProfileCommandController (
+    private val userProfileService: UserProfileCommandService
+): UserProfileCommandApi {
     override fun update(updatedUserProfile: UserProfile) {
         return userProfileService.update(updatedUserProfile)
-    }
-
-    override fun findByUsername(username: String): UserProfileResponse {
-        return userProfileService.findByUsername(username)
-    }
-
-    override fun me(): UserProfileResponse {
-        return userProfileService.me()
     }
 
     override fun addProfilePicture(multipartFile: MultipartFile) {
@@ -30,6 +22,5 @@ class UserProfileController (
     override fun removeProfilePicture() {
         return userProfileService.removeProfilePicture()
     }
-
 
 }
