@@ -1,6 +1,6 @@
 package com.range.rangeWatch.user.service.impl
 
-import com.range.rangeWatch.common.exception.UserNotFoundException
+import com.range.rangeWatch.user.exception.UserNotFoundException
 import com.range.rangeWatch.common.util.SecurityContextUtil
 import com.range.rangeWatch.user.domain.repository.UserRepository
 import com.range.rangeWatch.user.dto.request.UpdateUserRequest

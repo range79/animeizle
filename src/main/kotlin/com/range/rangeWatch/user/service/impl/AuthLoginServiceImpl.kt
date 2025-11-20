@@ -1,7 +1,7 @@
 package com.range.rangeWatch.user.service.impl
 
-import com.range.rangeWatch.common.exception.AccountDeletedException
-import com.range.rangeWatch.common.exception.AuthenticationException
+import com.range.rangeWatch.user.exception.AccountDeletedException
+import com.range.rangeWatch.user.exception.AuthenticationException
 import com.range.rangeWatch.user.domain.entity.User
 import com.range.rangeWatch.user.domain.enums.Role
 import com.range.rangeWatch.user.domain.repository.UserRepository
@@ -25,7 +25,7 @@ class AuthLoginServiceImpl(
         }
         return LoginResponse(
             userId = user.id,
-            role= user.role?: Role.USER,
+            role= user.role,
             email = user.email,
             twoFactorRequired = user.twoFactorEnabled
         )

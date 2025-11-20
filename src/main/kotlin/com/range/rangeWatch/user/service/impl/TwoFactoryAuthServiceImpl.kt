@@ -1,7 +1,7 @@
 package com.range.rangeWatch.user.service.impl
 
-import com.range.rangeWatch.common.exception.AuthenticationException
-import com.range.rangeWatch.common.exception.TwoFactoryAuthException
+import com.range.rangeWatch.user.exception.AuthenticationException
+import com.range.rangeWatch.user.exception.TwoFactoryAuthException
 import com.range.rangeWatch.token.tokenfactory.dto.TokenFactoryRequest
 import com.range.rangeWatch.token.tokenfactory.service.TokenFactoryService
 import com.range.rangeWatch.token.twoFactoryAuth.service.TwoFactoryAuthTokenService

@@ -1,6 +1,6 @@
 package com.range.rangeWatch.common.security
 
-import com.range.rangeWatch.common.exception.UserNotFoundException
+import com.range.rangeWatch.user.exception.UserNotFoundException
 import com.range.rangeWatch.user.domain.repository.UserRepository
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.stereotype.Service

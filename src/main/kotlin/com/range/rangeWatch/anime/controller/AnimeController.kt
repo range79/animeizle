@@ -2,6 +2,7 @@ package com.range.rangeWatch.anime.controller
 
 import com.range.rangeWatch.anime.api.AnimeApi
 import com.range.rangeWatch.anime.domain.entity.Anime
+import com.range.rangeWatch.anime.dto.AnimeCreateRequest
 import com.range.rangeWatch.anime.dto.AnimeUpdateRequest
 import com.range.rangeWatch.anime.service.AnimeService
 import org.springframework.data.domain.Page
@@ -30,7 +31,7 @@ class AnimeController(
     }
 
     override fun createAnime(
-        anime: Anime,
+        anime: AnimeCreateRequest,
         image: MultipartFile?
     ): Anime {
        return animeService.create(anime, image)

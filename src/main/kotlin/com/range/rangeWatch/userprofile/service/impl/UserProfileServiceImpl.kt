@@ -1,7 +1,7 @@
 package com.range.rangeWatch.userprofile.service.impl
 
-import com.range.rangeWatch.common.exception.UserNotFoundException
-import com.range.rangeWatch.common.exception.UserProfileNotFoundException
+import com.range.rangeWatch.user.exception.UserNotFoundException
+import com.range.rangeWatch.userprofile.exception.UserProfileNotFoundException
 import com.range.rangeWatch.common.service.AmazonService
 import com.range.rangeWatch.common.util.SecurityContextUtil
 import com.range.rangeWatch.user.domain.entity.User
@@ -22,7 +22,7 @@ class UserProfileServiceImpl(
 ) : UserProfileService {
 
     override fun create(user: User, request: UserProfileRequest) {
-        val userProfile = UserProfile.Companion.create(user, request)
+        val userProfile = UserProfile.create(user, request)
         userProfileRepository.save(userProfile)
     }
 
@@ -37,14 +37,14 @@ class UserProfileServiceImpl(
         val profile = userProfileRepository.findByUserUsername(username)
             .orElseThrow { UserProfileNotFoundException("User profile not found for username: $username") }
 
-        return UserProfileResponse.Companion.fromEntity(profile)
+        return UserProfileResponse.fromEntity(profile)
     }
 
     override fun me(): UserProfileResponse {
         val userId = securityContextUtil.getCurrentUserId()
         val profile = userProfileRepository.findById(userId)
             .orElseThrow { UserProfileNotFoundException("User profile not found for current user") }
-        return UserProfileResponse.Companion.fromEntity(profile)
+        return UserProfileResponse.fromEntity(profile)
     }
 
     override fun addProfilePicture(multipartFile: MultipartFile) {

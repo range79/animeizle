@@ -1,6 +1,7 @@
 package com.range.rangeWatch.anime.api
 
 import com.range.rangeWatch.anime.domain.entity.Anime
+import com.range.rangeWatch.anime.dto.AnimeCreateRequest
 import com.range.rangeWatch.anime.dto.AnimeUpdateRequest
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
@@ -22,7 +23,7 @@ interface AnimeApi {
 
     @PostMapping(consumes = ["multipart/form-data"])
     fun createAnime(
-        @RequestPart("anime") anime: Anime,
+        @RequestPart("anime") anime: AnimeCreateRequest,
         @RequestPart("image", required = false) image: MultipartFile?
     ): Anime
 
