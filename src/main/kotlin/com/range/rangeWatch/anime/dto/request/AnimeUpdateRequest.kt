@@ -1,4 +1,4 @@
-package com.range.rangeWatch.anime.dto
+package com.range.rangeWatch.anime.dto.request
 
 data class AnimeUpdateRequest (
     var title: String,
