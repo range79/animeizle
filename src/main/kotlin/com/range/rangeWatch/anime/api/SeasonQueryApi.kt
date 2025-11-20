@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import java.util.*
 
-@RequestMapping("\${api.prefix}/season")
+@RequestMapping("\${api.prefix}/seasons/")
 interface SeasonQueryApi {
 
 @GetMapping("/{animeId}")

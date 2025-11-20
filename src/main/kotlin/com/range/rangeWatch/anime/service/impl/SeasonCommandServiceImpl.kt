@@ -3,14 +3,14 @@ package com.range.rangeWatch.anime.service.impl
 import com.range.rangeWatch.anime.domain.entity.Season
 import com.range.rangeWatch.anime.domain.repository.SeasonRepository
 import com.range.rangeWatch.anime.dto.request.SeasonRequest
-import com.range.rangeWatch.anime.service.SeasonService
+import com.range.rangeWatch.anime.service.SeasonCommandService
 import org.springframework.stereotype.Service
 import java.util.UUID
 
 @Service
-class SeasonServiceImpl(
+class SeasonCommandServiceImpl(
     private val seasonRepository: SeasonRepository,
-): SeasonService {
+): SeasonCommandService {
 
 
     override fun create(seasonRequest: SeasonRequest): Season {

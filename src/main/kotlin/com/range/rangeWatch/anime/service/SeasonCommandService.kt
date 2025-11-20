@@ -5,7 +5,7 @@ import com.range.rangeWatch.anime.dto.request.SeasonRequest
 import java.util.*
 
 
-interface SeasonService {
+interface SeasonCommandService {
     fun create(seasonRequest: SeasonRequest): Season
     fun deleteSeason(id: UUID)
     fun updateSeason(id: UUID, seasonRequest: SeasonRequest)
