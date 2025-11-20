@@ -1,4 +1,4 @@
-## RangeWatch(Just anime backend api)
+## RangeWatch (Just anime backend API)
 
 ### Features:
 
@@ -7,16 +7,19 @@
 - Anime adding
 - Season Adding
 - Episode Adding
-- bla bla im so lazy for adding more
+- bla bla I'm so lazy to add more
 
 ## How to start
-### prerequis
-### 1. **Go to src/main/resources**
 
-### 2.find **example.env** make your env like that
+### Prerequisites
 
-### 3. run with this command if u run in some other ide
+1. **Go to `src/main/resources`**
+
+2. Find **`example.env`** and make your env like that
+
+3. Run with this command if you run in some other IDE:
 ```shell
 export $(grep -v '^#' src/main/resources/.env | xargs) && ./gradlew bootRun
 ```
-#### if You're using intellij idea add env file in app started
+
+### If you're using IntelliJ IDEA, add env file in app startup
