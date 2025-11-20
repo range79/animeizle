@@ -1,6 +1,6 @@
 package com.range.rangeWatch.common.util.impl
 
-import com.range.rangeWatch.common.exception.UserNotFoundException
+import com.range.rangeWatch.user.exception.UserNotFoundException
 import com.range.rangeWatch.common.util.SecurityContextUtil
 import com.range.rangeWatch.user.domain.entity.User
 import org.springframework.security.core.context.SecurityContextHolder

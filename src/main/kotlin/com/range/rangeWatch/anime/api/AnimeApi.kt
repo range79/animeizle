@@ -1,6 +1,7 @@
 package com.range.rangeWatch.anime.api
 
 import com.range.rangeWatch.anime.domain.entity.Anime
+import com.range.rangeWatch.anime.dto.AnimeCreateRequest
 import com.range.rangeWatch.anime.dto.AnimeUpdateRequest
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
@@ -11,18 +12,11 @@ import java.util.*
 @RequestMapping("\${api.prefix}/anime")
 interface AnimeApi {
 
-    @GetMapping
-    fun getAll(pageable: Pageable): Page<Anime>
 
-    @GetMapping("/{id}")
-    fun getById(@PathVariable id: UUID): Anime
-
-    @GetMapping("/search")
-    fun search(@RequestParam title: String, pageable: Pageable): Page<Anime>
 
     @PostMapping(consumes = ["multipart/form-data"])
     fun createAnime(
-        @RequestPart("anime") anime: Anime,
+        @RequestPart("anime") anime: AnimeCreateRequest,
         @RequestPart("image", required = false) image: MultipartFile?
     ): Anime
 

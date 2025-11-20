@@ -1,8 +1,8 @@
 package com.range.rangeWatch.user.service.impl
 
-import com.range.rangeWatch.common.exception.EmailAlreadyUsedException
-import com.range.rangeWatch.common.exception.InvalidUsernameException
-import com.range.rangeWatch.common.exception.UsernameAlreadyUsedException
+import com.range.rangeWatch.user.exception.EmailAlreadyUsedException
+import com.range.rangeWatch.user.exception.InvalidUsernameException
+import com.range.rangeWatch.user.exception.UsernameAlreadyUsedException
 import com.range.rangeWatch.user.domain.entity.User
 import com.range.rangeWatch.user.domain.enums.Role
 import com.range.rangeWatch.user.domain.repository.UserRepository

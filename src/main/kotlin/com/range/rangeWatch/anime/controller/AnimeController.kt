@@ -2,6 +2,7 @@ package com.range.rangeWatch.anime.controller
 
 import com.range.rangeWatch.anime.api.AnimeApi
 import com.range.rangeWatch.anime.domain.entity.Anime
+import com.range.rangeWatch.anime.dto.AnimeCreateRequest
 import com.range.rangeWatch.anime.dto.AnimeUpdateRequest
 import com.range.rangeWatch.anime.service.AnimeService
 import org.springframework.data.domain.Page
@@ -14,23 +15,9 @@ import java.util.UUID
 class AnimeController(
     private val animeService: AnimeService
 ) : AnimeApi {
-    override fun getAll(pageable: Pageable): Page<Anime> {
-        return animeService.getAll(pageable)
-    }
-
-    override fun getById(id: UUID): Anime {
-        return animeService.getById(id)
-    }
-
-    override fun search(
-        title: String,
-        pageable: Pageable
-    ): Page<Anime> {
-        return animeService.searchByTitle(title, pageable)
-    }
 
     override fun createAnime(
-        anime: Anime,
+        anime: AnimeCreateRequest,
         image: MultipartFile?
     ): Anime {
        return animeService.create(anime, image)

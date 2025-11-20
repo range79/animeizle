@@ -3,6 +3,7 @@ package com.range.rangeWatch.userprofile.domain.entity
 import com.range.rangeWatch.user.domain.entity.User
 import com.range.rangeWatch.user.domain.enums.Gender
 import com.range.rangeWatch.userprofile.dto.request.UserProfileRequest
+import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType
 import jakarta.persistence.Id
