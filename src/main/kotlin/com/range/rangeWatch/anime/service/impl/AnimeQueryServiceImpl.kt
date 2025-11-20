@@ -2,6 +2,7 @@ package com.range.rangeWatch.anime.service.impl
 
 import com.range.rangeWatch.anime.domain.entity.Anime
 import com.range.rangeWatch.anime.domain.repository.AnimeRepository
+import com.range.rangeWatch.anime.dto.response.AnimeResponse
 import com.range.rangeWatch.anime.exception.AnimeNotFoundException
 import com.range.rangeWatch.anime.service.AnimeQueryService
 import org.springframework.data.domain.Page
@@ -14,7 +15,7 @@ class AnimeQueryServiceImpl(
     private val animeRepository: AnimeRepository,
 ): AnimeQueryService {
     @Transactional(readOnly = true)
-    override fun getAll(pageable: Pageable): Page<Anime> =
+    override fun getAll(pageable: Pageable): Page<AnimeResponse> =
         animeRepository.findAll(pageable)
     @Transactional(readOnly = true)
     override fun getById(id: UUID): Anime =

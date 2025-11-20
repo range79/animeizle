@@ -1,6 +1,5 @@
 package com.range.rangeWatch.anime.service.impl
 
-import com.range.rangeWatch.anime.domain.entity.Anime
 import com.range.rangeWatch.anime.domain.repository.AnimeRepository
 import com.range.rangeWatch.anime.dto.request.AnimeCreateRequest
 import com.range.rangeWatch.anime.dto.request.AnimeUpdateRequest
@@ -23,7 +22,7 @@ class AnimeServiceImpl(
     private val bucketName = "anime-photos"
 
     @Transactional
-    override fun create(anime: AnimeCreateRequest, image: MultipartFile?): Anime {
+    override fun create(anime: AnimeCreateRequest, image: MultipartFile?) {
         val image = image ?: throw IllegalArgumentException("For creating a new anime you must provide a image.")
         if (image.isEmpty) {
             throw IllegalArgumentException("Anime name can't be empty!.")
@@ -37,16 +36,16 @@ class AnimeServiceImpl(
         try {
             animeEntity.imageUrl = amazonService.addPhoto(bucketName, image, safeFileName)
 
-            return animeRepository.save(animeEntity)
+             animeRepository.save(animeEntity)
 
         } catch (e: Exception) {
 
-            throw RuntimeException("A problem occured creating  anime.", e)
+            throw RuntimeException("A problem occurred creating  anime.", e)
         }
     }
 
     @Transactional
-    override fun update(id: UUID, updated: AnimeUpdateRequest, image: MultipartFile?): Anime {
+    override fun update(id: UUID, updated: AnimeUpdateRequest, image: MultipartFile?) {
         val existing = animeRepository.findById(id).orElseThrow {
             AnimeNotFoundException("Anime Not Found")
         }
@@ -59,7 +58,7 @@ class AnimeServiceImpl(
             existing.imageUrl = amazonService.addPhoto(bucketName, image, fileName)
         }
 
-        return animeRepository.save(existing)
+         animeRepository.save(existing)
     }
 
     @Transactional

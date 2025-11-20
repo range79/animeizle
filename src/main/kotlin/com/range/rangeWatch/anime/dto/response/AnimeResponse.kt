@@ -7,5 +7,4 @@ data class AnimeResponse(
     val title: String,
     val description: String,
     val imageUrl: String,
-    val seasonCount: Int
 )

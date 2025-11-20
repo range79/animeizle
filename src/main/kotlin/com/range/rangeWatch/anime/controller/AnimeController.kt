@@ -17,7 +17,7 @@ class AnimeController(
     override fun createAnime(
         anime: AnimeCreateRequest,
         image: MultipartFile?
-    ): Anime {
+    ) {
        return animeService.create(anime, image)
     }
 

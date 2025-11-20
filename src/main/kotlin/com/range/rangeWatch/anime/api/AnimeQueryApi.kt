@@ -1,6 +1,7 @@
 package com.range.rangeWatch.anime.api
 
 import com.range.rangeWatch.anime.domain.entity.Anime
+import com.range.rangeWatch.anime.dto.response.AnimeResponse
 import com.range.rangeWatch.anime.exception.AnimeNotFoundException
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
@@ -13,12 +14,12 @@ import java.util.UUID
 @RequestMapping("\${api.base-path}/anime")
 interface AnimeQueryApi {
     @GetMapping
-    fun getAll(pageable: Pageable): Page<Anime>
+    fun getAll(pageable: Pageable): Page<AnimeResponse>
 
     @GetMapping("/{id}")
-    fun getById(@PathVariable id: UUID): Anime
+    fun getById(@PathVariable id: UUID): AnimeResponse
 
     @GetMapping("/search")
-    fun search(@RequestParam title: String, pageable: Pageable): Page<Anime>
+    fun search(@RequestParam title: String, pageable: Pageable): Page<AnimeResponse>
 
 }
