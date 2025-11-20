@@ -2,11 +2,9 @@ package com.range.rangeWatch.anime.controller
 
 import com.range.rangeWatch.anime.api.AnimeApi
 import com.range.rangeWatch.anime.domain.entity.Anime
-import com.range.rangeWatch.anime.dto.AnimeCreateRequest
-import com.range.rangeWatch.anime.dto.AnimeUpdateRequest
+import com.range.rangeWatch.anime.dto.request.AnimeCreateRequest
+import com.range.rangeWatch.anime.dto.request.AnimeUpdateRequest
 import com.range.rangeWatch.anime.service.AnimeService
-import org.springframework.data.domain.Page
-import org.springframework.data.domain.Pageable
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.multipart.MultipartFile
 import java.util.UUID

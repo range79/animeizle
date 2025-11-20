@@ -2,14 +2,12 @@ package com.range.rangeWatch.anime.service.impl
 
 import com.range.rangeWatch.anime.domain.entity.Anime
 import com.range.rangeWatch.anime.domain.repository.AnimeRepository
-import com.range.rangeWatch.anime.dto.AnimeCreateRequest
-import com.range.rangeWatch.anime.dto.AnimeUpdateRequest
+import com.range.rangeWatch.anime.dto.request.AnimeCreateRequest
+import com.range.rangeWatch.anime.dto.request.AnimeUpdateRequest
 import com.range.rangeWatch.anime.exception.AnimeNotFoundException
 import com.range.rangeWatch.anime.mapper.AnimeMapper
 import com.range.rangeWatch.anime.service.AnimeService
 import com.range.rangeWatch.common.service.AmazonService
-import org.springframework.data.domain.Page
-import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.multipart.MultipartFile
@@ -25,13 +23,13 @@ class AnimeServiceImpl(
     private val bucketName = "anime-photos"
 
     @Transactional
-    override fun create(animeRequest: AnimeCreateRequest, imageFile: MultipartFile?): Anime {
-        val image = imageFile ?: throw IllegalArgumentException("Anime oluşturmak için resim dosyası gereklidir.")
+    override fun create(anime: AnimeCreateRequest, image: MultipartFile?): Anime {
+        val image = image ?: throw IllegalArgumentException("For creating a new anime you must provide a image.")
         if (image.isEmpty) {
-            throw IllegalArgumentException("Yüklenen resim dosyası boş olamaz.")
+            throw IllegalArgumentException("Anime name can't be empty!.")
         }
 
-        val animeEntity = animeMapper.toAnime(animeRequest)
+        val animeEntity = animeMapper.toAnime(anime)
 
         val originalFilename = image.originalFilename ?: "default_image.jpg"
         val safeFileName = "${UUID.randomUUID()}-${originalFilename.substringAfterLast('/')}"
@@ -43,7 +41,7 @@ class AnimeServiceImpl(
 
         } catch (e: Exception) {
 
-            throw RuntimeException("Anime oluşturma veya resim yükleme başarısız oldu.", e)
+            throw RuntimeException("A problem occured creating  anime.", e)
         }
     }
 
