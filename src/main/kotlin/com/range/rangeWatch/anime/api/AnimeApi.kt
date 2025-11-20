@@ -24,7 +24,7 @@ interface AnimeApi {
         @PathVariable id: UUID,
         @RequestPart("anime") anime: AnimeUpdateRequest,
         @RequestPart("image", required = false) image: MultipartFile?
-    ): Anime
+    )
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     fun deleteAnime(@PathVariable id: UUID)

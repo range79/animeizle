@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import java.util.UUID
-@RequestMapping("\${api.base-path}/anime")
+@RequestMapping("\${api.prefix}/anime")
 interface AnimeQueryApi {
     @GetMapping
     fun getAll(pageable: Pageable): Page<AnimeResponse>
