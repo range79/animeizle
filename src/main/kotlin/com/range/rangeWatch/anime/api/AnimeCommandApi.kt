@@ -1,6 +1,5 @@
 package com.range.rangeWatch.anime.api
 
-import com.range.rangeWatch.anime.domain.entity.Anime
 import com.range.rangeWatch.anime.dto.request.AnimeCreateRequest
 import com.range.rangeWatch.anime.dto.request.AnimeUpdateRequest
 import org.springframework.http.HttpStatus
@@ -9,7 +8,7 @@ import org.springframework.web.multipart.MultipartFile
 import java.util.*
 
 @RequestMapping("\${api.prefix}/anime")
-interface AnimeApi {
+interface AnimeCommandApi {
 
 
     @ResponseStatus(HttpStatus.OK)

@@ -12,17 +12,4 @@ data class UserProfileResponse(
     var birthday: LocalDate?,
     var avatarUrl: String?,
     var bio: String?
-) {
-    companion object {
-        fun fromEntity(entity: UserProfile): UserProfileResponse {
-            return UserProfileResponse(
-                id = entity.id,
-                username = entity.user.username,
-                gender = entity.gender,
-                birthday = entity.birthDate,
-                avatarUrl = entity.avatarUrl,
-                bio = entity.bio
-            )
-        }
-    }
-}
+)

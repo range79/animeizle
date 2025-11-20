@@ -12,16 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.multipart.MultipartFile
 
-@RequestMapping("\${api.prefix}/userprofile")
-interface UserProfileApi {
+@RequestMapping("\${api.prefix}/user-profile")
+interface UserProfileCommandApi {
     @PutMapping("/update")
     fun update(@RequestBody updatedUserProfile: UserProfile)
-
-    @GetMapping("/{username}")
-    fun findByUsername(@PathVariable username: String): UserProfileResponse
-
-    @GetMapping("/me")
-    fun me(): UserProfileResponse
 
     @PostMapping("/picture")
     fun addProfilePicture(@RequestParam("file") multipartFile: MultipartFile)

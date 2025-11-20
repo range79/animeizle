@@ -5,7 +5,7 @@ import com.range.rangeWatch.anime.dto.request.AnimeCreateRequest
 import com.range.rangeWatch.anime.dto.request.AnimeUpdateRequest
 import com.range.rangeWatch.anime.exception.AnimeNotFoundException
 import com.range.rangeWatch.anime.mapper.AnimeMapper
-import com.range.rangeWatch.anime.service.AnimeService
+import com.range.rangeWatch.anime.service.AnimeCommandService
 import com.range.rangeWatch.common.service.AmazonService
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -13,11 +13,11 @@ import org.springframework.web.multipart.MultipartFile
 import java.util.*
 
 @Service
-class AnimeServiceImpl(
+class AnimeCommandServiceImpl(
     private val animeRepository: AnimeRepository,
     private val amazonService: AmazonService,
     private val animeMapper: AnimeMapper,
-) : AnimeService {
+) : AnimeCommandService {
 
     private val bucketName = "anime-photos"
 
