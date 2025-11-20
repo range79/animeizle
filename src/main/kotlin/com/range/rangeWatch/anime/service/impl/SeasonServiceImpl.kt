@@ -17,7 +17,7 @@ class SeasonServiceImpl(
         animeId: Long,
         pageable: Pageable
     ): Page<Season> {
-        return
+       TODO()
     }
 
     override fun getSeason(id: UUID): Season {
