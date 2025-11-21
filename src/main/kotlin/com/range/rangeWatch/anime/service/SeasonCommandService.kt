@@ -6,7 +6,7 @@ import java.util.*
 
 
 interface SeasonCommandService {
-    fun create(seasonRequest: SeasonRequest): Season
+    fun create(seasonRequest: SeasonRequest)
     fun deleteSeason(id: UUID)
     fun updateSeason(id: UUID, seasonRequest: SeasonRequest)
 }
