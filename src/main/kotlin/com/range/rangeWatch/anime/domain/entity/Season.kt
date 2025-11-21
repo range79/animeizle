@@ -15,7 +15,7 @@ import java.util.UUID
 data class Season(
     @Id
     var id: UUID = UUID.randomUUID(),
-
+    val episodeNumber: Int,
     var title: String = "",
     var description: String = "",
     var imageUrl: String = "",
