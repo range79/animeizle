@@ -21,9 +21,7 @@ data class EpisodeVideo(
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "episode_id")
     var episode: Episode? = null,
-
     @Enumerated(EnumType.STRING)
     var quality: VideoQuality = VideoQuality.P1080,
-
     var url: String = ""
 )

@@ -10,9 +10,10 @@ import java.util.UUID
 class SeasonMapper {
     fun toSeason(season: SeasonRequest): Season {
         return Season(
-            id = UUID.randomUUID(),
+            id= UUID.randomUUID(),
             title = season.title,
-            description = season.description
+            description = season.description,
+            seasonNumber = season.seasonNumber,
         )
     }
 
