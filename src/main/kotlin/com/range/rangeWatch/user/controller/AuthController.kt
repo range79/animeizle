@@ -22,17 +22,5 @@ class AuthController(private val authService: AuthService) : AuthApi {
         return authService.logoutFromDevice()
     }
 
-//    override fun forgotPassword(email: String) {
-//        authService.forgotPassword(email)
-//    }
-//
-//    override fun resetPassword(resetPasswordRequest: ResetPasswordRequest): AuthResponse {
-//        return authService.resetPassword(resetPasswordRequest)
-//    }
-//
-//    override fun twoFactorAuth(twoFactoryAuthRequest: TwoFactoryAuthRequest): AuthResponse {
-//        return authService.twoFactorAuth(
-//        twoFactoryAuthRequest
-//        )
-//    }
+
 }

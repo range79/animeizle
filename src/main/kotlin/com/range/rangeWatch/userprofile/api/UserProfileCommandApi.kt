@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.multipart.MultipartFile
 
-@RequestMapping("\${api.prefix}/user-profile")
+@RequestMapping("\${api.prefix}/user-profiles")
 interface UserProfileCommandApi {
     @PutMapping("/update")
     fun update(@RequestBody updatedUserProfile: UserProfile)

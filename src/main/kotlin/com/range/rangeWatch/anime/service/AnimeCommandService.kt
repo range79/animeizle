@@ -13,4 +13,5 @@ interface AnimeCommandService {
 
     fun update(id: UUID, updated: AnimeUpdateRequest, image: MultipartFile?)
     fun delete(id: UUID)
+
 }

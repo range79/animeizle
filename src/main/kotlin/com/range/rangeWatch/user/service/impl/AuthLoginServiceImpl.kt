@@ -47,7 +47,6 @@ class AuthLoginServiceImpl(
         }.orElseThrow {
             AuthenticationException("Username or password invalid!")
         }
-
         throw AccountDeletedException("Account is deactivated!.")
     }
 

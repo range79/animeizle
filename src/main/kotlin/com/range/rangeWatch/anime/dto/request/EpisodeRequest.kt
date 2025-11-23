@@ -1,16 +1,14 @@
 package com.range.rangeWatch.anime.dto.request
 
-import com.range.rangeWatch.anime.domain.entity.Season
-import jakarta.persistence.FetchType
-import jakarta.persistence.JoinColumn
-import jakarta.persistence.ManyToOne
+import com.range.rangeWatch.anime.domain.enums.EpisodeStatus
+import java.time.LocalDate
+import java.util.UUID
 
-data class EpisodeRequest(
-
-    var title: String = "",
-    var description: String = "",
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "season_id")
-    var season: Season? = null,
+data class EpisodeRequest (
+    val title: String,
+    val description: String,
+    val episodeNumber: Long,
+    val seasonId: UUID,
+    val releaseDate: LocalDate,
+    val episodeStatus: EpisodeStatus,
 )
