@@ -11,3 +11,4 @@ interface EpisodeQueryService {
     fun getEpisodeById(id: UUID): Episode
 
 }
+
