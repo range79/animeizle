@@ -3,11 +3,11 @@ package com.range.rangeWatch.userprofile.domain.entity
 import com.range.rangeWatch.user.domain.entity.User
 import com.range.rangeWatch.user.domain.enums.Gender
 import com.range.rangeWatch.userprofile.dto.request.UserProfileRequest
-import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType
 import jakarta.persistence.Id
 import jakarta.persistence.JoinColumn
+;
 import jakarta.persistence.MapsId
 import jakarta.persistence.OneToOne
 import jakarta.persistence.Table
@@ -26,13 +26,12 @@ data class UserProfile(
     var user: User,
     var bio: String?,
 
-    var gender: Gender?=null,
+    var gender: Gender? = null,
     var birthDate: LocalDate? = null,
     var avatarUrl: String?
-){
-    companion object
-    {
-        fun create(user: User, profileRequest: UserProfileRequest): UserProfile{
+) {
+    companion object {
+        fun create(user: User, profileRequest: UserProfileRequest): UserProfile {
             return UserProfile(
                 user.id,
                 bio = profileRequest.bio,
@@ -43,17 +42,11 @@ data class UserProfile(
             )
         }
 
-
-
-        fun update(userProfile: UserProfile,profileRequest: UserProfileRequest): UserProfile{
-            return UserProfile(
-                id = userProfile.id,
-                bio=profileRequest.bio,
-                gender = profileRequest.gender,
-                birthDate = profileRequest.birthDate,
-                user = userProfile.user,
-                avatarUrl = userProfile.avatarUrl
-            )
-        }
     }
+
+
 }
+
+
+
+
