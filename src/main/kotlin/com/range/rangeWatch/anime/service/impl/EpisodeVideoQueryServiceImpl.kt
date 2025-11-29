@@ -11,8 +11,7 @@ import org.springframework.stereotype.Service
 import java.util.UUID
 
 @Service
-class EpisodeVideoQueryServiceImpl(private val episodeVideoRepository: EpisodeVideoRepository) : EpisodeVideoQueryService
-{
+class EpisodeVideoQueryServiceImpl(private val episodeVideoRepository: EpisodeVideoRepository) : EpisodeVideoQueryService {
     override fun getEpisodeVideo(
         videoId: UUID,
         dubbingLanguage: DubbingLanguage,

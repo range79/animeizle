@@ -17,7 +17,7 @@ class AnimeCommandController(
         anime: AnimeCreateRequest,
         image: MultipartFile?
     ) {
-       return animeCommandService.create(anime, image)
+        return animeCommandService.create(anime, image)
     }
 
     override fun updateAnime(
@@ -25,7 +25,7 @@ class AnimeCommandController(
         anime: AnimeUpdateRequest,
         image: MultipartFile?
     ) {
-return  animeCommandService.update(id,anime,image)
+        return animeCommandService.update(id, anime, image)
     }
 
     override fun deleteAnime(id: UUID) {

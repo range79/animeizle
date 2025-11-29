@@ -14,11 +14,12 @@ import java.util.UUID
 
 @RequestMapping("\${api.prefix}/episode-videos")
 interface EpisodeVideoCommandApi {
+    @ResponseStatus(HttpStatus.OK)
     @PostMapping("/")
     fun uploadVideo(
         @RequestPart("file") file: MultipartFile,
         @RequestPart("data") episodeVideoRequest: EpisodeVideoRequest
-    ): EpisodeVideoResponse
+    )
 
     @DeleteMapping("/{videoId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
