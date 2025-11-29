@@ -7,6 +7,7 @@ import com.range.rangeWatch.common.util.SecurityContextUtil
 import com.range.rangeWatch.user.domain.entity.User
 import com.range.rangeWatch.userprofile.domain.entity.UserProfile
 import com.range.rangeWatch.userprofile.domain.repository.UserProfileRepository
+import com.range.rangeWatch.userprofile.dto.request.UpdateUserProfileRequest
 import com.range.rangeWatch.userprofile.dto.request.UserProfileRequest
 import com.range.rangeWatch.userprofile.service.UserProfileCommandService
 import org.springframework.stereotype.Service
@@ -17,7 +18,7 @@ import java.util.UUID
 class UserProfileCommandServiceImpl(
     private val userProfileRepository: UserProfileRepository,
     private val securityContextUtil: SecurityContextUtil,
-    private val awsService : AmazonService
+    private val awsService: AmazonService
 ) : UserProfileCommandService {
 
     override fun create(user: User, request: UserProfileRequest) {
@@ -25,13 +26,17 @@ class UserProfileCommandServiceImpl(
         userProfileRepository.save(userProfile)
     }
 
-    override fun update(updatedUserProfile: UserProfile) {
+    override fun update(updatedUserProfile: UpdateUserProfileRequest) {
         val userId = securityContextUtil.getCurrentUserId()
         val existingProfile = userProfileRepository.findById(userId)
             .orElseThrow { UserProfileNotFoundException("User profile not found") }
+        existingProfile.apply {
+            birthDate = updatedUserProfile.birthDate
+            gender = updatedUserProfile.gender
+            bio = updatedUserProfile.bio
+        }
         userProfileRepository.save(existingProfile)
     }
-
 
 
     override fun addProfilePicture(multipartFile: MultipartFile) {

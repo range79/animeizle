@@ -1,6 +1,7 @@
 package com.range.rangeWatch.userprofile.api
 
 import com.range.rangeWatch.userprofile.domain.entity.UserProfile
+import com.range.rangeWatch.userprofile.dto.request.UpdateUserProfileRequest
 import com.range.rangeWatch.userprofile.dto.response.UserProfileResponse
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
@@ -15,7 +16,7 @@ import org.springframework.web.multipart.MultipartFile
 @RequestMapping("\${api.prefix}/user-profiles")
 interface UserProfileCommandApi {
     @PutMapping("/update")
-    fun update(@RequestBody updatedUserProfile: UserProfile)
+    fun update(@RequestBody updatedUserProfile: UpdateUserProfileRequest)
 
     @PostMapping("/picture")
     fun addProfilePicture(@RequestParam("file") multipartFile: MultipartFile)
