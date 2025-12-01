@@ -9,8 +9,8 @@ import java.util.UUID
 class CustomUserDetails (
     val user: User
 ): UserDetails {
-    override fun getAuthorities(): Collection<GrantedAuthority?>{
-        return mutableListOf(user.role?: Role.USER)
+    override fun getAuthorities(): Collection<GrantedAuthority> {
+        return mutableListOf(user.role)
     }
 
     override fun getPassword(): String {

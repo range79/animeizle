@@ -23,7 +23,7 @@ class SecurityConfig(
             csrf { disable() }
             authorizeHttpRequests {
                 // Auth endpoints
-                authorize("$prefix/auth/**", permitAll)
+                authorize("/$prefix/auth/**", permitAll)
 
                 // Swagger
                 authorize("/v3/**", permitAll)

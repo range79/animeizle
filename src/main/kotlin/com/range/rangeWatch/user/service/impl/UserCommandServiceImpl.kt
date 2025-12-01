@@ -37,7 +37,7 @@ class UserCommandServiceImpl(
 
     override fun updateUserPassword(id: UUID, newPassword: String) {
         val user = userRepository.findById(id).orElseThrow { UserNotFoundException("User not found") }
-        user.password = passwordEncoder.encode(newPassword)
+        user.password = passwordEncoder.encode(newPassword)!!
         userRepository.save(user)
     }
 

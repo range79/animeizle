@@ -25,7 +25,7 @@ class AuthRegisterServiceImpl(
             throw UsernameAlreadyUsedException("${registerRequest.username} is already used!")
         }
         isValidUsername(registerRequest.username)
-        val password = passwordEncoder.encode(registerRequest.password)
+        val password = passwordEncoder.encode(registerRequest.password)!!
         val user = User.generateUser(registerRequest, password)
         return RegisterResponse(userId = user.id,role= Role.USER)
 
