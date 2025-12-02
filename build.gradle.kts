@@ -1,9 +1,9 @@
 plugins {
-    kotlin("jvm") version "1.9.25"
+    kotlin("jvm") version "2.2.21"
     kotlin("plugin.spring") version "2.2.21"
     id("org.springframework.boot") version "4.0.0"
     id("io.spring.dependency-management") version "1.1.7"
-    kotlin("plugin.jpa") version "1.9.25"
+    kotlin("plugin.jpa") version "2.2.21"
 }
 
 group = "com.range"
@@ -43,7 +43,7 @@ dependencies {
     // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-jackson
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.13.0")
 
-    implementation("software.amazon.awssdk:s3:2.39.5")
+    implementation("software.amazon.awssdk:s3:2.39.6")
     // https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-mediaconvert
     implementation("com.amazonaws:aws-java-sdk-mediaconvert:1.12.794")
 }
