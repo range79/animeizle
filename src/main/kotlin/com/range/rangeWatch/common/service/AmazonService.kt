@@ -1,4 +1,3 @@
 package com.range.rangeWatch.common.service
 
-class AmazonService {
-}
+interface AmazonService : PhotoService

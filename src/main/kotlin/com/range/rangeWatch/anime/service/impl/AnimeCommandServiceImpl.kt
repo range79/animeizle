@@ -6,7 +6,7 @@ import com.range.rangeWatch.anime.dto.request.AnimeUpdateRequest
 import com.range.rangeWatch.anime.exception.AnimeNotFoundException
 import com.range.rangeWatch.anime.mapper.AnimeMapper
 import com.range.rangeWatch.anime.service.AnimeCommandService
-import com.range.rangeWatch.common.service.AmazonService
+import com.range.rangeWatch.common.service.PhotoService
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.multipart.MultipartFile
@@ -15,7 +15,7 @@ import java.util.*
 @Service
 class AnimeCommandServiceImpl(
     private val animeRepository: AnimeRepository,
-    private val amazonService: AmazonService,
+    private val amazonService: PhotoService,
     private val animeMapper: AnimeMapper,
 ) : AnimeCommandService {
 

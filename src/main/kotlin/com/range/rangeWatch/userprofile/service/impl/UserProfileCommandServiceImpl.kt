@@ -2,7 +2,7 @@ package com.range.rangeWatch.userprofile.service.impl
 
 import com.range.rangeWatch.user.exception.UserNotFoundException
 import com.range.rangeWatch.userprofile.exception.UserProfileNotFoundException
-import com.range.rangeWatch.common.service.AmazonService
+import com.range.rangeWatch.common.service.PhotoService
 import com.range.rangeWatch.common.util.SecurityContextUtil
 import com.range.rangeWatch.user.domain.entity.User
 import com.range.rangeWatch.userprofile.domain.entity.UserProfile
@@ -18,7 +18,7 @@ import java.util.UUID
 class UserProfileCommandServiceImpl(
     private val userProfileRepository: UserProfileRepository,
     private val securityContextUtil: SecurityContextUtil,
-    private val awsService: AmazonService
+    private val awsService: PhotoService
 ) : UserProfileCommandService {
 
     override fun create(user: User, request: UserProfileRequest) {
