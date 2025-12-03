@@ -1,8 +1,11 @@
 package com.range.rangeWatch.common.service.impl
 
+import com.amazonaws.services.mediaconvert.AWSMediaConvertClient
 import com.range.rangeWatch.anime.domain.enums.DubbingLanguage
 import com.range.rangeWatch.anime.domain.enums.VideoQuality
+import com.range.rangeWatch.common.service.AmazonVideoService
 import org.slf4j.LoggerFactory
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import org.springframework.web.multipart.MultipartFile
 import software.amazon.awssdk.core.sync.RequestBody
@@ -10,10 +13,12 @@ import software.amazon.awssdk.services.s3.S3Client
 
 @Service
 class AmazonVideoServiceImpl (
-    private val s3Client: S3Client
-): com.range.rangeWatch.common.service.AmazonVideoService {
+    private val s3Client: S3Client,
+//    private val mediaConvertClient: AWSMediaConvertClient,
+    @Value("\${aws.mediaconvert.role}") private val mediaConvertRole: String
+): AmazonVideoService {
     private val log = LoggerFactory.getLogger(AmazonVideoServiceImpl::class.java)
-
+//Todo i need add ahh media convert to it
     override fun findVideo(
         bucketName: String,
         videoId: String,
